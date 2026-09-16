@@ -1,0 +1,7 @@
+[book]
+title = "Beyond-The-Code"
+authors = ["Ailrid"]
+language = "zh-CN"
+
+[preprocessor.katex]
+after = ["links"]
