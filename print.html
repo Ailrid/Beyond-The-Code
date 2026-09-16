@@ -1,0 +1,1637 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Beyond-The-Code</title>
+        <meta name="robots" content="noindex">
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-2459343d.css">
+        <link rel="stylesheet" href="css/chrome-ae938929.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-4ab73a71.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-cb195499.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Beyond-The-Code</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+<h1 id="pensées--praxis--思考与实践随笔"><a class="header" href="#pensées--praxis--思考与实践随笔">Pensées &amp; Praxis / 思考与实践随笔</a></h1>
+<blockquote>
+<p>“The limits of my language mean the limits of my world.” — Ludwig Wittgenstein</p>
+</blockquote>
+<blockquote>
+<p>“我的语言之限，即我的世界之限。” — 路德维希·维特根斯坦</p>
+</blockquote>
+<p>本仓库收录了我个人在闲暇时间所写的一些关于<strong>技术底层、范式演进、哲学人文</strong>的思考杂谈，以及在<strong>工程实践、硬件部署</strong>过程中的技术教程，将其整理成册。</p>
+<p>文中所表达的观点与方案仅代表个人在特定时期的探索与认知，未必绝对完美，仅供参考与探讨。</p>
+<hr>
+<p>有些想法终究需要落于笔端。无论是关于技术范式的演变、时代浪潮的更迭，还是纯粹的技术笔记，若一直憋在脑海里，便失去了交流与沉淀的意义。</p>
+<p>如今市面上充斥着纷繁嘈杂的争論，却鲜有逻辑严密、触及本质的剖析。遂决心整理本仓库，将这些日子关于技术与哲学的沉淀公之于众。</p>
+<p>文字一出，便有了自己的生命。不知未来会有多少读者驻足于此，但哪怕这些拙见只能为你带来些许视野之外的启发、促使你重新审视某些习以为常的概念，这也算是我在这个世界上留下一丝微弱但真实的痕迹。若能借此让技术与思想的世界稍变好微芒分毫，我便感激不尽。</p>
+<div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+<h1 id="杂谈"><a class="header" href="#杂谈">杂谈</a></h1>
+<h2 id="话题函数式编程"><a class="header" href="#话题函数式编程">话题：函数式编程</a></h2>
+<p>如果你仔细审视当今技术栈的顶峰，你会发现函数式编程无处不在，它已经成为了诸多框架和语言刻在基因里的概念——不可变数据与闭包。</p>
+<p>你可能把这句话都已经听烂了，可变数据会导致状态污染、控制流混乱、导致发生“我这个数据怎么莫名其妙变了”这种问题，听烂了闭包的n种好处。但是抛开这种教条，到底为什么我们需要函数式编程？这中间到底发生过什么？让我们从古到今来复盘一下。</p>
+<p>顺着族谱往上找，函数式编程其实根本不是什么现代前端或者Rust的新发明，它的理论根基在1930年代就被阿隆佐·邱奇（Alonzo Church）在普林斯顿大学的黑板上写下来了。那时候连真正意义上的电子计算机都还没诞生。</p>
+<h3 id="lambda-演算"><a class="header" href="#lambda-演算">Lambda 演算</a></h3>
+<p>要聊 λ 演算的诞生，我们得把时钟拨回1920-1930年代。那时，整个数学界正处于一场数学危机中，数学家们正在疯狂地寻找数学的终极根基。</p>
+<p>起因在于，大数学家大卫·希尔伯特（David Hilbert）在1900年的国际数学家大会上，一口气提出了 23 个著名的数学问题。这 23个问题直接指引了整个20世纪数学家们的奋斗方向，诞生了无数的数学定理，甚至连编程本身，也是从中诞生。</p>
+<p>希尔伯特是一个极端的数学理性主义者，他有一句名言刻在了他的墓碑上：“我们必须知道，我们必将知道”。他无法容忍数学体系里存在任何模糊、二义性或者无法证明的东西。于是，1920年代，他进一步提出的一个宏大宏愿——<strong>“希尔伯特计划”</strong>。提出了一个宏大的计划，想要一劳永逸地为整个数学建立一座坚不可摧的理论体系。他要求这个数学体系必须满足三个条件：</p>
+<ol>
+<li><strong>完备性：</strong> 任何一个数学命题，要么能证明它是真的，要么能证明它是假的。绝对不存在无法确定的中间地带。</li>
+<li><strong>一致性：</strong> 数学体系必须是自洽的，绝对不能推导自相矛盾的结论（比如不能推导出 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span></span></span></span>）。</li>
+<li><strong>可判定性：</strong> 存在一个纯粹机械化的步骤（算法），只要把任何数学命题丢进去，这个机器就能在有限时间内死板地计算出它是真还是假。这就是大名鼎鼎的<strong>判定问题</strong>。</li>
+</ol>
+<p>如果这个计划成功，数学将变成一门完美的艺术：所有的定理都不再需要天才的灵光一现，只需要交给一个机械工人去推导符号就可以了。</p>
+<hr>
+<p><strong>这三个条件，直接导致了三个伟大的发现。</strong></p>
+<hr>
+<p>希尔伯特正带着全世界的数学家试图证明这个体系时，1931年，25岁的库尔特·哥德尔（Kurt Gödel）发表了著名的<strong>哥德尔不完备定理</strong>。</p>
+<p>简单来说，哥德尔不完备定理直接证明了完备性的破产，哥德尔证明了。</p>
+<p><strong>任何一个自洽的数学体系，一定存在着一些绝对正确，但永远无法被这个体系证明的数学命题。</strong></p>
+<p>这给希尔伯特的梦想狠狠地砸了第一锤：数学是不可能完备的。</p>
+<hr>
+<p>虽然完备性碎了，但希尔伯特和数学家们想：好吧，就算有些问题无法证明，那我们至少能不能发明一个“算法”，来判定某一个特定命题到底是不是“无法证明”的呢？这对应了第三个条件——<strong>可判定性</strong>。</p>
+<p>为了解决这个判定问题，数学家们必须先搞懂一件事：<strong>到底什么叫“算法”？</strong> 当时根本没有计算机，大家对计算的理解都是模糊的。</p>
+<p>于是，为了彻底打趴下希尔伯特的幻想，有两个天才在1936年不约而同地登场了，他们各自为计算下了一个严格的数学定义：</p>
+<ul>
+<li><strong>阿隆佐·邱奇</strong> 发明了**<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">λ</span></span></span></span> 演算**，认为计算就是函数的代入与展开。</li>
+<li><strong>艾伦·图灵</strong> 发明了<strong>图灵机</strong>，认为计算就是读写头在纸带上的擦擦写写。</li>
+</ul>
+<p>后者，是今天一切计算机的老祖宗，而前者，则是函数式编程的老祖宗。</p>
+<hr>
+<p>那么，什么是 <strong><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">λ</span></span></span></span> 演算</strong>？要一句话说清 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">λ</span></span></span></span> 演算，就是：<strong>“世界上没有实体，只有动作，万物皆是函数。”</strong></p>
+<p>在传统的物理世界或图灵机世界里，我们习惯了先有“东西（数据）”，再有“对东西的操作（算法）”。但邱奇的 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">λ</span></span></span></span> 演算做出了一个极其反直觉但是很数学的假设：<strong>我们不需要数据，只需要映射关系本身，就足以表达宇宙间的一切规律。</strong></p>
+<ul>
+<li><strong>没有数字：</strong> “2” 不是一个实体，而是“把某个动作连续做两次”的抽象概念。</li>
+<li><strong>没有状态：</strong> 函数是一个绝对纯净的映射通道。你把东西丢进去，吐出新的东西。在这个过程中，输入的参数绝对不会在原位被污染或篡改。<strong>不可变性不是它的特性，而是它的核心假设。</strong></li>
+</ul>
+<p>邱奇用他的基础假设和<code>Lambda</code>演算，证明了只要有以下三种语法组件，就能组合出宇宙间所有的计算逻辑：</p>
+<ol>
+<li><strong>变量：</strong> <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span></span></span></span> （一个代号，用于指代输入）。</li>
+<li><strong>函数抽象：</strong> <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">λ</span><span class="mord mathnormal">x</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span> （定义一个匿名函数，输入是 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span></span></span></span>，逻辑体是 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span>。现代前端管它叫<strong>箭头函数</strong>：x =&gt; M）。</li>
+<li><strong>函数应用：</strong> <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mspace"> </span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span> （把函数 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span> 作用在参数 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span> 上。也就是<strong>函数调用</strong>：M(N)）。</li>
+</ol>
+<p>它的计算机制只有一条：<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.05278em;">β</span></span></span></span>-归约（<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.05278em;">β</span></span></span></span>-reduction）。</p>
+<p>说白了就是九个字——<strong>变量代入与函数展开</strong>。把输入参数代入到函数体里，再像弹簧一样把函数表达式展开、化简，直到不能再简为止。这就是整个<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">λ</span></span></span></span> 演算的全部运转方式。</p>
+<hr>
+<p>邱奇在这个连数字、<code>if-else</code>、循环语句都没有的荒凉世界里，推导出了两个终极结论：</p>
+<ul>
+<li>结论一：它和图灵机完全等价（邱奇-图灵论题）</li>
+</ul>
+<p>通过纯粹的函数组合（比如用函数表达布尔值、用著名的“Y组合子”在没有循环语句的情况下强行实现递归），邱奇证明了：<strong>这个只用符号代入的逻辑系统，其计算能力与那个拥有无限纸带、读写头的、精密的物理图灵机完全等价。</strong> 这就为后来的函数式编程（Lisp、Haskell）奠定了绝对合法的正统地位——图灵机能干的，<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">λ</span></span></span></span> 演算全都能干。</p>
+<ul>
+<li>结论二：机械化的终极判定是不可能的</li>
+</ul>
+<p>邱奇利用 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">λ</span></span></span></span> 演算证明了，你无法写出一个通用的 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">λ</span></span></span></span> 表达式，去判定任意另一个 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">λ</span></span></span></span> 表达式是否能被化简到终点。这和图灵的停机问题殊途同归，彻底干掉了希尔伯特想用机械化判定一切数学命题的宏愿（希尔伯特又被无情鞭打）。</p>
+<hr>
+<h3 id="图灵机"><a class="header" href="#图灵机">图灵机</a></h3>
+<p>说到图灵机，每个计算机人都很熟悉，在这里我们再重新复习一下图灵机的三个物理组件。</p>
+<ul>
+<li>
+<p><strong>无限长的纸带：</strong> 这就是<strong>内存</strong>。纸带被划分为一个个格子，每个格子存储一个符号（数据）。</p>
+</li>
+<li>
+<p><strong>读写头：</strong> 这就是 <strong>CPU 的指针和寄存器</strong>。它可以在纸带有左右移动，更重要的是，它能擦除当前格子的符号，并写入一个新符号。</p>
+</li>
+<li>
+<p><strong>状态寄存器：</strong> 记录机器当前处于什么状态。</p>
+</li>
+</ul>
+<p>在图灵的假设里，计算就是读写头在纸带上的擦擦写写。想进行计算，必须去内存的某个地址上，把原来的值擦掉，改写成新的值。这就是地地道道的“可变变量”。我们今天在面向对象或命令式编程里写的 <code>x = x + 1</code>、<code>obj.age = 18</code>，全都是图灵机在纸带上擦擦写写的现代翻版。</p>
+<p>OOP的出现，其实也绝对不是偶然，它就是图灵机模型在工程复杂度爆炸时的必然产物。 甚至可以说，OOP是图灵机在软件工程世界里演进出来的终极完全体。图灵机的核心就是那条纸带和那个擦擦写写的读写头，就是命令式编程的根源。世界上最早的高级语言（如 Fortran、C 语言）全都是地地道道的图灵机翻版。</p>
+<p>为了拯救图灵机模型，不让它在复杂的现实业务里崩溃，人类必须想个办法限制读写头的瞎擦乱写。于是，阿兰·凯（Alan Kay，OOP之父）、芭芭拉·利斯科夫（Barbara Liskov）这帮天才提出了面向对象的思想。仔细审视OOP的核心三大特性（封装、继承、多态），它们其实全都是为了给图灵机的可变纸带打补丁。</p>
+<h3 id="为什么计算机使用图灵机"><a class="header" href="#为什么计算机使用图灵机">为什么计算机使用图灵机</a></h3>
+<p>历史务实的地方就在于，冯·诺依曼在造物理计算机时，由于当年的硬件极其昂贵，物理学家们用屁股决定也会毫不犹豫背叛邱奇，选择更贴合硬件物理结构的图灵机模型（内存就是纸带，CPU就是读写头）。</p>
+<p>于是，原位修改、命令式代码，这些东西统治了工业界半个世纪。而<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">λ</span></span></span></span>演算则带着它天生不可变，被软件工程打入冷宫，只能在<code>Lisp</code>语言里自娱自乐，甚至被工业界嘲笑是学术玩具。</p>
+<p>这主要是因为，在那个世纪的硬件条件下，如果你非要用图灵机的硬件去跑纯<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">λ</span></span></span></span>演算，因为不能原地改数据，你每次改个属性都得在内存里重新开辟空间、复制一遍数据，当年只有几KB内存的机器根本无法运行任何复杂程序。</p>
+<h3 id="函数式编程复兴原因"><a class="header" href="#函数式编程复兴原因">函数式编程复兴原因</a></h3>
+<p>函数式编程的复兴主要是由于两个变化导致的。</p>
+<p>第一个变化是半导体技术达到了上限。在21世纪初人类终于撞上了物理极限，摩尔定律锁死了，单核 CPU 的主频撞到了物理极限。为了让计算机更快，物理学家和工程师们只能开始往一个芯片里塞更多的核心——多核并发时代来临。</p>
+<p>这时候，图灵机模型的致命缺陷暴露了。多个核心同时在同一块内存上疯狂擦擦写写，世界瞬间乱套了。为了防止数据竞争，人类不得不发明了锁、互斥量、死锁检测。为了保护那块可变内存，程序员的心智负担直接爆炸。</p>
+<p>人类在图灵机的沙盘里修修补补快崩溃时，一回头，突然发现了在函数式编程里躺了半个世纪的<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">λ</span></span></span></span> 演算。因为 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">λ</span></span></span></span> 演算天然不可变，数据只能读取不能修改，所以一千个核心同时去读它也是绝对安全的，天然对多核并发免疫。</p>
+<hr>
+<p>另一个变化是系统的复杂度变了。早期的程序很简单，内存很贵，原位修改能榨干每一比特的硬件性能。但现代的系统太庞大了。数据在无数个组件、中间件、异步回调里流转。这时候，可变数据就变成了：“我这个状态怎么莫名其妙变了？是谁在哪个旮旯角里悄悄改了我的属性？”debug 变成了玄学。</p>
+<hr>
+<p>兜兜转转大半个世纪，软件工程发现，解决复杂度的终极武器，居然是90年前数学家在黑板上写下的、那个连变量和数字都没有的纯粹世界。不管是现代前端的函数式编程、不可变数据、<code>Lambda</code>函数，其归根到底，老祖宗都是90年前的<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">λ</span></span></span></span> 演算。说到这里顺便插一嘴，其实纯粹的<code>Lambda</code>演算的函数，不能包含内部状态和触发副作用的，在现在叫做“纯函数”。而现在编程语言里的更务实的，能够捕获外部变量和存有自己状态的，有个更响亮的名字——闭包。现在你知道为什么叫<code>Lambda</code>函数而不是<code>gamma</code>或者什么<code>omega</code>函数了吧。</p>
+<h3 id="现代函数式编程"><a class="header" href="#现代函数式编程">现代函数式编程</a></h3>
+<p>现代硬件底层依然是硬件高效的图灵机，但在软件的上层，现代编程语言都正在用<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">λ</span></span></span></span>演算的核心概念，让程序员能够编写出确定与优雅的程序。由于根上还是图灵机，实现最纯粹的其<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">λ</span></span></span></span>演算实是很困难的，而且我们也没有必要完全按照最初的<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">λ</span></span></span></span>演算来编写程序，不然那就太痛苦了。</p>
+<p>现代函数式编程语言，从<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">λ</span></span></span></span>演算里偷来了最核心的几个武器——不可变数据、闭包、代数数据类型、高阶函数复合。变成了你天天看到的这些概念。</p>
+<ul>
+<li>**闭包：**本质上是<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">λ</span></span></span></span>演算在图灵机上的妥协产物。<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">λ</span></span></span></span>演算没有状态，而闭包通过捕获自由变量，把环境和动作打包在了一起。</li>
+<li>**不可变数据类型：**本质上是<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">λ</span></span></span></span>演算的核心假设。在现代主要通过两种方式实现，一种是编译器强制不可变关键字（例如<code>const</code>）甚至在<code>Rust</code>里，只要不声明可变，就默认不可变；一种是通过结构共享，在可变数据类型上强行实现不可变数据，这就是<code>React</code>的核心，没变的部分用指针指向老数据，变了的部分创建新节点。</li>
+<li>**代数数据类型：**这是现代函数式编程极其重要、甚至可以说是 <code>Rust</code>、<code>TypeScript</code> 等语言灵魂的一点，其标志性的体现就是<code>enum</code>。传统OOP依赖开放多态（通过子类继承虚表来分发行为），而函数式编程带来了闭合多态，结合模式匹配，编译器能强迫你必须处理完所有情况才能编译通过。这种闭合带来了类型安全和运行效率。</li>
+<li>**高阶函数复合：**传统OOP要实现功能的组合通常要让对象持有另一个对象的引用。而函数式编程的组合，是数学意义上的函数复合（<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">h</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">))</span></span></span></span>）。一个函数能够接收函数作为参数，或者能够实现一个，返回函数的函数</li>
+</ul>
+<p>因此，你在设计模式中看到的，很多由于现代语言的改进而消灭的设计模式，其实更本质上，是现代函数式编程和<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">λ</span></span></span></span>演算对于图灵机的胜利。</p>
+<h3 id="不存在银弹"><a class="header" href="#不存在银弹">不存在银弹</a></h3>
+<p>软件开发中没有银弹。说完了函数式编程与OOP的爱恨情仇。赞扬了函数编程的优点，那么，函数式编程的缺点是什么？</p>
+<p>前面我们说到，<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">λ</span></span></span></span>演算的核心就是<strong>变量代入</strong>与<strong>函数展开</strong>，而一个事物的核心假设与方法，是优点来源的同时，往往也是最大的缺点来源。</p>
+<p><strong>缺点一：闭包地狱</strong></p>
+<p>在<code>React</code>里有一个被无数人喷过的被叫做“闭包地狱”的大雷，由于闭包的特性，某个异步回调函数或副作用捕获了“过去”的状态，导致它在执行时拿到的依然是旧数据，而不是最新的值。为了引入函数式组件的副作用与缓存，React推出了 <code>useEffect</code>、<code>useCallback</code> 等等一堆API。然而搞笑的是，它们反而转接了代价，变成了闭包地狱最频繁的爆发区。</p>
+<p><strong>其本质，是闭包的状态捕获与异步并发之间的冲突。</strong></p>
+<p>而在更底层的语言里，这个问题变得更加致命。单单是所有权机制和异步就已经开始产生了排异反应。</p>
+<p>由于Rust 经常会发生所有权转移，把一个<code>Future</code>传给另一个线程、或者放进一个<code>Box</code>里。为了解决异步并发导致的内存移动产生空指针，Rust 引入了 <code>Pin</code>。<code>Pin&lt;P&gt;</code> 的本质是在内存中把这个对象“钉住”。一旦一个 <code>Future</code> 被 <code>Pin</code> 住了，Rust 就保证它再也不能在内存中被移动。这样，它内部的自引用指针就永远是安全的。</p>
+<p>Rust闭包与其他语言也不同，在Rust中闭包也有一个<code>move</code>关键字。在没有所有权的语言中，闭包对外部变量的捕获一般是全自动且悄无声息的，一律通过引用计数挂在堆上。但Rust的闭包非常节约，能用借用就绝不用所有权。但如果你的闭包生命周期比它捕获的变量还要长，借用就会失效，导致编译报错，这时候你就必须在闭包前加上 <code>move</code>。</p>
+<p>而当Rust里的异步和闭包撞上，就会发生巨大的核反应。</p>
+<p>如果捕获的变量已经在外面的函数里被销毁（Drop）了，但异步任务还在另一个线程里哼哧哼哧地跑，这时候去访问那个变量，不就成了野指针吗？而Rust设计的目标就是根除空指针的存在，这可怎么办？</p>
+<p>为了让异步任务能安全运行，你必须使用<code>move</code>关键字。</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let local_data = String::from("重要数据");
+// 加上 move！把 local_data 的所有权彻底剥夺，转移进异步任务内部
+tokio::spawn(async move {
+    // 此时这个数据完全属于这个异步任务了，它爱活多久活多久
+    println!("{}", local_data); 
+}); 
+<span class="boring">}</span></code></pre>
+<p>回到<code>React</code>闭包地狱的本质，其根源是同一个变量，外面在变，闭包里拿的是旧的，从而产生了冲突，React创造了<code>useEffect</code>。而Rust的<code>move</code>机制直接从物理上消灭了这种冲突的可能性。</p>
+<p>但代价就是，一旦被捕获，外面的世界就彻底失去它了。因此如果你既想把数据传给异步任务，又想让外面的代码继续用，该怎么办？只能拷贝。</p>
+<p><strong>这就是第一条代价：拷贝地狱。</strong></p>
+<p>更进一步，如果数据不仅要被多个异步任务共享，而且这些任务都想修改它，那你必须保证线程安全。</p>
+<p><strong>这就是第二条代价：<code>Arc&lt;Mutex&lt;T&gt;&gt;</code>地狱。</strong></p>
+<hr>
+<p><strong>缺点二：丧失的多态拓展性</strong></p>
+<p>代数数据类型与模式匹配很好的解决了绝大部分OOP继承需要的场景。唯独只有一条没有解决——扩展性。这在计算机科学中被称为“表达式问题”。</p>
+<p>以最典型的UI树为例。利用开放多态（继承），可以很好的描述一个UI的树结构，这已经在OOP中得到了大量的应用，我们不再赘述。</p>
+<p>在现代的闭合多态语言中，利用代数数据类型与接口，我们也可以实现同样的功能，因此可以写出这样的代码来描述一个树形结构。</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// 用代数类型穷尽节点的所有可能性（闭合多态）
+#[derive(Debug)]
+pub enum UIWidget {
+    Button { text: String },
+    Text { content: String },
+    Panel { children: Vec&lt;UIWidget&gt; },
+}
+
+impl UIWidget {
+    // 统一的行为方法，内部通过模式匹配（Pattern Matching）分发逻辑
+    pub fn draw(&amp;self) {
+        match self {
+            UIWidget::Button { text } =&gt; {
+                println!("  [渲染按钮]: {}", text);
+            }
+            UIWidget::Text { content } =&gt; {
+                println!("  [渲染文本]: {}", content);
+            }
+            UIWidget::Panel { children } =&gt; {
+                println!("[开始渲染面板] -&gt;");
+                // 一视同仁地向下递归遍历
+                for child in children {
+                    child.draw();
+                }
+                println!("&lt;- [面板渲染结束]");
+            }
+        }
+    }
+}
+<span class="boring">}</span></code></pre>
+<p>但是——这里的关键是代数类型是一种封闭的多态，如果要添加新的UI组件，必须更改整个代数类型，这意味着，如果你在写一个<strong>通用 UI 框架</strong>，麻烦就大了。如果用户想自定义一个自己的组件并塞进框架的容器里，他们根本无法做到！因为他们没有权限去修改框架源码的<code>enum</code>类型，而且增加一个新的类型，意味着要大动干戈地修改原有的枚举定义，并且所有 <code>match</code> 它的地方全都要改一遍。这对框架设计来说是毁灭性的。</p>
+<p>有很多框架采用了一种讨巧的方式，比如SwiftUI或者Slint等，将修改结构后需要更改源代码的问题，交给了编译器来自动化工作，让你写起来感觉有开放多态的好处，但是实际上运行时却没有OOP的开销和问题。但这往往导致编译器报错出来的类型会嵌套几十层如同天书，同时也无法良好的支持热重载。</p>
+<p>而OOP是开放多态，从不假设数量。这就导致了一个天然的结果——<strong>OOP天然就是适合用来组建真正的UI树</strong>。很多UI框架早以证实了这一点，Flutter、早期的React（实际上React现在也是，虽然代码里不是，但是JS天生就是弱类型多态的，这只是一种不需要开放多态的幻觉，如果用纯粹、严格的函数式静态语言去写，就会立刻撞上这堵南墙），源代码里都是OOP。</p>
+<p>或许你有很多的方法仍然可以绕着来实现这样的开放多态，但是绝对不会优雅，最终你会发现自己绝对又结合类型擦除，重新实现了OOP中的虚表。</p>
+<p>或许有朝一日，如果我们能够用另一种继承之外的，更好的方式来实现开放多态，这个问题就能够解决了。</p>
+<p><strong>缺点三：复合地狱</strong></p>
+<p>最后一点则是函数式编程里臭名昭著的套娃地狱。例如Rust的迭代器不仅链条长，最致命的是Rust编译器的类型推导。这一长串下来，中间任何一步的借用或所有权搞错，编译器就会抛出一个长达两页纸的、夹杂着类似 <code>Filter&lt;Map&lt;Filter&lt;Iter&lt;...&gt;&gt;&gt;&gt;</code> 的超长泛型报错，直接把人看瞎。</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let top_users: Vec&lt;String&gt; = users
+    .into_iter()
+    .filter(|u| u.age &gt;= 18)
+    .map(|u| u.name)
+    .filter(|name| !name.is_empty())
+    // 为了去重，得先收集到 HashSet，再转回迭代器（因为迭代器本身没有 dedup）
+    .collect::&lt;std::collections::HashSet&lt;_&gt;&gt;()
+    .into_iter()
+    .take(3)
+    .collect(); 
+// 哦等等，还要排序？迭代器没有 sort()，又得 collect 出来排，再处理……
+<span class="boring">}</span></code></pre>
+<p>正如人月神话里说的，软件开发中没有银弹。其实这句话放到编程语言里也是相同的。没有一种编程风格能够解决所有的设计问题。很多人误以为函数式编程比OOP更加优美，是因为他们只看到了高阶函数在字面上的简练。真正的函数式编程之所以敢如此自由传递和嵌套函数，是因为它强制要求函数是“纯”的。但我们在前端、在Rust、在Go里用的，大多是多范式语言而不是真正的纯粹的函数式语言。因此，硬币的另一面就是：自由的代价往往就是混乱。</p>
+<h3 id="补充"><a class="header" href="#补充">补充</a></h3>
+<p><code>Lisp</code>是第一门函数式编程语言。Lisp是世界上第二古老的高级语言（仅次于 Fortran），由人工智能之父约翰·麦卡锡（John McCarthy在1958年发明。他的特点是万物皆是列表，万物皆是函数。Lisp是现代所有动态语言（包括 JavaScript）的老祖宗。它是第一个引入闭包（Closure）、高阶函数、垃圾回收（GC）机制的语言。</p>
+<p><code>Haskhell</code>是一门把函数式编程发展到极致的编程语言。是为了实现“绝对纯粹的邱奇理想国”而打造的语言。它是以逻辑学家哈斯凯尔·柯里（Haskell Curry，柯里化Curry思想的提出者）的名字命名的。他的特点是，极端的纯粹与不可变，在 <code>Haskell</code> 里，“可变变量”这个概念是被彻底物理消灭的，它把 = 理解为数学上的等价定义，而不是图灵机的赋值。<code>Haskell</code> 引入了极其强大的静态强类型系统。之前在设计模式里感受到的代数数据类型和模式匹配，其现代工业界的终极源头就是<code>Haskell</code>。</p>
+<h2 id="话题元编程"><a class="header" href="#话题元编程">话题：元编程</a></h2>
+<p>要讲元编程，就必须先弄明白什么不是元编程，“元”到底指的是什么。</p>
+<p>让我们把思维从日常的写代码里抽离出来，站到一个更高的抽象维度去重新审视，那个你一直在写但从未考虑过的问题：“代码本身到底是什么？”</p>
+<h3 id="代码的本质"><a class="header" href="#代码的本质">代码的本质</a></h3>
+<p>每天，程序员坐在电脑前敲下 <code>if (user.isAdmin)</code>、<code>list.map(x =&gt; x * 2)</code>，或者封装一个用户类、写一个数据库连接池，这些<strong>通通不是元编程</strong>，这些应该叫做，业务编程或者一阶编程。</p>
+<p>在这种模式下，代码本身决定的是具体的数据结构与控制流程，而用户输入的数据是被推上流水线的原材料。代码像一个加工厂，日复一日地吞进去数据，吐出来新的数据。</p>
+<p>在计算机科学的终极圣殿里，有一条定理，叫做“柯里-霍华德同构”。</p>
+<p>它用严密的数学逻辑证明了一件事**：代码的本质，就是数学证明。**这个定理表明，类型本质上就是数学里的命题，函数本质上就是对这个命题的数学证明。</p>
+<p>当你写下一个函数 <code>function add(a: number, b: number): number</code> 并让它顺利通过编译时，其实不是在写一段机械的指令，而是在向计算机推导一个数学定理：“已知存在两个数<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">a</span></span></span></span>和<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">b</span></span></span></span>，我可以通过以下步骤，证明必然能通过函数体内的流程来构造出第三个数。”只要代码能跑通，就意味着你的证明成立，命题就为真。</p>
+<h3 id="元编程的本质"><a class="header" href="#元编程的本质">元编程的本质</a></h3>
+<p>还记得我们之前说，希尔伯特的判定问题指的是：存在一个纯粹机械化的算法，只要把任何数学命题丢进去，这个机器就能在有限时间内死板地计算出它是真还是假。而这个机器，其实就是我们天天在用的计算机。</p>
+<p>“元”一词在希腊语里有“超越”、“在……之后”的意思，这个词还广泛用在其他领域，例如心理学上有“元认知”，是一个人对自己的认知能力；数据科学里有“元数据”，是用来描述数据的数据，比如描述一副图像的各种参数等等。</p>
+<p>现在我们可以指出，我们之前写的业务代码，就是在编写一个命题，写代码的过程就是去证明我们的逻辑和结论为真的过程。而元编程，是去写出一个“能够证明一个证明为真”的程序。在这种情况下，一个证明本身就成为了一个命题。</p>
+<p>这么说可能有些拗口，“证明一个证明”是什么意思呢？既然我们说写代码是证明，那么其实简单替换一下就可以得到更容易理解的概念：<strong>元编程，是写一段程序，让这个程序输出另一个可运行的、正确的程序的过程。</strong></p>
+<p>希尔伯特的判定问题，以及图灵的图灵机停机问题，如果用现代软件工程的语言来翻译，就是“试图寻找一个万能的、全知全能的元编程程序”的问题。</p>
+<p>图灵提出，是否存在一个万能的判定程序 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.08125em;">H</span></span></span></span>，当你把任意一个程序 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span></span></span></span> 和它的输入 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span></span></span></span> 传给 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.08125em;">H</span></span></span></span> 时，<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.08125em;">H</span></span></span></span> 能够百分之百准确地告诉你，程序 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span></span></span></span> 是会运行结束（停机），还是会陷入死循环？</p>
+<p>这个 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.08125em;">H</span></span></span></span>，在定义上就是一个地地道道的、最顶级的“元编程程序”，。如果它存在，它就拥有了超越一阶代码的“上帝视角”，能够看穿所有世间代码的宿命。它要吃进去的原材料不是别的，正是另一段程序的源代码。它的加工逻辑是去分析这段源代码的控制流，它的输出是一个布尔值（<code>true</code> 或 <code>false</code>）。</p>
+<p>元编程是极其强大的武器，能够轻而易举做到普通编程根本无法做到的事情。在现代语言里，语言本身主要使用反射与宏，来实现元编程。</p>
+<h3 id="运行时元编程反射"><a class="header" href="#运行时元编程反射">运行时元编程—反射</a></h3>
+<p>反射是很多程序员进阶路上最大的一只拦路虎，甚至是编程生涯的终点。</p>
+<p>很多人天天都在用它（ JSON 序列化工具、用 Spring 的注解、或者在前端用Vue3/MobX），但如果你问：“到底什么是反射？它反射了什么？”，绝大多数人都会卡壳，往往只觉得它很高级、很神秘，能搞出一些魔法，但底层的逻辑却是一片浆糊。</p>
+<p>要弄懂反射，必须先明白这个词是怎么来的。它其实是一个非常精妙的物理隐喻。</p>
+<p>在物理世界里，反射是一束光打在镜子上，折射回你的眼睛，让你看清了你自己的模样。</p>
+<p>在编程语言里，反射是代码在运行的时候，突然停下来，转过头去对着镜子晃一下，审视自己、观察自己、看清自己的代码结构。这就叫做<strong>运行时的“自省”</strong>。</p>
+<p>所以，<strong>反射，就是程序在运行期“照镜子”自审的能力。</strong> 它反射的不是别的东西，正是<strong>一个程序自身</strong>。</p>
+<hr>
+<p>说到这里可能还是很抽象，一个程序看自身是什么意思？让我们看的更本质一些。</p>
+<p>为了明白为什么需要反射，我们必须回头看看你写下的代码，是怎么编译的。</p>
+<p>当你写下这些定义：</p>
+<pre><code class="language-ts">class User {
+    public name: string;
+    private age: number;
+    public deleteDatabase() { ... }
+}
+</code></pre>
+<p>对于人类来说，这个类结构清晰，有属性、有方法、有私有共有权限。这些定义一目了然。</p>
+<p>但是，当编译器把这段代码编译成机器码或者字节码、放到内存里去运行的时候，计算机只认识内存地址和偏移量。在物理内存里，这个 <code>User</code> 对象最后可能被简化成了仅仅是一块 <strong>16个字节的连续内存空间</strong>。前8个字节存 <code>name</code> 的指针。后8个字节存 <code>age</code> 的数字，你在代码里所有的访问和调用，全都变成了指针和地址。</p>
+<p>这时候，如果你突然产生了一个需求：“我想写一个万能的工具，用户传进来任意一个对象，我都能自动把它变成JSON字符串吐出来。”如果没有反射你根本无法做到。因为程序在运行的时候，根本不知道前8个字节的名字叫做什么，后8个字节的名字叫做什么。</p>
+<hr>
+<p>为了解决这个痛点，现代支持反射的语言（Java、Go、C#、JavaScript）的编译器，做了一件额外的事情。它们在编译和加载代码时，<strong>没有把这些类型和字段数据删除，而是偷偷藏了一份每个函数和对象的字段和参数记录。</strong></p>
+<p>以TS为例，当你启用编译器的反射功能，并且引入反射库。</p>
+<pre><code class="language-ts">{
+  "compilerOptions": {
+    "experimentalDecorators": true,   // 开启装饰器
+    "emitDecoratorMetadata": true     // 核心：允许编译器在运行时吐出类型元数据
+  }
+}
+
+import "reflect-metadata";
+</code></pre>
+<p>假如你拥有一个巨大的<code>Map</code>，其中<code>key</code>是类型，而<code>value</code>是对应的数据。</p>
+<pre><code class="language-ts">// 假设这是我们的大 Map，里面存着系统运行所需的各种基础服务
+const container = new Map&lt;any, any&gt;();
+
+// 往大Map里塞点原材料
+class ApiService {
+    fetchData() { return "从服务器捞出的核心数据"; }
+}
+class LoggerService {
+    log(msg: string) { console.log(`[日志]: ${msg}`); }
+}
+
+container.set(ApiService, new ApiService());
+container.set(LoggerService, new LoggerService());
+</code></pre>
+<p>TS有个设定，只有被装饰器修饰的类或方法，编译器才会配合地保存这个类或方法的参数和类型信息。所以我们先写一个最简单的装饰器，哪怕它什么都不干。</p>
+<pre><code class="language-ts">// 这是一个空壳装饰器，单纯为了告诉 TS 编译器
+function Injectable(): ClassDecorator {
+    return (target) =&gt; {
+    };
+}
+</code></pre>
+<p>现在，我们要写一个万能的自动实例化函数 <code>resolve</code>。它会去照镜子（反射），看看目标类需要什么参数，然后从大 Map 里捞出来塞进去。这里的关键是，由于在之前引入了<code>import "reflect-metadata";</code>，这个库会在全局的<code>Reflect</code>对象上添加一个<code>getMetadata</code>方法，其本质其实是一个巨大的<code>WeakMap</code>。利用这个方法，你可以获得一个含有当前对象元数据的数组。</p>
+<pre><code class="language-ts">function resolve&lt;T&gt;(target: new (...args: any[]) =&gt; T): T {
+    // 核心反射：向 Reflect 索要这个类的构造函数参数类型图纸
+    // "design:paramtypes" 是TS内置的key，用来获取参数的类型数组
+    const paramTypes: any[] = Reflect.getMetadata("design:paramtypes", target) || [];
+
+    console.log(`[反射自审]: 发现类 ${target.name} 的构造函数需要 ${paramTypes.length} 个参数。`);
+    // 打印出来的 paramTypes 看起来像这样：[ [class ApiService], [class LoggerService] ]
+    paramTypes.forEach((type, index) =&gt; {
+        console.log(`           参数 ${index + 1} 的类型是: ${type.name}`);
+    });
+
+    // 现在你可以根据类型参数，从刚才的大Map里捞出对应的依赖
+    const dependencies = paramTypes.map(type =&gt; {
+        const dependency = container.get(type);
+        if (!dependency) {
+            throw new Error(`找不到依赖的类型: ${type.name}，请先塞进大 Map 中！`);
+        }
+        return dependency;
+    });
+
+    // 把捞出来的参数作为构造函数参数塞进去，返回新实例
+    return new target(...dependencies);
+}
+</code></pre>
+<p>现在我们写一个业务类 <code>UserController</code>，它假装自己不知道参数怎么来，只管伸手要：</p>
+<pre><code class="language-ts">@Injectable() // 打上标记，让TS编译器保存参数
+class UserController {
+    // 声明我需要 ApiService 和 LoggerService，参数数量：2
+    constructor(
+        private api: ApiService,
+        private logger: LoggerService
+    ) {}
+
+    public handleRequest() {
+        this.logger.log("开始处理用户请求...");
+        const data = this.api.fetchData();
+        console.log(`[控制器响应]: ${data}`);
+    }
+}
+
+// 我们不需要手动 new UserController(new ApiService(), new LoggerService()) 了
+// 直接交给 resolve 函数，它会通过反射自动组装
+const controller = resolve(UserController);
+
+controller.handleRequest();
+</code></pre>
+<p>这个例子，本质上就是我们在创建型模式里讨论的依赖注入的最简单实现。在其他语言里，比如Java，Go，同样也需要用到反射，才能够实现依赖注入。这是因为依赖注入必须有一个前提，必须能够让程序知道“这个类或者函数接受几个参数，每个参数的类型是什么”。要知道这些事情，就必须使用反射。</p>
+<p>但是，你发现他的代价了吗？</p>
+<p>第一，它是不纯粹的。JS语言本身根本不支持这种类型的反射，我们必须在语言外层加一套特殊的编译器开关（<code>emitDecoratorMetadata</code>）并引入一个<code>reflect-metadata</code>库。</p>
+<p>第二，它必须依赖装饰器（<code>@Injectable</code>）这个语法。如果程序员忘记在类名上加这行注解，反射机制当场就会变成瞎子，什么参数也捞不出来，在运行时直接导致程序崩溃。</p>
+<p>这种在运行时“编译时留额外信息、运行时再翻来翻去查找”的方案，正是元编程在运行时流派的工程妥协。这也正是为什么，更硬核的现代语言，会抛弃运行时的反射，直接转入编译期的阵营。</p>
+<h3 id="编译时元编程宏"><a class="header" href="#编译时元编程宏">编译时元编程—宏</a></h3>
+<p>宏的发展史是一个极其精彩的屌丝逆袭故事，它一开始根本不是什么高大上的元编程神器，而是一个纯粹的打字机语法糖。</p>
+<p>宏最早可以追溯到汇编语言时代和C语言时代（<code>#define</code>）。那时候，由于硬件内存极小，连函数的调用开销（压栈、出栈、保护现场）程序员都斤斤计较。于是，大家想：能不能发明一个东西，让我少写点重复代码，但在编译前自动帮我把代码复制粘贴过去。</p>
+<p>这就是<strong>文本替换宏</strong>。在这个阶段，宏根本没有智商，它不认识什么是类型，不认识什么是语法，它就是一个纯粹的字符串替换工具。因为这种呆板设计，早期的宏制造了无数难以调试的Bug，被现代面向对象语言（Java、C#）视作毒瘤，直接在语言设计中被彻底开除了。</p>
+<p>然而，当程序员陷入了“运行时的无限套娃”和“反射的沉重代价”中感到毫无办法时，宏最终又被拾起来重新发现，并且在系统级语言里完成了屌丝逆袭。</p>
+<p>现代的宏（以 Rust 的<strong>过程宏</strong> 为代表）彻底进行了全面升级，它不再是盲目的文本替换了，而是直接跟编译器深度合体，直接获得了接触抽象语法树 的最高权限，变成了指挥编译器的工具。</p>
+<hr>
+<p>在动态类型和Java或者C#这种字节码语言里主要依靠反射，而宏主要在真正的硬核编译型语言里大行其道，并且分为好几个流派。</p>
+<p><strong>流派 A：Rust的“编译魔法”——过程宏</strong></p>
+<p>这个流派的观点非常直白粗暴简单有效，既然元编程是改写代码，那就干脆在编译器内部开一个后门。</p>
+<p>当你写下<code>#[derive(Serialize)]</code> 时，编译器在编译你的核心代码之前，会先去跑一段由你编写的元编程程序。这段程序吃进去的是你当前结构体的Token流，在内存里重组语法树，然后吐出全新的Rust代码。</p>
+<p>这种流派是纯粹的语言内解法，非常安全，类型系统和生命周期检查全部无缝覆盖。但代价是编译速度极慢，因为你编译一个程序，实际上等于先编译并运行了十几个“生成代码的程序”。</p>
+<hr>
+<p><strong>流派 B：UE5（虚幻引擎）的“重工业魔改”——外部编译器</strong></p>
+<p>C++天生是没有现代反射和元数据的，但在游戏开发中，对象的序列化、GC、蓝图与C++的动态绑定又必须依赖反射。Epic官方一看，指望C++标准委员会扯皮完（C++标准委员会是这样的），黄花菜都凉了，于是他们采取了最暴力的重工业手段：不和委员会玩了，自己给 C++ 编译器写个外挂壳子。</p>
+<p>这就是UHT（虚幻请求头工具）。当你在UE5里写下 <code>UCLASS()</code>、<code>UPROPERTY()</code> 时，原生的C++编译器根本不认识这些宏。在真正的C++编译器启动之前，UE的UHT会先跑一遍，把你的整个 C++ 源码文件肉眼扫描一遍，强行解析出你的类结构。UHT会在幕后自动生成一堆巨庞大的、极其恶心的 <code>.generated.h</code> 和 <code>.gen.cpp</code> 文件，帮你在C++里强行手写出了一套元数据。最后，再把这些生成的代码和你的源代码一起喂给标准的C++编译器。</p>
+<p>这种流派直接降维打击，在不支持反射的语言里，硬生生用重型工程手段造出了全套反射基础设施。但是极度依赖虚幻自己的构建系统，编译链条极长，一旦代码写错，引发的报错信息简直是天书。</p>
+<hr>
+<p><strong>流派 C：Zig语言的“超级杀招”——<code>comptime</code>关键字</strong></p>
+<p>Zig 语言走了一条让所有人惊掉下巴的纯粹路线。不发明宏也不发明外部工具，而是在编译期直接运行正儿八经的Zig代码。这就是Zig被无数人赞扬的超级大招——<strong><code>comptime</code> 关键字</strong>。</p>
+<p>在Zig里，你想写一个万能的、支持任何类型的泛型容器，不需要写复杂的泛型语法或宏，你直接在编译期写常规代码。直接把类型当作变量给当作函数的输出给返回出去。</p>
+<pre><code class="language-zig">// 这是一个函数，输入是一个类型，输出是一个结构体新类型！
+fn List(comptime T: type) type {
+    return struct {
+        items: []T,
+        len: usize,
+    };
+}
+
+// 使用时：
+const IntList = List(i32); // 在编译期把 i32 类型传进去，直接生成一个新的结构体！
+</code></pre>
+<p>在Zig语言里，类型天生就是编译期的一等公民。你可以像操作普通的数字、字符串一样，在编译期用 <code>if-else</code>、<code>for</code> 循环去组装这些类型。它不需要任何特殊的宏语法，日常怎么写业务逻辑，就怎么写元编程。编译器在编译时，会把标有 <code>comptime</code> 的代码直接在内嵌的解释器里跑完，把结果固化成极其干净、零开销的机器码吐出来。</p>
+<p><strong>流派 D：现代语言的“隐藏元编程”——泛型</strong></p>
+<p>泛型在计算机科学的严谨定义下，其实也是“元编程”最基础、最优雅的一种形态。</p>
+<p>当你编写<code>fn swap&lt;T&gt;(a: &amp;mut T, b: &amp;mut T)</code>这样的函数时，你并没有编写一段具体的机器码。你是在编写“编写代码的逻辑”。所以，泛型本质上就是一个“代码生成器”。编译器替你完成了繁琐的“代码复制粘贴”，这就是最高效、最安全、最易用的元编程。Zig语言其实就是把这种“泛型即元编程”的本质给彻底释放出来，并且把泛型的地位进一步提升了。</p>
+<h3 id="成也萧何败也萧何"><a class="header" href="#成也萧何败也萧何">成也萧何，败也萧何</a></h3>
+<p>在前面我们说到了zig语言最神奇的地方，把类型当作可以运算的变量来在编译器期间运行生成结果，看似一切都很美，那么代价是什么？</p>
+<hr>
+<p>让我们来抛开现象看本质，zig语言的<code>comptime</code>到底是什么？</p>
+<p>在话题函数式编程中我们长篇铺叙了图灵机与<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">λ</span></span></span></span> 演算的历史，不知道你是否能发现一些端倪。</p>
+<p>当我们写下泛型<code>HsahMap&lt;String,Vec&lt;Vec&lt;usize&gt;&gt;&gt;</code>时，其实这就是最纯正的<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">λ</span></span></span></span> 演算，类型就是我们的输入，泛型的嵌套就是函数的嵌套。</p>
+<p>因此Rust社区才能利用泛型构造出泛型常量，当你在<code>nalgebra</code>库中使用<code>U2</code>,<code>U3</code>这样的泛型常量时，其实就是在用<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">λ</span></span></span></span> 演算去模拟真正的次数计算。</p>
+<p>那么，zig语言的<code>comptime</code>是什么？</p>
+<p><strong>显然，他就是一个完整的用来计算类型的图灵机，具备了图灵机便于使用简单直观的优点的同时，也背负了图灵机所有的缺点。</strong></p>
+<ul>
+<li>图灵停机问题：图灵证明了，对于一个程序，不存在任何一个程序只需要看源代码，就能够推导出这个程序是否会在有限时间内终止。这里的程序，就是Zig编译器本身。换句话说，对于<code>comptime</code>中的内容，Zig编译器永远也不能希望靠纯粹的代码检查就能判断<code>comptime</code>中的内容会不会卡死编译器，这对Zig语言的语言服务器提出了巨大的挑战。</li>
+<li>复杂度爆炸：自由是混乱的源泉。相比<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">λ</span></span></span></span> 演算，图灵机的灵活性实在是太大了，一旦不加任何对于<code>comptime</code>的限制，<code>comptime</code>中的内容最终必将会成长为谁也看不懂的混沌巨兽。</li>
+<li>并行：当<code>comptime</code>碰上并行，所有之前在图灵机中的出现的竟态问题，都会重新以更复杂的状态出现在<code>comptime</code>中。</li>
+</ul>
+<p>解决方法也很简单，必须对自由的<code>comptime</code>加上严格的函数式限制，例如不可变量、纯函数式编程….</p>
+<p><code>comptime</code>的特性使得Zig的编译器和语言服务器复杂度暴增，Zig必须在正式编译之前，把所有的<code>comptime</code>运行一遍才能知道真正的结果，这就意味着Zig编译器必须内置一个微型解释器来运行这些代码。同时，这也意味着这对于类型检查、代码补全、代码跳转等功能是毁灭性打击。</p>
+<p>成也萧何，败也萧何。Zig语言的未来还长路漫漫。</p>
+<h3 id="最大的元编程程序编译器"><a class="header" href="#最大的元编程程序编译器">最大的元编程程序—编译器</a></h3>
+<p>其实某种意义上来说，编译器，就是最大的元编程程序。</p>
+<p>在前面我们说，元编程，是写一段程序，让这个程序输出另一个可运行的、正确的程序的过程。那么按照这个标准来看，我们前面讨论的方法，都局限在这两个程序都是一种语言上。但是只要我们允许这两个程序可以不是一个语言，那么我们实际上就可以顺理成章得到一个结论——<strong>编译器，就是最大的元编程程序。</strong></p>
+<p>我们在前端创造了各种<code>DSL</code>语言，<code>JSX</code>也好<code>Vue</code>也罢， <code>JSX</code>和<code>Svelte</code>的编译器，本质上就是一个“语法翻译层面的元编程”。当你写下 <code>&lt;div/&gt;</code> 时，你不是在写<code>JS</code>，你是在写一种元编程语言。编译器这个最大的元编程程序，在构建阶段接管了你的代码，它把你的语义描述通过<code>AST</code>重写，转换成了指令式的、低层级的<code>DOM</code>操作，让你能够一行代码顶原来的十行代码。</p>
+<p>一个编译器的里程碑事件，就是让这个语言的编译器，也是用这个编程语言写出来的。在计算机里这叫做<strong>自举</strong>。这就是元编程的闭环。在这个闭环里，编程语言变成了一种能够自我复制、自我进化、自我增殖的生命体。</p>
+<p>但是，这种进化是永无休止的吗？</p>
+<p>显然，图灵和邱奇已经证明了，编译器不是万能的，不管如何进化，也不可能进化出理想的终点——能够解释万物终极真理判别器。那么，如果我们彻底超越编程与代码的边界，去看看那个真正孕育了计算机的母体呢？</p>
+<h2 id="话题超越编程"><a class="header" href="#话题超越编程">话题：超越编程</a></h2>
+<p>让我们把话题推向逻辑和理性终点，在编程之外，超越编程之外的世界是什么样的？</p>
+<p>让我们把视野拉的更高一些，当程序消失，当计算机消失，甚至连物理世界也消失，我们还剩下什么？</p>
+<h3 id="符号主义"><a class="header" href="#符号主义">符号主义</a></h3>
+<p>早在 17 世纪，戈特弗里德·威廉·莱布尼茨（Gottfried Wilhelm Leibniz）就提出了一个想法：能不能发明一种通用特性语言，把人类世界所有的思想、争论、逻辑，全部简化为纯粹的符号和算术？这样未来如果两个人发生争论，他们不需要面红耳赤地吵架，只需要拿出纸和笔，说一句：“让我们来算一算！”，通过符号推导就能得出谁是对的。</p>
+<p>这就是<strong>符号主义</strong>创世起点。莱布尼茨在三百年前，就已经在脑海中构思了“逻辑代数”的蓝图。在他眼里，思考就是计算，理性就是符号的重组。</p>
+<p>顺着莱布尼茨的火种，历史走到了 20 世纪初。逻辑学家们不满足于仅仅把符号当成工具，他们发起了一场更加激进的圣战：证明整个数学，本质上都只是逻辑学的一个分支。</p>
+<p><strong>罗素和怀特海</strong>为了实现莱布尼茨的梦想，硬生生写出了三大卷、重达数公斤的宏篇巨著——《数学原理》。这本书枯燥、严密、纯粹到了非人的地步。在这套完全由符号构筑的冰冷世界里，他们花了整整 <strong>362页</strong>的符号推导，才终于在数学上严格地证明了一个在我们看来是废话的命题：<strong><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span></span></span></span></strong>。罗素定义了什么是0，什么是1，什么是加法，然后用极其严密的逻辑符号去证明和定义了2。</p>
+<p>为什么当年那些大哲学家要搞这么复杂来证明看似这么简单的问题？</p>
+<p><strong>因为越是简单，反而越是困难。</strong></p>
+<p>罗素搞得这么复杂，就是为了向全世界证明：不需要依赖任何关于数字的<strong>直觉</strong>，我只用纯粹的逻辑概念（集合、属于、并集），就能凭空推导整个数学。</p>
+<hr>
+<p>那么，到底什么是符号？什么又是符号主义？人类为什么非要用符号不可？</p>
+<p>在普通人眼里，符号只是键盘上的 <code>+ - * /</code> 或者代码里的字母。但在哲学和数学的底层，符号是人类用来驯服无限宇宙的唯一武器。</p>
+<p><strong>在逻辑哲学里，符号的本质，是人类理性对现实世界进行的一种“极高层次的抽象”。</strong></p>
+<p>现实世界是极其沉重、复杂且充满杂质的。比如，你眼前有“两头健壮的牛”，有“两个红苹果”，还有“两颗正在坍缩的恒星”。物理世界里的牛会生病，苹果会腐烂，恒星会熄灭，它们太重了，人类的大脑根本无法直接把它们塞进思维里去运算。于是，人类发明了符号。 人类把牛、苹果、恒星里那个共同的、抽象的本质抽出来，脱掉所有的水分和实体，变成了一个毫无具体意义的符号——<strong><code>2</code></strong>。</p>
+<p>有了符号，就诞生了<strong>符号主义</strong>，它的底层核心假设只有一句话：“人类的认知本质上就是计算，而计算本质上就是符号的操纵。”</p>
+<p>符号主义坚信，宇宙的底层逻辑是一套巨大的、由公理驱动的<strong>形式系统</strong>。在这个系统里，不管是数学（如皮亚诺的后继符号）、逻辑（如真与假），还是人类的思想、语言，都可以被彻底拆解为离散的符号。你不需要去物理世界里看牛和苹果。你只需要制定一套严格的<strong>符号规则</strong>。只要你按照规则，把符号 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">A</span></span></span></span> 变成符号 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span></span></span></span>，再变成符号 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span></span></span></span>，只要推导过程不违背规则，你在纸面上演算出来的结论，就必定是物理世界的终极真理。</p>
+<hr>
+<p>我们为什么要用符号？因为符号是人类跨越心智带宽限制来认识和改造世界的工程手段。</p>
+<p>自然语言是充满二义性和模糊性的。如果用自然语言去推导真理，逻辑链条稍微拉长，就会因为语义的妥协而彻底崩塌。罗素的著作《逻辑与知识》，就是在研究如何用一套严密的符号去创造一门精确的语言。</p>
+<p>一旦现实世界被符号化，真理的推导就变成了一套刻板的、机械的符号替换游戏。这时候，思考这个动作，就被彻底降维降格成了体力劳动。 既然是体力劳动，人类就可以把这个开销转嫁出去——在三百年前转嫁给纸笔，在今天转嫁给图灵机，也就是计算机。</p>
+<p>人类的寿命和肉眼是有限的，但数学和宇宙是无限的。你怎么去证明“所有自然数都满足某个规律”？你不可能把无限个数挨个试一遍。 但符号主义可以通过数学归纳法（皮亚诺第五公理），用区区几行符号的推导，把横跨到宇宙终点的无限个数字，一网打尽。</p>
+<p>可以说，不管是数学家写下的每一行公式和证明，还是程序员写下的每一行代码，每天面对的，就是这样的一个由各种符号组成的世界。</p>
+<h3 id="逻辑哲学"><a class="header" href="#逻辑哲学">逻辑哲学</a></h3>
+<p>既然有了符号，我们开始玩起了符号的游戏，那么在这场游戏里，我们天天挂在嘴边的逻辑，本质到底是什么？</p>
+<p>在这里，我们直接请出 20 世纪最伟大的天才哲学家——<strong>路德维希·维特根斯坦（Ludwig Wittgenstein）。</strong></p>
+<p>很多人（包括很多程序员）觉得逻辑是人类大脑里“正确思考的指南手册”。</p>
+<p>但维特根斯坦在全书的开篇，就直接颠覆了这种唯心主义的幻觉。</p>
+<ul>
+<li>
+<p><strong>世界是所有发生的事情。</strong></p>
+</li>
+<li>
+<p><strong>世界是事实的总和，而不是事物的总和。</strong></p>
+</li>
+</ul>
+<p>什么叫“世界不是事物的总和，而是事实的总和”？在计算机和现实世界里，根本没有孤立存在的“苹果”、“内存”或“用户”（这些只是事物）。世界是由“苹果在桌子上”<strong>、</strong>“指针指向了0x001”<strong>、</strong>“变量 x 等于 1”这些<strong>事实</strong>构成的。</p>
+<p>那么，逻辑是什么？维特根斯坦给出了如同神谕一般的定义：</p>
+<ul>
+<li><strong>我们在语言中不能表达任何违反逻辑的东西，就像在几何学中不能用坐标来表现一个违反空间定律的图形，或者给出一个不可能的点的坐标一样。</strong></li>
+<li><strong>逻辑充满了世界：世界的边界也就是逻辑的边界。</strong></li>
+</ul>
+<p>逻辑，本质上根本不是什么高深的思想工具。</p>
+<p>逻辑就是允许事实能够发生、能够被组合、被陈列的“底层网格”，是世界的“脚手架”。如果没有逻辑这个底层脚手架，世界上的事实根本无处挂载，就像没有内存的网格和语法规则，代码里的变量和数据流根本无法存在一样。</p>
+<p>既然逻辑是世界的脚手架，那么逻辑命题的底层真相是什么？</p>
+<ul>
+<li>
+<p><strong>逻辑的命题都是同义反复。</strong></p>
+</li>
+<li>
+<p><strong>因此逻辑的命题什么也没有说。</strong></p>
+</li>
+</ul>
+<p>什么叫“同义反复”、“什么也没有说”？</p>
+<p>举个例子：</p>
+<ul>
+<li>命题 A：“外面正在下雨。”（这句话传达了新信息，它可能是真，可能是假。）</li>
+<li>命题 B：“外面要么在下雨，要么没在下雨。”（这句话在逻辑上永远正确，是个真理。）</li>
+</ul>
+<p>但维特根斯坦说：命题 B 作为一句绝对正确的逻辑真理，它告诉你任何关于天气的新知识了吗？没有。它在物理上一文不值。</p>
+<p><strong>这就是我们写代码的真相。</strong></p>
+<p>我们在代码的世界里写下了成千上万行严密的逻辑推导，我们用泛型和控制流卡死了每一种可能。编译通过的那一刻，我们欢呼雀跃，觉得自己创造了真理。但维特根斯坦告诉我们：**你的代码什么也没有说，它只是一场宏大的、在编译期完成的“同义反复”。**喂给编译器的输入，和编译器吐出来的输出，在逻辑的物理天平上，重量是完全相等的。<strong>逻辑没有创造任何新东西</strong>，它只是用一种绝对严密的符号游戏，保证了“输入”到“输出”的等价交换。逻辑的本质，就是一场绝对不会出错的、巨大的符号变换。</p>
+<p>程序员们每天打交道的代码（<code>if-else</code>、变量名、类名），本质上就是这套玩了三百年的“符号脱水游戏”。用符号把沉重的现实业务脱水成轻量级的代码，在计算机里疯狂运算。</p>
+<h3 id="超越编程"><a class="header" href="#超越编程">超越编程</a></h3>
+<p>从莱布尼茨的通用语言，到罗素362页的符号圣战，再到维特根斯坦给世界布下的逻辑网格，人类用三百年的时间，把现实世界脱水成了纯粹的符号与逻辑。</p>
+<p>现代程序员，其实正是这门最古老学派的事实缔造者。我们用代码在物理的硅片上，用符号和逻辑，筑起了人类历史上最庞大、最精密的逻辑巴别塔。</p>
+<p>但维特根斯坦在理性的终点拉住了我们。他告诉我们：</p>
+<ul>
+<li>
+<p><strong>对语言的边界，就是世界的边界。</strong></p>
+</li>
+<li>
+<p><strong>对于不可言说之物，必须保持沉默</strong></p>
+</li>
+</ul>
+<p>符号和逻辑能捕获的，仅仅是那个被“脱水”的事实世界。而超越编程之外的——那些关于生命的痛苦、美、爱、以及存在本身的意义，它们无法被写进 <code>if-else</code>，无法被封装进类与函数，它们属于那片“不可言说的领域”。</p>
+<p>程序员们用尽一生的逻辑去编写程序，去穷尽这个符号世界的所有可能。而当我们终于合上电脑、抬起头，望向窗外真实、充满不确定性的复杂世界时，才会发现超越编程之外的，是那些代码无法触及的生命色彩，对于这些我们能做的，只有带着最深的敬畏，保持沉默。</p>
+<div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+<h1 id="ai时代的编程"><a class="header" href="#ai时代的编程">AI时代的编程</a></h1>
+<h2 id="话题编程是什么"><a class="header" href="#话题编程是什么">话题：编程是什么</a></h2>
+<p>我应该算得上是最后一批，在AI出现之前开始学习计算机与程序设计的人之一，在我这一代，社会经历了巨变。如今我的学弟学妹也好，学长学姐也罢，好似大都已经很少再已经自己手动编写代码了。</p>
+<p>在之前的技术漫游中，我详细的从更宏观的哲学与历史角度讲述了编程这件事的前世今生与意义，而这里，我还想再提一下这些事，不过这次，我们从更微观的个体来说吧。</p>
+<p>编程对一个具体的人而言，到底意味着什么？是一份枯燥的工作？是一份令人折磨的负反馈循环？是一场高能耗的大脑思考风暴呢？</p>
+<p>对绝大多数人而言，编程确实只是一份枯燥的工程劳作。就这种层面而言，程序员们自称码农，这是因为在绝大多数时候，编程的确早已脱离了创造性。高度完善的开发框架、标准化组件、成熟的语言规范以及早已固化的业务范式，将绝大多数人每天的工作重塑成了一场填空游戏。</p>
+<p>**这是工业主义在软件领域的伟大胜利，却也是个体创造力的丧失。**工业化工程的终极目标，就是通过极其严密的抽象与规范，尽可能抹平每一个开发者的个体差异与个人风格。它成功让数千人的大规模协作不再走向无序与混乱，但代价是，它把程序设计变为了可以被高度标准化取代的业务搬砖。</p>
+<p>对绝大多数人而言，编程也确实只是一份折磨人的负反馈循环。代码并不是创造的工具，而是层层叠叠的枷锁。它是完全搞不懂的空指针、段错误、并发冲突、数组越界、参数错误，是无休止的兼容性问题与改不完的业务需求。在长达 99% 的时间里，程序都处于编译错误无法运行的失败状态，人要在这个过程中忍受着极其密集的挫败感与挫折。这种无休止的折磨，让许多人最终筋疲力竭，只希望快点拿到结果，逃离这充满报错信息的折磨。</p>
+<p>对极少数人而言，编程是一场令人沉醉的高能耗思考风暴。是 99% 的失败与折磨，构成了另外 1% 绝无仅有的成就感。当你在无序的混乱中，凭借纯粹的烧脑逻辑在大脑里构建出极其复杂的抽象模型，在最终跑通程序的那一愣神间——那种瞬间降临的秩序感与支配感，让许多人误以为自己触碰到了神明视角，以为自己成为了这个程序数字宇宙唯一的创世神。</p>
+<p>但是，这不过是一场极其深刻的幻觉。**代码其实什么都没有说，也什么都没有创造。**那些看似神奇的算法、优雅的架构、严密的类型系统，在逻辑的天平上，只是一场极其庞大、绝对精准的同义反复。喂给编译器的输入，早已决定了所有的输出。CPU上飞速运行的程序，不过是人类用了三百年的符号游戏。</p>
+<p>代码本身是没有生命的，也没有创造任何新的东西，它只是一堆冰冷的、不具备任何倾向与温度的绝对等价的符号演绎。而真正的成就感与意义，从来不在于代码本身，而在于写下代码的那个人。是人将现实世界沉重的业务与思考抽象成了符号，是人是人在最终跑通程序的那一刻，赋予了电路上的电信号以意义。</p>
+<p><strong>代码只是一场冰冷的符号游戏，而人，才是这场游戏里最核心、最不可替代的灵魂。</strong></p>
+<h2 id="话题被剥离的主体性与懒惰的大脑"><a class="header" href="#话题被剥离的主体性与懒惰的大脑">话题：被剥离的主体性与懒惰的大脑</a></h2>
+<p>也许你经常听到有人这样诡辩：“珍妮纺纱机取代纺织工人”，“内燃机取代蒸汽机”，“火车取代马车”，“用Vim的程序员说用IDE会毒害程序员”，“手洗的衣服比洗衣机更干净”。</p>
+<p>这些诡辩无一例外犯了一个致命的错误——他们将肉身的延伸与思考的让渡混为一谈，彻底忽视了人的主体性。</p>
+<p>无论是蒸汽机、纺纱机，还是从 Vim 演进到智能 IDE，人类历史上所有的技术革命，本质上都是<strong>人类主体性的向外延伸</strong>。蒸汽机取代了人力搬运，但并没有取代人类决定“把石头搬向何方”的意志；纺纱机提高了织布的效率，但设计图案、裁切衣物的审美主权依然掌握在织工手中；IDE 帮我们自动化了重构、语法高亮与代码跳转，但它从未替我们构思过系统的架构，更未替我们决定过逻辑的走向。这些工具，是人类为了探索更广袤世界而打造的工具。人类在使用它们时，大脑在疯狂地运转，主体性在工具的放大下得到了前所未有的扩张。</p>
+<p>当下生成式AI对编程的重构，绝不是一次简单的工具升级。这是一场史无前例的、对人类主体性的悄无声息的剥离。当人们不再试图在大脑里构建抽象的数据结构，不再思考系统的运行方式时；当一个人退化为只会输入一句 Prompt，然后点击Accept Suggestions时；当一个程序构建完成运行，连写下它的人居然都不再清楚里面的执行路径时。</p>
+<p><strong>人类就已经不再是那个挥舞利剑的战士，反而变成了被AI奴役的、剥离了主体性的代码审查员。</strong></p>
+<hr>
+<p>对于一株植物而言，无论它未来的命运是长成几十厘米高的花草灌木，还是挺立为几十米高的参天巨杉，在其生命的幼苗期，都是最脆弱、最需要小心呵护的。</p>
+<p>当子叶艰难地拱出土壤的那一刻，它便开始倾尽全力进行光合作用。直到那第一对真叶缓缓伸展出来，整株植物才算真正建立起了立足于世界的基础，拥有了继续伸出第二对、第三对真叶的底气。然而，生命极其震撼的一点在于，那第一对最早伸展出来的真叶，往往并不是未来最大、最强壮、最完美的叶片。随着植物的生长，它们甚至会慢慢黄化、脱落，淹没在日后茂密的树冠之中。</p>
+<p>但如果没有那对最初稚嫩、粗糙、甚至形状并不完美的真叶，去为他扎下第一缕根系、吸收第一缕阳光，后续庞大的躯干与繁茂的枝叶，就根本就没有机会在这个世界上诞生。</p>
+<p><strong>人类大脑学习与重构抽象思维的过程，亦是如此。</strong></p>
+<p>在你刚开始接触编程、接触复杂的逻辑与抽象系统时，你写下的第一行代码、解决的第一个段错误、搭建的第一套破绽百出的架构，就像是脆弱的第一对真叶。它可能极度稚嫩，效率极低，甚至充满破绽，但它却是你的大脑在混乱中建立主体性、扎下思维根系的唯一方式。</p>
+<p>而当下 AI 对很多人所做的，恰恰就是在植物还没有长出第一对真叶时，就强行贴上去了一片看似完美、无比巨大的伪造叶片。</p>
+<p>它帮你跳过了破土而出的脆弱，帮你看似直接拥有了茂密的树冠。但因为没有经历过自己伸展第一对真叶的阵痛，一个人的生命底座从未真正强壮过。当面临真正的风暴时，这株看似繁茂的伪造植物，就会在瞬间连根拔起。</p>
+<hr>
+<p>人类的大脑，在生物学本能上是极度懒惰的。在漫长的演化史中，大脑虽然只占人体体重的 2% 左右，却消耗了整整 20% 的基础代谢能量。在食物匮乏、危机四伏的荒野时代，避免高耗能思考是一种至关重要的生存策略。大脑会想方设法寻找捷径、形成习惯、跳过复杂的推导，只为了省下那弥足珍贵的一点卡路里来应对突如其来的野兽与饥荒。</p>
+<p>可如果人类的智力彻底停留在这种节能本能的层面，那么直到今天，人类可能都依然只会蜷缩在阴暗潮湿的山洞里，靠着条件反射去猎捕野兽、获取食物。但人类之所以能超越所有生灵、建构起独一无二的文明，恰恰是因为我们学会了克服这种低级的生物本能，去主动进化出更高级的能力，一种忍受极其密集的负反馈、用严密的逻辑去对对抗混乱与未知的思维能力。</p>
+<p>这种对高耗能思考的逃避，早已弥散在整个现代社会的精神消费之中。从 15 秒反馈一次刺激的短视频，到三集一次打脸反转的微短剧，再到套路高度公式化的爽文网文，刺激的网络游戏——它们之所以能让人上瘾，是因为它们通过极其密集的低延迟正反馈，成功绕过了大脑所有需要进行深度抽象与逻辑推导的区域，直接作用于人类最原始的多巴胺受体。</p>
+<p>你不需要思考，不需要理解背后的结构，甚至不需要集中注意力，只需要像动物一样被动地接受刺激。</p>
+<p><strong>把所有代码交由 AI 自动生成，将软件工程退化为提示词工程，在本质上与沉溺于短视频和网文没有任何区别。</strong></p>
+<p>它不过是软件工程领域的快餐化。你下载一些Skill，输入一段 Prompt，AI 瞬间吐出成百上千行代码，甚至自己开始debug，自己写测试；程序跑通的那一刻，你获得了一阵短暂的爽感。这与刷到一个爆笑短视频、读到网文里主角复仇成功时的快感，在神经生物学层面没有任何本质不同。</p>
+<p><strong>你没有建立任何东西，你只是消费了一段由算法预制的快感。</strong></p>
+<p>在这种模式下，代码变成了另一种形式的电子鸦片。它看似让你在极短时间内完成了产出，但在这个过程中，你没有经历过对抽象模型的构建，没有经历过排查 Bug 时的百折不挠，没有体验过逻辑自洽后的沉静与尊严。你也不再具有主体性，变成了一台被低廉多巴胺驱动的、看着 AI 生成结果并按下确认键的快餐消费者。</p>
+<p>当所有人都在享受一键生成代码、一键生成视频、一键获得快感时，我们实际上正在共同沦为一个精神上被喂养、思维上极其贫瘠的庞大群体。</p>
+<hr>
+<p>这种对低延迟刺激与无痛代劳的依赖，最可怕的地方不在于当下，而在于它具有极其强大的神经生物学成瘾性。</p>
+<p>当大脑习惯了每次只需敲入几句模糊的 Prompt 就能获得成百上千行跑通的代码，习惯了像刷短视频一样在极短时间内榨取微弱的多巴胺时，神经回路就会彻底重塑。那些需要连续数小时深度专注、需要在复杂架构中建立抽象模型、需要在无数个死锁与段错误中百折不挠的高耗能思考能力，会在这种高频的廉价正反馈中被迅速边缘化。</p>
+<p><strong>时间一长，人就会彻底丧失认识与解决复杂问题的能力。</strong></p>
+<p>当真正的新理念被创造、未知的罕见崩溃发生、或是全新的范式重构降临时，你以为自己凭借AI是赶上了时代的潮流，不需要学习就搭上了高效率的时代快车，实则早已在被创造的温室里，完成了一场彻底的自我放弃。</p>
+<p>这是一个极度残酷却又极其简单的逻辑，如果 AI 真的能无门槛地爆发出恐怖的效率，那么那些早已有深厚知识、完整主体性的人，只会在 AI 的加持下飞得更高，而于此同时，一个放弃了第一对真叶、让渡了思考主权的人，还在沉溺在靠着几句 Prompt 就能生成一个Demo、增加一个新功能的快感中。</p>
+<p><strong>你以为自己踩在了巨人的肩膀上，实则不过是掉进了AI为你编制的幻梦里。</strong></p>
+<h2 id="话题投降派vs速胜论一体两面"><a class="header" href="#话题投降派vs速胜论一体两面">话题：投降派vs速胜论——一体两面</a></h2>
+<p>近九十年前在民族存亡之际，社会上充斥着两种截然相反却又同样致命的论调：一种是看到强敌枪炮犀利便吓破了胆的中国必亡论；另一种则是轻视战争规律、幻想靠几场胜仗或外部援助就能一夜解围的速胜论。</p>
+<p>毛泽东在《论持久战》中极其深刻地指出：这两种看似对立的观点，本质上都是主观主义与片面性的产物。他们看问题只看局部不看全体，只看眼前不看本质。</p>
+<p>历史的幽灵总是穿梭在技术演进的浪潮里。当生成式 AI 重构软件工程时，今天的技术圈正完美复刻着当年那场思想大分裂。技术社区里声浪最大的两拨人，恰恰就是当代的投降派与速胜论者。</p>
+<h3 id="壹-投降派技术拜物教下的自我去势"><a class="header" href="#壹-投降派技术拜物教下的自我去势">壹· 投降派：技术拜物教下的自我去势</a></h3>
+<p>投降派们终日沉浸在技术的虚无主义与集体焦虑之中。</p>
+<p>他们看到 LLM 一秒钟吐出成百上千行代码，看到 AI 刷爆各大 LeetCode 榜单，解开各种数学难题，便瞬间丧失了所有的理性与底气。他们逢人便喊：“编程已死”、“人类手写代码已无意义”、“程序员这个职业马上就要灭绝了”。</p>
+<p>在这种悲观情绪的驱使下，他们选择主动缴械。他们劝退想要深入学习数据结构、操作系统和编译原理的新人，甚至自己也放弃了对底层逻辑的钻研。在他们眼里，任何需要耗费巨大脑力去建立的思维肌肉，在未来的算法面前都是徒劳的抵抗。</p>
+<p><strong>投降派的本质，是一种典型的技术拜物教。</strong> 他们将概率预测模型神化为了不可战胜的造物主，只看到了算法在绝对等价的符号演绎上的高效率，却彻底无视了人类在意图定义、架构设计、物理世界复杂性映射以及赋予系统意义上的根本主体性。</p>
+<p>用反正要被取代作为投降的挡箭牌，极其优雅地为自己大脑的惰性找好了借口，心甘情愿地退化为给算法盖章的附庸。</p>
+<h3 id="贰-速胜论轻视工程复杂性的浅薄狂热"><a class="header" href="#贰-速胜论轻视工程复杂性的浅薄狂热">贰· 速胜论：轻视工程复杂性的浅薄狂热</a></h3>
+<p>与投降派的悲观绝望不同，速胜论者展现出了一种近乎狂热的盲目自信。</p>
+<p>他们高喊着“人人都是架构师”、“提示词工程师取代传统开发”，甚至叫嚣着只需几个 AI Agent，就能不付出一丝一毫的学习成本，一键生成大型工业级系统。</p>
+<p>在他们眼中，过去几十年无数工程师在内存踩踏、并发死锁、系统容灾里死磕出来的工程经验，不过是一堆随时可以被几个 Prompt 轻易抹平抄袭走的冗余垃圾。只要学会了如何指挥 AI，自己就瞬间站在了技术金字塔的顶端。</p>
+<p><strong>速胜论的本质，是对真实工程世界极其残酷复杂性的无知与轻视。</strong> 他们极其浅薄地混淆了代码的生成与问题的解决。</p>
+<p>代码本质上只是一场绝对等价的同义反复。写出成百上千行看似跑通的代码极其简单，但在真实的工业级场景中，在代码之外的真实世界面临的各种各样的问题，AI 可以提供建议，但绝不可能、也不会代替人类大脑去承担决策的风险与责任。</p>
+<p>试图跳过生长的过程、妄图靠一键生成一劳永逸的人，在面临真正的技术难题时，会在瞬间被打回原型。</p>
+<h3 id="叁-一体两面对高耗能思考的共同逃避"><a class="header" href="#叁-一体两面对高耗能思考的共同逃避">叁· 一体两面：对高耗能思考的共同逃避</a></h3>
+<p>投降派与速胜论者，一个在悲鸣中溃退，一个在狂欢中造神。他们看似水火不容、互相将对方视为异端，但实则是一体两面，在最底层的认知逻辑上完全同构</p>
+<p>无论是投降派用“反正要被取代”来彻底放弃抵抗，还是速胜论用“靠 Prompt 就能秒杀一切”来掩盖自身的浅薄，两者的本质都在逃避高耗能思考的痛苦。他们都拒绝承认第一对真叶的不可跨越，投降派认为既然长不出完美树冠就不必扎根，速胜论则以为用塑料胶水贴上假叶子就等于长成了参天大树，前者拱手将思考权让渡给机器，后者自以为掌控了全局，实则不过是算法预制快感的被动消费者。</p>
+<p>归根结底，支撑这两种极端心态的，依然是人类基因里那种避免卡路里消耗的生物节能本能。因为无法忍受工程世界里那 99% 的挫败与折磨，他们一个选择了精神上的物理死亡，另一个选择了精神上的阿 Q 式胜利。</p>
+<p>面对这场时代的大浪潮，我们既不必做膝盖发软的投降派，更不应做盲目狂热的速胜论者。人类逻辑其最深厚的根源，从来不在完成一件项目或解开一个题本身，而存在于人类大脑对物理世界的深刻洞察之中。</p>
+<h2 id="话题未来"><a class="header" href="#话题未来">话题：未来？</a></h2>
+<p>你可能也经常听到类似的言论：“AI 现在做不到，过几年不就会了？”“这几年 AI 的进步肉眼可见。”“等以后具身智能成熟了，这些就统统不是问题。”</p>
+<p>这些话表面看起来无懈可击，不过是因为说出它们的人，既不了解 AI 内部的运行逻辑，更看不清当下的技术真相。这样的人要么是对于AI一无所知的技术小白，要么是把移动互联网、半导体工艺的演进的规律生搬硬套到了现在。以为自己在做冷静的趋势外推，却忽略了一个根本前提，基于概率预测与数据吞噬的统计学模型，和真正的逻辑推理、物理世界认知，根本不是同一种东西，也从未了解过整个AI的发展历史以及连接主义的生死轮回。</p>
+<p>速胜论者是狂热地让渡主体性，而这些“理智派”则是<strong>理性地妥协了主体性</strong>。他们会义正言辞地劝你：“时代变了，要学会拥抱变化，不要做无谓的抵抗。” 这种看似温和、中立的劝告，杀伤力比狂热的宣扬还要大。因为它给放弃深度思考、放弃扎根赋予了一种顺应时代潮流的合法性与优越感。</p>
+<hr>
+<p><strong>LLM 的底层能力，本质上早已逼近了某种上限。</strong></p>
+<p>当前通用大模型面临的真正危机，早已不再是模型架构不够庞大，而是全人类高质量原生数据的彻底枯竭。这几年绝大多数人所惊叹的技术飞跃，绝非算法底层逻辑发生了什么真正的质变，而是一套套精致的工程外壳、强行扣上的控制流，以及工作流拼凑出来的幻象。</p>
+<p>你之所以总觉得模型在一代代变聪明，往往不是因为下一代模型有了什么本质突破，而是因为上一代模型在商业化普及与大并发摊薄成本时，为了节省极其昂贵的推理算力同时给下一代模型造势铺路，被刻意削减了性能。当新一代模型上线、重新恢复了本该有的算力配给时，营销号与宣发文案便铺天盖地宣扬，所谓“吓瘫在椅子上”。</p>
+<p><strong>这正是为什么你总会产生一种奇怪的幻觉——好像模型确实“一代比一代强”，却永远都差了那最关键的“最后一点”。</strong></p>
+<p>把工程上的调优与营销手段里的算力猫鼠游戏，误认为是算法主体智慧的无限进化，这不仅是对技术的无知，更是对这场宏大商业叙事的无脑信服。这些人实际上只是在一个精明编织的工程幻象里，心甘情愿地让渡出了自己最珍贵的深度思考能力。</p>
+<hr>
+<p>但这套依靠算力拆东墙补西墙的工程戏法，终究是有极限的。迟早有一天，这种猫捉老鼠的游戏会耗尽大众与资本的耐心。AI 终将卸下被神化的光环，重回它原本的位置——<strong>它只是一件极其优秀的工具，是成熟工程师与程序员的“副驾驶”，而绝不可能成为替你思考、替你承担后果的“全职保姆”。</strong></p>
+<div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+<h1 id="ai的前世今生与来世"><a class="header" href="#ai的前世今生与来世">AI的前世今生与来世</a></h1>
+<p>// Todo</p>
+<div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+<h1 id="在rk1828上使用rust部署superpointlightglue"><a class="header" href="#在rk1828上使用rust部署superpointlightglue">在RK1828上使用Rust部署Superpoint+Lightglue</a></h1>
+<p>本文记录了在 RK3588 + RK1828 NPU 边缘端平台上，使用 Rust 部署 SuperPoint + LightGlue 的完整流程。涵盖了 C/Rust FFI 封装、针对 NPU 算子的 PyTorch 模型重构、ONNX 导出、RKNN 转换与精度/性能评估，旨在为有边缘端视觉定位/特征匹配部署需求的开发者提供参考。</p>
+<h2 id="1-编写rknn3的rust-ffi"><a class="header" href="#1-编写rknn3的rust-ffi">1 编写rknn3的rust ffi</a></h2>
+<p>由于rk1828只能使用rknn3-runtime和rknn3-tookkit来进行部署和导出。而官方的rknn3-runtime只有c语言的原始api，因此首先需要对c语言的接口尽心封装，找出我们需要使用的接口并进行一层rust封装即可。</p>
+<p>该步骤较为麻烦，且需要详细阅读rknn3的文档和手册。</p>
+<p><strong>我（Ailrid）已经编写完成ffi的封装,对于非LLM的模型推理直接使用即可</strong>，读者可以直接查看<a href="https://github.com/Ailrid/wedjat/tree/master/core/crates/rknn3">代码仓库</a>。</p>
+<p>简而言之，主要结构体的代码如下，仅需三个api即可。不言而喻，流程按照简单的new-&gt;run-&gt;get_output三步走即可。</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub struct Rknn3 {
+    context: Context,
+    input_tensors: Vec&lt;rknn3_tensor&gt;,
+    output_tensors: Vec&lt;rknn3_tensor&gt;,
+}
+
+impl Rknn3 {
+    pub fn new(
+        device_id: impl Into&lt;String&gt;,
+        model_path: impl Into&lt;String&gt;,
+        weight_path: impl Into&lt;String&gt;,
+    ) -&gt; Result&lt;Self, RknnError&gt; {
+       // ....
+    }
+    pub fn run&lt;T: Copy&gt;(&amp;mut self, inputs: &amp;[&amp;[T]]) -&gt; Result&lt;(), RknnError&gt; {
+       // ....
+    }
+    #[allow(non_upper_case_globals)]
+    pub fn get_output(&amp;self, index: usize) -&gt; Result&lt;Vec&lt;f32&gt;, RknnError&gt; {
+       // ....
+    }
+}
+<span class="boring">}</span></code></pre>
+<h2 id="2-superpoint"><a class="header" href="#2-superpoint">2 Superpoint</a></h2>
+<p>原始的Superpoint接受一个形状为[1,1,H,W]的灰度图像，网络的输出为一个形状为[1,H,W]大小的特征点得分与一个形状为[1,256,H/8,W/8]的256维的特征描述子。在对特征点进行nms处理之后选择真正的局部极大值特征点和特征描述子，其中由于特征描述子的形状只有原图大小的1/8宽高，因此如果要得到某一像素位置的特征描述子，需要对网络的描述子进行插值处理。</p>
+<p>rknn的底层算子对于这样的插值处理适配仍然不够好，因此我们要做的第一步就是把所有的后处理（包括特征点的nms处理和特征描述子的插值）从网络中剥离出来。整个网络看起来大概就会变成这样，整体来看结构非常简单，难度不大，</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>"""
+Copyright (c) 2026-present Ailrid.
+Licensed under the Apache License, Version 2.0.
+Project: wedjat-metric
+"""
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+
+
+class SuperPoint(nn.Module):
+    """SuperPoint backbone tailored for ONNX and RKNN export."""
+
+    weights_url = "https://github.com/cvg/LightGlue/releases/download/v0.1_arxiv/superpoint_v1.pth"
+
+    def __init__(self, descriptor_dim: int = 256) -&gt; None:
+        super().__init__()
+        self.descriptor_dim = descriptor_dim
+
+<span class="boring">        Shared encoder
+</span>        self.relu = nn.ReLU(inplace=True)
+        self.pool = nn.MaxPool2d(kernel_size=2, stride=2)
+        c1, c2, c3, c4, c5 = 64, 64, 128, 128, 256
+
+        self.conv1a = nn.Conv2d(1, c1, kernel_size=3, stride=1, padding=1)
+        self.conv1b = nn.Conv2d(c1, c1, kernel_size=3, stride=1, padding=1)
+        self.conv2a = nn.Conv2d(c1, c2, kernel_size=3, stride=1, padding=1)
+        self.conv2b = nn.Conv2d(c2, c2, kernel_size=3, stride=1, padding=1)
+        self.conv3a = nn.Conv2d(c2, c3, kernel_size=3, stride=1, padding=1)
+        self.conv3b = nn.Conv2d(c3, c3, kernel_size=3, stride=1, padding=1)
+        self.conv4a = nn.Conv2d(c3, c4, kernel_size=3, stride=1, padding=1)
+        self.conv4b = nn.Conv2d(c4, c4, kernel_size=3, stride=1, padding=1)
+
+<span class="boring">        Detector head
+</span>        self.convPa = nn.Conv2d(c4, c5, kernel_size=3, stride=1, padding=1)
+        self.convPb = nn.Conv2d(c5, 65, kernel_size=1, stride=1, padding=0)
+
+<span class="boring">        Descriptor head
+</span>        self.convDa = nn.Conv2d(c4, c5, kernel_size=3, stride=1, padding=1)
+        self.convDb = nn.Conv2d(
+            c5, self.descriptor_dim, kernel_size=1, stride=1, padding=0
+        )
+
+<span class="boring">        Load pretrained weights
+</span>        self.load_state_dict(torch.hub.load_state_dict_from_url(self.weights_url))
+
+    def forward(self, image: torch.Tensor) -&gt; tuple[torch.Tensor, torch.Tensor]:
+
+        x = self.relu(self.conv1a(image))
+        x = self.relu(self.conv1b(x))
+        x = self.pool(x)
+        x = self.relu(self.conv2a(x))
+        x = self.relu(self.conv2b(x))
+        x = self.pool(x)
+        x = self.relu(self.conv3a(x))
+        x = self.relu(self.conv3b(x))
+        x = self.pool(x)
+        x = self.relu(self.conv4a(x))
+        x = self.relu(self.conv4b(x))
+
+<span class="boring">        Detector head
+</span>        cPa = self.relu(self.convPa(x))
+        scores = self.convPb(cPa)
+        scores = F.softmax(scores, dim=1)[
+            :, :-1
+        ]  # Remove dustbin channel (B, 64, H/8, W/8)
+
+<span class="boring">        Reshape to full resolution dense score map (B, 1, H, W)
+</span>        b, _, h, w = scores.shape
+        s = 8
+        scores = (
+            scores.reshape(b, s, s, h, w)
+            .permute(0, 3, 1, 4, 2)
+            .reshape(b, 1, h * s, w * s)
+        )
+
+<span class="boring">        Descriptor head
+</span>        cDa = self.relu(self.convDa(x))
+        descriptors = self.convDb(cDa)
+        descriptors = F.normalize(descriptors, p=2, dim=1)  # (B, 256, H/8, W/8)
+
+        return scores, descriptors
+<span class="boring">}</span></code></pre>
+<p>之后直接导出即可，使用如下代码先导出为ONNX格式。</p>
+<pre><code class="language-python">"""
+Copyright (c) 2026-present Ailrid.
+Licensed under the Apache License, Version 2.0.
+Project: wedjat-metric
+"""
+def export_superpoint(output_path: str = "superpoint_static.onnx") -&gt; None:
+    model = SuperPoint().eval()
+    dummy_input = torch.randn(1, 1, 256, 256, dtype=torch.float32)
+    torch.onnx.export(
+        model,
+        dummy_input,  # type: ignore
+        output_path,
+        export_params=True,
+        opset_version=12,
+        do_constant_folding=True,
+        input_names=["input"],
+        output_names=["scores", "descriptors"],
+        dynamic_axes=None,
+    )
+
+    print(f"Static ONNX model successfully exported to {output_path}")
+</code></pre>
+<p>然后安装官方rknn3-toolkit后，使用如下代码可以进行导出和模型评测。这里我们指定目标平台为rk1828，量化模式为w8a8。直接指定单通道即可 mean_values = [[127.5]]，std_values = [[127.5]]。</p>
+<pre><code class="language-python">"""
+Copyright (c) 2026-present Ailrid.
+Licensed under the Apache License, Version 2.0.
+Project: wedjat-rknn
+"""
+
+import os
+import sys
+from rknn.api import RKNN
+
+
+def init_and_config_rknn(
+    target_platform,
+    mean_values,
+    std_values,
+    quantized_dtype="asymmetric_quantized-8",
+    quantized_method="channel",
+    quantized_algorithm="normal",
+):
+    """Initialize RKNN object and configure preprocessing parameters."""
+    print("--&gt; Initializing and configuring RKNN...")
+    rknn = RKNN(verbose=False)
+    rknn.config(
+        target_platform=target_platform,
+        mean_values=mean_values,
+        std_values=std_values,
+        quantized_dtype=quantized_dtype,
+        quantized_method=quantized_method,
+        quantized_algorithm=quantized_algorithm,
+    )
+    return rknn
+
+
+def load_onnx_model(rknn, path):
+    """Load the source ONNX model into RKNN memory."""
+    print(f"--&gt; Loading ONNX model from: {path}")
+    if not os.path.exists(path):
+        print(f"Error: ONNX model file not found at {path}")
+        rknn.release()
+        sys.exit(-1)
+
+    ret = rknn.load_onnx(model=path)
+    if ret != 0:
+        print("Error: Load ONNX model failed! Please check model operators.")
+        rknn.release()
+        sys.exit(ret)
+
+
+def build_rknn_model(rknn, do_quantization=True, dataset_path=None):
+    """Build RKNN model with full quantization or FP16 mode."""
+    print(f"--&gt; Building RKNN model (do_quantization={do_quantization})...")
+    if do_quantization:
+        if not dataset_path or not os.path.exists(dataset_path):
+            print(f"Error: Dataset file not found at {dataset_path} for quantization.")
+            rknn.release()
+            sys.exit(-1)
+        ret = rknn.build(do_quantization=True, dataset=dataset_path)
+    else:
+        ret = rknn.build(do_quantization=False)
+
+    if ret != 0:
+        print("Error: Build RKNN model failed!")
+        rknn.release()
+        sys.exit(ret)
+    print("Success: RKNN model built successfully.")
+
+
+def run_accuracy_analysis_on_folder(rknn, folder_path, output_dir):
+    """Scan folder and perform layer-by-layer accuracy analysis using all found images."""
+    print(f"--&gt; Scanning folder for test images: {folder_path}")
+    if not os.path.isdir(folder_path):
+        print(f"Error: Provided path is not a valid directory: {folder_path}")
+        rknn.release()
+        sys.exit(-1)
+
+    valid_extensions = (
+        ".jpg",
+        ".jpeg",
+        ".png",
+        ".bmp",
+        ".JPG",
+        ".JPEG",
+        ".PNG",
+        ".BMP",
+    )
+
+    image_list = [
+        os.path.join(folder_path, f)
+        for f in os.listdir(folder_path)
+        if f.endswith(valid_extensions)
+    ]
+
+    if not image_list:
+        print(f"Error: No valid images found in folder: {folder_path}")
+        rknn.release()
+        sys.exit(-1)
+
+    print(f"--&gt; Found {len(image_list)} images. Starting batch accuracy analysis...")
+
+    ret = rknn.accuracy_analysis(inputs=image_list, output_dir=output_dir, target=None)
+    if ret != 0:
+        print("Error: Accuracy analysis failed!")
+        rknn.release()
+        sys.exit(ret)
+    print(
+        f"Success: Accuracy analysis reports saved to '{output_dir}/error_analysis.txt'"
+    )
+
+
+def export_rknn_model(rknn, path):
+    """Export the compiled and verified RKNN model to disk."""
+    print(f"--&gt; Exporting RKNN model to: {path}")
+    ret = rknn.export_rknn(path)
+    if ret != 0:
+        print("Error: Export RKNN model failed!")
+        rknn.release()
+        sys.exit(ret)
+    print("Success: Final RKNN model generated successfully.")
+
+
+def main(
+    do_quantization,
+    quantized_dtype,
+    model_path,
+    output_path,
+    dataset_path,
+    image_folder_path,
+    target_platform,
+    analysis_output_dir,
+    mean_values,
+    std_values,
+):
+    """Execute main flow for RKNN model building."""
+    rknn = init_and_config_rknn(
+        target_platform=target_platform,
+        mean_values=mean_values,
+        std_values=std_values,
+        quantized_dtype=quantized_dtype,
+    )
+    try:
+        load_onnx_model(rknn, model_path)
+        build_rknn_model(
+            rknn, do_quantization=do_quantization, dataset_path=dataset_path
+        )
+
+        if os.path.exists(image_folder_path):
+            run_accuracy_analysis_on_folder(
+                rknn, image_folder_path, analysis_output_dir
+            )
+
+        export_rknn_model(rknn, output_path)
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
+    finally:
+        print("--&gt; Releasing RKNN resources...")
+        rknn.release()
+
+
+if __name__ == "__main__":
+    do_quantization = True
+    quantized_dtype = "w8a8"
+    model_path = "assets/superpoint.onnx"
+    output_path = "assets/superpoint.rknn"
+    dataset_path = "./test_images/dataset.txt"
+    image_folder_path = "./test_images"
+    target_platform = "rk1828"
+    analysis_output_dir = "./snapshot"
+
+    # Single channel configurations for grayscale input
+    mean_values = [[127.5]]
+    std_values = [[127.5]]
+
+    main(
+        do_quantization=do_quantization,
+        quantized_dtype=quantized_dtype,
+        model_path=model_path,
+        output_path=output_path,
+        dataset_path=dataset_path,
+        image_folder_path=image_folder_path,
+        target_platform=target_platform,
+        analysis_output_dir=analysis_output_dir,
+        mean_values=mean_values,
+        std_values=std_values,
+    )
+
+</code></pre>
+<p>经过评测，最终量化精度损失控制在1%之内，说明模型量化正常，基本无损失。</p>
+<pre><code class="language-python">layer_name                                                  simulator_error                    
+                                                        entire              single             
+                                                     cos      euc        cos      euc          
+-------------------------------------------------------------------------------------------
+[Input] input                                      1.00000 | 0.00000   1.00000 | 0.00000       
+[Conv] /conv1a/Conv_output_0                       
+[Relu] /relu/Relu_output_0                         0.99797 | 459.11237 0.99797 | 459.11237     
+[Conv] /conv1b/Conv_output_0                       
+[Relu] /relu_1/Relu_output_0                       0.99490 | 452.73779 0.99803 | 282.21017     
+[MaxPool] /pool/MaxPool_output_0                   0.99507 | 290.25031 0.99984 | 50.98222      
+[Conv] /conv2a/Conv_output_0                       
+[Relu] /relu_2/Relu_output_0                       0.99853 | 180.53827 0.99990 | 47.50360      
+[Conv] /conv2b/Conv_output_0                       
+[Relu] /relu_3/Relu_output_0                       0.99773 | 234.34865 0.99981 | 68.65708      
+[MaxPool] /pool_1/MaxPool_output_0                 0.99795 | 140.77922 0.99995 | 23.36398      
+[Conv] /conv3a/Conv_output_0                       
+[Relu] /relu_4/Relu_output_0                       0.99786 | 88.88990  0.99979 | 27.82686      
+[Conv] /conv3b/Conv_output_0                       
+[Relu] /relu_5/Relu_output_0                       0.99850 | 107.51498 0.99980 | 38.89457      
+[MaxPool] /pool_2/MaxPool_output_0                 0.99856 | 65.00426  0.99992 | 15.51352      
+[Conv] /conv4a/Conv_output_0                       
+[Relu] /relu_6/Relu_output_0                       0.99879 | 74.61687  0.99986 | 25.30547      
+[Conv] /conv4b/Conv_output_0                       
+[Relu] /relu_7/Relu_output_0                       0.99876 | 78.10155  0.99983 | 28.77638      
+[Conv] /convPa/Conv_output_0                       
+[Relu] /relu_8/Relu_output_0                       0.99623 | 8.14100   0.99942 | 3.13619       
+[Conv] /convPb/Conv_output_0                       0.99920 | 117.83292 0.99992 | 32.30668      
+[exDataConvert] /convPb/Conv_output_0__float16     0.99920 | 117.83034 0.99996 | 23.88952      
+[exSoftmax13] /Transpose_output_0_sw               0.99928 | 1.14666   1.00000 | 0.00470       
+[Slice] /Slice_output_0                            0.98124 | 0.77863   1.00000 | 0.00085       
+[Reshape] /Reshape_output_0_rs                     0.98124 | 0.77863   1.00000 | 0.00085       
+[Transpose] /Transpose_2_output_0-rs               0.98124 | 0.77863   1.00000 | 0.00085       
+[Reshape] scores                                   0.98124 | 0.77863   1.00000 | 0.00085       
+[Conv] /convDa/Conv_output_0                       
+[Relu] /relu_9/Relu_output_0                       0.99874 | 92.35944  0.99989 | 27.17639      
+[Conv] /convDb/Conv_output_0                       0.99605 | 4726.699710.99971 | 1295.12781    
+[exDataConvert] descriptors                        0.99515 | 3.14969   0.99993 | 0.37416   
+</code></pre>
+<p>在rust侧，读者可以查看<a href="https://github.com/Ailrid/wedjat/blob/master/core/crates/engine/src/superpoint.rs">仓库</a>。</p>
+<p>经过测算，**网络的全部的流程，包括输入+推理+输出+后处理，在rk3588+rk1828开发板上，速度大概在45fps左右。**整体来看速度还是偏低，根据测算应该相当的耗时都花在了后处理上，如果要获得更高的速度应该考虑把后处理同样也放在rk1828上运行。</p>
+<p>但rk1828能否支持对应的这些后处理算子仍然未知（极大概率不支持），<strong>不建议折腾</strong>，这个帧率绝大多数时候已经足够用了。</p>
+<p><strong>此外对于官方宣称的Resnet50V2在224 * 224下有114.15的fps，实测只有75fps左右。性能一般只能达到标称的60%~70%。</strong></p>
+<pre><code class="language-tex">firefly@firefly:~/rknn/crates/engine$ cargo test test_superpoint_pipeline_and_fps --release -- --nocapture
+
+=== Model ./assets/superpoint.rknn Summary ===
+=== RKNN IO Summary ===
+Input count: 1
+Output count: 2
+
+=== Input Tensor Attributes ===
+Input [0]:
+  Name: input
+  Index: 0
+  Core ID: 0
+  Data Type: 3
+  Quantitative Type: 2
+  Aligned Size: 65536 bytes
+  Element Number: 65536
+  Dimensions (n_dims=4): [1, 256, 256, 1]
+
+=== Output Tensor Attributes ===
+Output [0]:
+  Name: scores
+  Index: 0
+  Core ID: 0
+  Data Type: 1
+  Quantitative Type: 0
+  Aligned Size: 131072 bytes
+  Element Number: 65536
+  Dimensions (n_dims=4): [1, 1, 256, 256]
+Output [1]:
+  Name: descriptors
+  Index: 1
+  Core ID: 0
+  Data Type: 2
+  Quantitative Type: 2
+  Aligned Size: 262144 bytes
+  Element Number: 262144
+  Dimensions (n_dims=4): [1, 256, 32, 32]
+Extracted 256 keypoints.
+Saved visual result to superpoint_result.jpg
+--- Benchmark Results ---
+Iterations: 1000
+Average Latency: 22.59 ms
+Throughput: 44.27 FPS
+test superpoint::tests::test_superpoint_pipeline_and_fps ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 1 filtered out; finished in 23.02s
+</code></pre>
+<p>最后，附上一张提取的特征点结果图，特征点数锁定为256个。</p>
+<p><img src="img/superpoint_result.jpg" alt="superpoint_result"></p>
+<h2 id="3-lightglue"><a class="header" href="#3-lightglue">3 Lightglue</a></h2>
+<p>原始的Lightglue接受一个形状为[2,N,2]的特征点坐标对和一个形状为[2,N,D]的描述子对。然后在其中利用交叉注意力在两个batch之间做交叉注意力。</p>
+<p>但是！这个输入格式直接导出时，虽然导出工具不会报错，但是运行时会产生直接导致程序崩溃，产生类似<code>rknn_outputs_get, msg_finish fail, result = 1(ack_fail), expect 0(ack_succ)!!</code>这样的错误。</p>
+<p><strong>根据笔者的深入研究，似乎RKNN的硬件底层将不同的batch之间划分为了完全独立的内存块，一旦模型在不同的batch之间进行了运算，直接就会导致npu内部的底层内存布局非法。</strong></p>
+<p>要解决这个问题，我们需要将输入拆分为四个不同的输入，两个形状为[1,N,2]的特征点坐标对和两个形状为[1,N,D]的描述子对，并重构网络，才能正常运行，修改后的代码如下。</p>
+<pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>import torch
+import torch.nn as nn
+import torch.nn.functional as F
+
+
+class LearnableFourierPositionalEncoding(nn.Module):
+
+    def __init__(
+        self, M: int, descriptor_dim: int, num_heads: int, gamma: float = 1.0
+    ) -&gt; None:
+        super().__init__()
+        self.num_heads = num_heads
+        head_dim = descriptor_dim // num_heads
+        self.Wr = nn.Linear(M, head_dim // 2, bias=False)
+        self.gamma = gamma
+        nn.init.normal_(self.Wr.weight.data, mean=0, std=self.gamma**-2)
+
+    def forward(self, x: torch.Tensor) -&gt; torch.Tensor:
+        """Encode position vector using stack and cat to avoid Tile op on NPU."""
+        projected = self.Wr(x)
+        cosines, sines = torch.cos(projected), torch.sin(projected)
+        emb = torch.stack([cosines, sines])  # Shape: (2, B, N, head_dim // 2)
+
+<span class="boring">        Interleave cosines and sines at the last dimension
+</span>        emb = torch.stack([emb, emb], dim=-1).reshape(
+            emb.shape[0], emb.shape[1], emb.shape[2], -1
+        )  # Shape: (2, B, N, head_dim)
+
+<span class="boring">        Use torch.cat instead of repeat to eliminate ONNX Tile node
+</span>        emb = torch.cat([emb] * self.num_heads, dim=-1).unsqueeze(-1)
+        return emb
+
+
+class SelfBlock(nn.Module):
+    def __init__(self, embed_dim: int, num_heads: int, bias: bool = True) -&gt; None:
+        super().__init__()
+        self.embed_dim = embed_dim
+        self.num_heads = num_heads
+        self.head_dim = embed_dim // num_heads
+        self.Wqkv = nn.Linear(embed_dim, 3 * embed_dim, bias=bias)
+        self.out_proj = nn.Linear(embed_dim, embed_dim, bias=bias)
+        self.ffn = nn.Sequential(
+            nn.Linear(2 * embed_dim, 2 * embed_dim),
+            nn.LayerNorm(2 * embed_dim, elementwise_affine=True),
+            nn.GELU(),
+            nn.Linear(2 * embed_dim, embed_dim),
+        )
+
+    def rotate_half(self, qk: torch.Tensor) -&gt; torch.Tensor:
+        b, n, _, _ = qk.shape
+        qk = qk.reshape((b, n, self.num_heads, self.head_dim // 2, 2, 2))
+        qk = torch.stack((-qk[..., 1, :], qk[..., 0, :]), dim=4)
+        qk = qk.reshape((b, n, self.embed_dim, 2))
+        return qk
+
+    def apply_cached_rotary_emb(
+        self, encoding: torch.Tensor, qk: torch.Tensor
+    ) -&gt; torch.Tensor:
+        return qk * encoding[0] + self.rotate_half(qk) * encoding[1]
+
+    def forward(self, x: torch.Tensor, encoding: torch.Tensor) -&gt; torch.Tensor:
+        b, n, _ = x.shape
+        qkv: torch.Tensor = self.Wqkv(x)
+        qkv = qkv.reshape((b, n, self.embed_dim, 3))
+        qk, v = qkv[..., :2], qkv[..., 2]
+        qk = self.apply_cached_rotary_emb(encoding, qk)
+        q, k = qk[..., 0], qk[..., 1]
+
+        head_dim = self.embed_dim // self.num_heads
+        q = q.reshape(b, n, self.num_heads, head_dim).transpose(1, 2)
+        k = k.reshape(b, n, self.num_heads, head_dim).transpose(1, 2)
+        v = v.reshape(b, n, self.num_heads, head_dim).transpose(1, 2)
+
+        context = (
+            F.scaled_dot_product_attention(q, k, v)
+            .transpose(1, 2)
+            .reshape(b, n, self.embed_dim)
+        )
+        message = self.out_proj(context)
+        return x + self.ffn(torch.cat([x, message], dim=2))
+
+
+class CrossBlock(nn.Module):
+    def __init__(self, embed_dim: int, num_heads: int, bias: bool = True) -&gt; None:
+        super().__init__()
+        self.embed_dim = embed_dim
+        self.num_heads = num_heads
+        self.head_dim = embed_dim // num_heads
+        self.to_qk = nn.Linear(embed_dim, embed_dim, bias=bias)
+        self.to_v = nn.Linear(embed_dim, embed_dim, bias=bias)
+        self.to_out = nn.Linear(embed_dim, embed_dim, bias=bias)
+        self.ffn = nn.Sequential(
+            nn.Linear(2 * embed_dim, 2 * embed_dim),
+            nn.LayerNorm(2 * embed_dim, elementwise_affine=True),
+            nn.GELU(),
+            nn.Linear(2 * embed_dim, embed_dim),
+        )
+
+    def forward(
+        self, desc0: torch.Tensor, desc1: torch.Tensor
+    ) -&gt; tuple[torch.Tensor, torch.Tensor]:
+        """Cross attention between two independent image descriptor streams."""
+        num_keypoints = desc0.shape[1]
+        qk0, v0 = self.to_qk(desc0), self.to_v(desc0)
+        qk1, v1 = self.to_qk(desc1), self.to_v(desc1)
+
+        head_dim = self.embed_dim // self.num_heads
+
+<span class="boring">        Stream 0 attends to Stream 1
+</span>        q0 = qk0.reshape(1, num_keypoints, self.num_heads, head_dim).transpose(1, 2)
+        k1 = qk1.reshape(1, num_keypoints, self.num_heads, head_dim).transpose(1, 2)
+        v1_heads = v1.reshape(1, num_keypoints, self.num_heads, head_dim).transpose(
+            1, 2
+        )
+
+        m0 = (
+            F.scaled_dot_product_attention(q0, k1, v1_heads)
+            .transpose(1, 2)
+            .reshape(1, num_keypoints, self.embed_dim)
+        )
+        m0 = self.to_out(m0)
+        desc0_out = desc0 + self.ffn(torch.cat([desc0, m0], dim=2))
+
+<span class="boring">        Stream 1 attends to Stream 0
+</span>        q1 = qk1.reshape(1, num_keypoints, self.num_heads, head_dim).transpose(1, 2)
+        k0 = qk0.reshape(1, num_keypoints, self.num_heads, head_dim).transpose(1, 2)
+        v0_heads = v0.reshape(1, num_keypoints, self.num_heads, head_dim).transpose(
+            1, 2
+        )
+
+        m1 = (
+            F.scaled_dot_product_attention(q1, k0, v0_heads)
+            .transpose(1, 2)
+            .reshape(1, num_keypoints, self.embed_dim)
+        )
+        m1 = self.to_out(m1)
+        desc1_out = desc1 + self.ffn(torch.cat([desc1, m1], dim=2))
+
+        return desc0_out, desc1_out
+
+
+class TransformerLayer(nn.Module):
+    def __init__(self, embed_dim: int, num_heads: int) -&gt; None:
+        super().__init__()
+        self.self_attn = SelfBlock(embed_dim, num_heads)
+        self.cross_attn = CrossBlock(embed_dim, num_heads)
+
+    def forward(
+        self,
+        desc0: torch.Tensor,
+        desc1: torch.Tensor,
+        enc0: torch.Tensor,
+        enc1: torch.Tensor,
+    ) -&gt; tuple[torch.Tensor, torch.Tensor]:
+        desc0 = self.self_attn(desc0, enc0)
+        desc1 = self.self_attn(desc1, enc1)
+        desc0, desc1 = self.cross_attn(desc0, desc1)
+        return desc0, desc1
+
+
+def sigmoid_log_double_softmax_static(
+    similarities: torch.Tensor, z0: torch.Tensor, z1: torch.Tensor
+) -&gt; torch.Tensor:
+    """Compute assignment matrix without log operations."""
+    scores0 = F.softmax(similarities, dim=2)
+    scores1 = F.softmax(similarities, dim=1)
+    certainties = torch.sigmoid(z0) * torch.sigmoid(z1).transpose(1, 2)
+    return scores0 * scores1 * certainties
+
+
+class MatchAssignmentStatic(nn.Module):
+    def __init__(self, dim: int) -&gt; None:
+        super().__init__()
+        self.scale = dim**0.25
+        self.final_proj = nn.Linear(dim, dim, bias=True)
+        self.matchability = nn.Linear(dim, 1, bias=True)
+
+    def forward(self, desc0: torch.Tensor, desc1: torch.Tensor) -&gt; torch.Tensor:
+        """Build assignment matrix directly from stream inputs."""
+        mdesc0 = self.final_proj(desc0) / self.scale
+        mdesc1 = self.final_proj(desc1) / self.scale
+
+        similarities = mdesc0 @ mdesc1.transpose(1, 2)
+
+        z0 = self.matchability(desc0)
+        z1 = self.matchability(desc1)
+
+        scores = sigmoid_log_double_softmax_static(similarities, z0, z1)
+        return scores
+
+
+class LightGlue(nn.Module):
+    def __init__(
+        self,
+        url: str = "https://github.com/cvg/LightGlue/releases/download/v0.1_arxiv/superpoint_lightglue.pth",
+        input_dim: int = 256,
+        descriptor_dim: int = 256,
+        num_heads: int = 4,
+        n_layers: int = 9,
+    ) -&gt; None:
+        super().__init__()
+
+        self.descriptor_dim = descriptor_dim
+        self.num_heads = num_heads
+        self.n_layers = n_layers
+
+        if input_dim != self.descriptor_dim:
+            self.input_proj = nn.Linear(input_dim, self.descriptor_dim, bias=True)
+        else:
+            self.input_proj = nn.Identity()
+
+        self.posenc = LearnableFourierPositionalEncoding(
+            2, self.descriptor_dim, self.num_heads
+        )
+
+        d, h, n = self.descriptor_dim, self.num_heads, self.n_layers
+        self.transformers = nn.ModuleList([TransformerLayer(d, h) for _ in range(n)])
+        self.log_assignment = nn.ModuleList(
+            [MatchAssignmentStatic(d) for _ in range(n)]
+        )
+
+<span class="boring">        Load weights directly without structural mismatch
+</span>        state_dict = torch.hub.load_state_dict_from_url(url)
+        for i in range(n):
+            pattern = f"self_attn.{i}", f"transformers.{i}.self_attn"
+            state_dict = {k.replace(*pattern): v for k, v in state_dict.items()}
+            pattern = f"cross_attn.{i}", f"transformers.{i}.cross_attn"
+            state_dict = {k.replace(*pattern): v for k, v in state_dict.items()}
+        self.load_state_dict(state_dict, strict=False)
+
+    def forward(
+        self,
+        kpts0: torch.Tensor,  # Shape: (1, N, 2)
+        kpts1: torch.Tensor,  # Shape: (1, N, 2)
+        descs0: torch.Tensor,  # Shape: (1, N, 256)
+        descs1: torch.Tensor,  # Shape: (1, N, 256)
+    ) -&gt; torch.Tensor:
+        """Forward pass taking 4 independent inputs with batch size 1."""
+        descs0 = self.input_proj(descs0)
+        descs1 = self.input_proj(descs1)
+
+        enc0 = self.posenc(kpts0)
+        enc1 = self.posenc(kpts1)
+
+        for i in range(self.n_layers):
+            descs0, descs1 = self.transformers[i](descs0, descs1, enc0, enc1)
+
+        scores = self.log_assignment[-1](descs0, descs1)
+        return scores
+<span class="boring">}</span></code></pre>
+<p>使用以下代码进行导出，由于lightglue里含有大量transformer块，所以我们这里使用fp16格式导出。</p>
+<pre><code class="language-python">"""
+Copyright (c) 2026-present Ailrid.
+Licensed under the Apache License, Version 2.0.
+Project: wedjat-rknn
+"""
+
+import osv
+import sys
+from rknn.api import RKNN
+
+
+def convert_onnx_to_rknn_fp16(
+    onnx_path,
+    rknn_path,
+    target_platform="rk3588",
+    quantized_dtype="w8a8",
+    quantized_method="channel",
+    quantized_algorithm="normal",
+):
+    """Convert LightGlue ONNX model to pure FP16 RKNN model."""
+    rknn = RKNN(verbose=False)
+
+    print(f"--&gt; Configuring RKNN for FP16 ({target_platform})...")
+    # For non-image inputs, mean_values and std_values should be None
+    rknn.config(
+        target_platform=target_platform,
+        mean_values=None,
+        std_values=None,
+        quantized_dtype=quantized_dtype,
+        quantized_method=quantized_method,
+        quantized_algorithm=quantized_algorithm,
+    )
+
+    print(f"--&gt; Loading ONNX model from {onnx_path}...")
+    if not os.path.exists(onnx_path):
+        print(f"Error: ONNX model file not found at {onnx_path}")
+        sys.exit(-1)
+
+    ret = rknn.load_onnx(model=onnx_path)
+    if ret != 0:
+        print("Error: Load ONNX model failed!")
+        rknn.release()
+        sys.exit(ret)
+
+    print("--&gt; Building RKNN model with FP16 (do_quantization=False)...")
+    # Setting do_quantization=False forces the NPU to use FP16 precision
+    ret = rknn.build(do_quantization=False)
+    if ret != 0:
+        print("Error: Build FP16 RKNN model failed!")
+        rknn.release()
+        sys.exit(ret)
+
+    print(f"--&gt; Exporting RKNN model to {rknn_path}...")
+    ret = rknn.export_rknn(rknn_path)
+    if ret != 0:
+        print("Error: Export RKNN model failed!")
+        rknn.release()
+        sys.exit(ret)
+
+    print("Success: FP16 RKNN model created successfully.")
+    rknn.release()
+
+
+
+if __name__ == "__main__":
+    onnx_file = "assets/lightglue.onnx"
+    rknn_file = "assets/lightglue.rknn"
+    platform = "rk1828"  # 'rk3588', 'rk1828'
+
+    convert_onnx_to_rknn_fp16(
+        onnx_path=onnx_file,
+        rknn_path=rknn_file,
+        target_platform=platform,
+    )
+</code></pre>
+<p>在rust侧推理代码，读者可以查看<a href="https://github.com/Ailrid/wedjat/blob/master/core/crates/engine/src/lightglue.rs">仓库</a>。</p>
+<p>经过测算，**网络的全部的流程，包括输入+推理+输出+后处理，在rk3588+rk1828开发板上，速度大概在15fps左右。**整体来看速度好像其实还不错？毕竟是fp16进行的量化。</p>
+<p><strong>如果要获得更高的速度应该考虑采用混合量化，但rknn3将此过程单独分离到了一个工具中，目前笔者暂无研究，等待以后补充。</strong></p>
+<pre><code class="language-tex">firefly@firefly:~/rknn/crates/engine$ cargo test test_superpoint_lightglue_pipeline --release -- --nocapture 
+
+W RKNNAPI(3948): Weight sync chunk size resolved to 2097152 bytes
+=== Model ./assets/superpoint.rknn Summary ===
+=== RKNN IO Summary ===
+Input count: 1
+Output count: 2
+
+=== Input Tensor Attributes ===
+Input [0]:
+  Name: input
+  Index: 0
+  Core ID: 0
+  Data Type: 3
+  Quantitative Type: 2
+  Aligned Size: 65536 bytes
+  Element Number: 65536
+  Dimensions (n_dims=4): [1, 256, 256, 1]
+
+=== Output Tensor Attributes ===
+Output [0]:
+  Name: scores
+  Index: 0
+  Core ID: 0
+  Data Type: 1
+  Quantitative Type: 0
+  Aligned Size: 131072 bytes
+  Element Number: 65536
+  Dimensions (n_dims=4): [1, 1, 256, 256]
+Output [1]:
+  Name: descriptors
+  Index: 1
+  Core ID: 0
+  Data Type: 2
+  Quantitative Type: 2
+  Aligned Size: 262144 bytes
+  Element Number: 262144
+  Dimensions (n_dims=4): [1, 256, 32, 32]
+Device 0: 0000:01:00.0
+=== Model ./assets/lightglue.rknn Summary ===
+=== RKNN IO Summary ===
+Input count: 4
+Output count: 1
+
+=== Input Tensor Attributes ===
+Input [0]:
+  Name: keypoints0
+  Index: 0
+  Core ID: 0
+  Data Type: 1
+  Quantitative Type: 0
+  Aligned Size: 1024 bytes
+  Element Number: 512
+  Dimensions (n_dims=3): [1, 256, 2]
+Input [1]:
+  Name: keypoints1
+  Index: 1
+  Core ID: 0
+  Data Type: 1
+  Quantitative Type: 0
+  Aligned Size: 1024 bytes
+  Element Number: 512
+  Dimensions (n_dims=3): [1, 256, 2]
+Input [2]:
+  Name: descriptors0
+  Index: 2
+  Core ID: 0
+  Data Type: 1
+  Quantitative Type: 0
+  Aligned Size: 131072 bytes
+  Element Number: 65536
+  Dimensions (n_dims=3): [1, 256, 256]
+Input [3]:
+  Name: descriptors1
+  Index: 3
+  Core ID: 0
+  Data Type: 1
+  Quantitative Type: 0
+  Aligned Size: 131072 bytes
+  Element Number: 65536
+  Dimensions (n_dims=3): [1, 256, 256]
+
+=== Output Tensor Attributes ===
+Output [0]:
+  Name: scores
+  Index: 0
+  Core ID: 0
+  Data Type: 1
+  Quantitative Type: 0
+  Aligned Size: 131072 bytes
+  Element Number: 65536
+  Dimensions (n_dims=3): [1, 256, 256]
+SuperPoint extracted 256 and 256 keypoints.
+Found 97 valid matches.
+--- LightGlue Benchmark Results ---
+Iterations: 100
+Average Latency: 67.02 ms
+Throughput: 14.92 FPS
+Saved match visualization to lightglue_matches.jpg
+test lightglue::integration_tests::test_superpoint_lightglue_pipeline ... ok
+</code></pre>
+<p>最后，附上一张superpoint提取 + lightglue匹配的结果图，特征点数量为256个。</p>
+<p><img src="img/lightglue_matches.jpg" alt="lightglue_matches"></p>
+<hr>
+<p>补充：经过笔者评测，使用RKQuantizer进行混合量化后，速度提升微乎其微几乎可以忽略不计。使用int8量化后精度损失严重，匹配结果几乎不可用。因此可以得出结论，lightglue不适合进行量化，使用fp16进行推理即可。</p>
+<h2 id="4-总结"><a class="header" href="#4-总结">4 总结</a></h2>
+<p>读者可以查看完整的代码仓库，该步骤为笔者的完整的<a href="https://github.com/Ailrid/wedjat/tree/master">地图匹配定位项目</a>的一部分。以上代码均摘自该项目。</p>
+<p>以上，至此。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-c2a407aa.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+
+    </div>
+    </body>
+</html>
