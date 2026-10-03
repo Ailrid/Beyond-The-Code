@@ -35,7 +35,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-470ab615.js";
+            window.path_to_searchindex_js = "searchindex-e0d4f47c.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-9f44cde6.js"></script>
@@ -545,9 +545,8 @@ if __name__ == "__main__":
 [exDataConvert] descriptors                        0.99515 | 3.14969   0.99993 | 0.37416   
 </code></pre>
 <p>在rust侧，读者可以查看<a href="https://github.com/Ailrid/wedjat/blob/master/core/crates/engine/src/superpoint.rs">仓库</a>。</p>
-<p>经过测算，**网络的全部的流程，包括输入+推理+输出+后处理，在rk3588+rk1828开发板上，速度大概在45fps左右。**整体来看速度还是偏低，根据测算应该相当的耗时都花在了后处理上，如果要获得更高的速度应该考虑把后处理同样也放在rk1828上运行。</p>
+<p>经过测算，**网络的全部的流程，包括输入+推理+输出+后处理，在rk3588+rk1828开发板上，速度大概在57fps左右。**整体来看速度还是偏低，根据测算应该相当的耗时都花在了后处理上，如果要获得更高的速度应该考虑把后处理同样也放在rk1828上运行。</p>
 <p>但rk1828能否支持对应的这些后处理算子仍然未知（极大概率不支持），<strong>不建议折腾</strong>，这个帧率绝大多数时候已经足够用了。</p>
-<p><strong>此外对于官方宣称的Resnet50V2在224 * 224下有114.15的fps，实测只有75fps左右。性能一般只能达到标称的60%~70%。</strong></p>
 <pre><code class="language-tex">firefly@firefly:~/rknn/crates/engine$ cargo test test_superpoint_pipeline_and_fps --release -- --nocapture
 
 === Model ./assets/superpoint.rknn Summary ===
@@ -588,9 +587,9 @@ Output [1]:
 Extracted 256 keypoints.
 Saved visual result to superpoint_result.jpg
 --- Benchmark Results ---
-Iterations: 1000
-Average Latency: 22.59 ms
-Throughput: 44.27 FPS
+Iterations: 100
+Average Latency: 17.54 ms
+Throughput: 57.03 FPS
 test superpoint::tests::test_superpoint_pipeline_and_fps ... ok
 
 test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 1 filtered out; finished in 23.02s
@@ -931,7 +930,7 @@ if __name__ == "__main__":
     )
 </code></pre>
 <p>在rust侧推理代码，读者可以查看<a href="https://github.com/Ailrid/wedjat/blob/master/core/crates/engine/src/lightglue.rs">仓库</a>。</p>
-<p>经过测算，**网络的全部的流程，包括输入+推理+输出+后处理，在rk3588+rk1828开发板上，速度大概在15fps左右。**整体来看速度好像其实还不错？毕竟是fp16进行的量化。</p>
+<p>经过测算，**网络的全部的流程，包括输入+推理+输出+后处理，在rk3588+rk1828开发板上，速度大概在17fps左右。**整体来看速度好像其实还不错？毕竟是fp16进行的量化。</p>
 <p><strong>如果要获得更高的速度应该考虑采用混合量化，但rknn3将此过程单独分离到了一个工具中，目前笔者暂无研究，等待以后补充。</strong></p>
 <pre><code class="language-tex">firefly@firefly:~/rknn/crates/engine$ cargo test test_superpoint_lightglue_pipeline --release -- --nocapture 
 
@@ -1029,8 +1028,8 @@ SuperPoint extracted 256 and 256 keypoints.
 Found 97 valid matches.
 --- LightGlue Benchmark Results ---
 Iterations: 100
-Average Latency: 67.02 ms
-Throughput: 14.92 FPS
+Average Latency: 59.01 ms
+Throughput: 16.95 FPS
 Saved match visualization to lightglue_matches.jpg
 test lightglue::integration_tests::test_superpoint_lightglue_pipeline ... ok
 </code></pre>
@@ -1038,6 +1037,7 @@ test lightglue::integration_tests::test_superpoint_lightglue_pipeline ... ok
 <p><img src="./img/lightglue_matches.jpg" alt="lightglue_matches"></p>
 <hr>
 <p>补充：经过笔者评测，使用RKQuantizer进行混合量化后，速度提升微乎其微几乎可以忽略不计。使用int8量化后精度损失严重，匹配结果几乎不可用。因此可以得出结论，lightglue不适合进行量化，使用fp16进行推理即可。</p>
+<p>再次补充：根据我的测试，不同的开发板型号和不同的1828封装会导致性能出现差异，有些开发板上可能速度略低或更高一些（superpoint浮动在10fps，lightglue在2-5fps内），但总体来说不会差异太多。</p>
 <h2 id="4-总结"><a class="header" href="#4-总结">4 总结</a></h2>
 <p>读者可以查看完整的代码仓库，该步骤为笔者的完整的<a href="https://github.com/Ailrid/wedjat/tree/master">地图匹配定位项目</a>的一部分。以上代码均摘自该项目。</p>
 <p>以上，至此。</p>
