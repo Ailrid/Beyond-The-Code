@@ -388,11 +388,9 @@ layer_name                                                  simulator_error
 
 在rust侧，读者可以查看[仓库](https://github.com/Ailrid/wedjat/blob/master/core/crates/engine/src/superpoint.rs)。
 
-经过测算，**网络的全部的流程，包括输入+推理+输出+后处理，在rk3588+rk1828开发板上，速度大概在45fps左右。**整体来看速度还是偏低，根据测算应该相当的耗时都花在了后处理上，如果要获得更高的速度应该考虑把后处理同样也放在rk1828上运行。
+经过测算，**网络的全部的流程，包括输入+推理+输出+后处理，在rk3588+rk1828开发板上，速度大概在57fps左右。**整体来看速度还是偏低，根据测算应该相当的耗时都花在了后处理上，如果要获得更高的速度应该考虑把后处理同样也放在rk1828上运行。
 
 但rk1828能否支持对应的这些后处理算子仍然未知（极大概率不支持），**不建议折腾**，这个帧率绝大多数时候已经足够用了。
-
-**此外对于官方宣称的Resnet50V2在224 * 224下有114.15的fps，实测只有75fps左右。性能一般只能达到标称的60%~70%。**
 
 ```tex
 firefly@firefly:~/rknn/crates/engine$ cargo test test_superpoint_pipeline_and_fps --release -- --nocapture
@@ -435,9 +433,9 @@ Output [1]:
 Extracted 256 keypoints.
 Saved visual result to superpoint_result.jpg
 --- Benchmark Results ---
-Iterations: 1000
-Average Latency: 22.59 ms
-Throughput: 44.27 FPS
+Iterations: 100
+Average Latency: 17.54 ms
+Throughput: 57.03 FPS
 test superpoint::tests::test_superpoint_pipeline_and_fps ... ok
 
 test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 1 filtered out; finished in 23.02s
@@ -790,7 +788,7 @@ if __name__ == "__main__":
 
 在rust侧推理代码，读者可以查看[仓库](https://github.com/Ailrid/wedjat/blob/master/core/crates/engine/src/lightglue.rs)。
 
-经过测算，**网络的全部的流程，包括输入+推理+输出+后处理，在rk3588+rk1828开发板上，速度大概在15fps左右。**整体来看速度好像其实还不错？毕竟是fp16进行的量化。
+经过测算，**网络的全部的流程，包括输入+推理+输出+后处理，在rk3588+rk1828开发板上，速度大概在17fps左右。**整体来看速度好像其实还不错？毕竟是fp16进行的量化。
 
 **如果要获得更高的速度应该考虑采用混合量化，但rknn3将此过程单独分离到了一个工具中，目前笔者暂无研究，等待以后补充。**
 
@@ -891,8 +889,8 @@ SuperPoint extracted 256 and 256 keypoints.
 Found 97 valid matches.
 --- LightGlue Benchmark Results ---
 Iterations: 100
-Average Latency: 67.02 ms
-Throughput: 14.92 FPS
+Average Latency: 59.01 ms
+Throughput: 16.95 FPS
 Saved match visualization to lightglue_matches.jpg
 test lightglue::integration_tests::test_superpoint_lightglue_pipeline ... ok
 ```
@@ -904,6 +902,8 @@ test lightglue::integration_tests::test_superpoint_lightglue_pipeline ... ok
 ---
 
 补充：经过笔者评测，使用RKQuantizer进行混合量化后，速度提升微乎其微几乎可以忽略不计。使用int8量化后精度损失严重，匹配结果几乎不可用。因此可以得出结论，lightglue不适合进行量化，使用fp16进行推理即可。
+
+再次补充：根据我的测试，不同的开发板型号和不同的1828封装会导致性能出现差异，有些开发板上可能速度略低或更高一些（superpoint浮动在10fps，lightglue在2-5fps内），但总体来说不会差异太多。
 
 ## 4 总结
 
