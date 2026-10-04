@@ -1,0 +1,376 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>话题：如何煮并剥一个完美的鸡蛋 - Beyond-The-Code</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-2459343d.css">
+        <link rel="stylesheet" href="css/chrome-ae938929.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-74b26d84.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-a7114326.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Beyond-The-Code</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+<h1 id="基于进化学溯源与鸡蛋物化机制的完美剥蛋理论探讨兼论晨间好运机制与完美鸡蛋量化关系研究"><a class="header" href="#基于进化学溯源与鸡蛋物化机制的完美剥蛋理论探讨兼论晨间好运机制与完美鸡蛋量化关系研究">《基于进化学溯源与鸡蛋物化机制的完美剥蛋理论探讨——兼论晨间好运机制与完美鸡蛋量化关系研究》</a></h1>
+<h2 id="1-摘要"><a class="header" href="#1-摘要">1 摘要</a></h2>
+<p>长久以来，早晨剥鸡蛋的完整度已被广泛认同为个体（主要是我自己）当日运势指数的强相关代用指标。然而，受限于蛋白与内膜之间未知的物理化学相互作用与学校不知名的煮蛋手法，研究者（还是我）常遭遇蛋白带壳撕裂现象，导致晨间好运心理坍塌。因此，本研究旨在通过详细的考察鸡类的物种起源、鸡蛋构造、煮鸡蛋中的物理化学反应等因素，建立一套完整的晨间煮剥鸡蛋理论体系，以应对学校阿姨的糟糕煮蛋手法并努力夺回属于研究者（就是我!）的一日好运。</p>
+<p><strong>关键词：运势指数、好运心理防御机制、煮剥鸡蛋理论</strong></p>
+<h2 id="2-引言与相关工作"><a class="header" href="#2-引言与相关工作">2 引言与相关工作</a></h2>
+<h3 id="21-问题背景"><a class="header" href="#21-问题背景">2.1 问题背景</a></h3>
+<p>水煮蛋作为人类文明中最基础、最高效的蛋白质获取来源之一，在日常膳食结构中占据着不可替代的地位。然而，在将煮熟的鸡蛋转化为可食用状态的剥离过程中，普遍存在一种严重的物理失效现象——蛋壳内膜与蛋白粘连引发剥离过程中产生结构撕裂。这种现象不仅造成了约 5%–15% 的生物质资源浪费（残留在蛋壳上的无法食用的蛋白），更在心理学与行为学层面产生了显著的负面效应。</p>
+<p>研究表明，清晨首次尝试剥鸡蛋即遭遇蛋白残缺事件，会导致个体产生强烈的不确定性焦虑与系统无序感。约 100%（我自己）的受访者表示：当自己努力尝试剥一个完美的鸡蛋遇到鸡蛋蛋白被黏连至蛋壳、连续剥下的完美环状蛋壳突然断裂、蛋壳与蛋白黏连过紧时，会产生遗憾与焦躁的情绪认为今日好运丢失，并在后续过程中选择破罐破摔，造成生物质资源与食物浪费。</p>
+<p>因此，建立一套科学的煮蛋与剥蛋体系知识，确保在剥蛋过程中能够轻松、完美的脱离蛋壳保留生物质，不仅对于个体微观幸福感与幸运度是重要的，更能节约食物资源，为环境保护与人类发展做出重要贡献。</p>
+<h3 id="22-相关工作"><a class="header" href="#22-相关工作">2.2 相关工作</a></h3>
+<p>关于如何完美剥离鸡蛋这一课题，前人在民间经验、食品化学以及经验工程学领域进行了长达半个多世纪的探索。这些研究成果在演进历程上大致可划分为三个主要发展阶段，涵盖了从早期定性猜测到现代定量控制的学术跨越。</p>
+<h4 id="221-经验主义与民间黑魔法时代"><a class="header" href="#221-经验主义与民间黑魔法时代">2.2.1 经验主义与民间黑魔法时代</a></h4>
+<p>在早期探索中，经验主义与民间黑魔法占据了主流地位。</p>
+<p>这一时期的传统观念大多依赖于归纳法与缺乏对照组的民间假说，其中最典型的代表即为水体介质添加剂假说。</p>
+<p>民间广泛主张在煮沸介质中加入食盐、白醋（乙酸）或小苏打（碳酸氢钠），其理论假设试图通过酸性环境溶解碳酸钙外壳，或通过碱性改变水体 pH 值以减弱界面黏连。然而，后续的控制变量实验表明，此类介质添加剂对于水分子渗透进入蛋壳内膜的微观作用微乎其微，且极易引发未预期的味觉污染。</p>
+<p>此外，这一时期还衍生出了“容器加水摇晃”或“桌面掌心滚压”等破坏性外力震荡法。此类方法试图盲目施加机械外力以击碎内膜应力，但在蛋白与内膜仍处于高黏连状态时，过度的机械力往往会导致蛋白整体发生崩溃性碎裂，使原本仅局部破损的鸡蛋直接进入全盘皆输的状态。</p>
+<h4 id="222-食品化学与热力学控制论"><a class="header" href="#222-食品化学与热力学控制论">2.2.2 食品化学与热力学控制论</a></h4>
+<p>进入21世纪，随着厨艺物理学的兴起，学术界开始转向食品化学与热力学控制论的深度探讨。</p>
+<p>（1）界面生化解耦与 pH 依赖机制</p>
+<p>早期的突破性研究集中于蛋壳内膜与蛋白胶体界面的化学结合态。Meehan 等（1962）与 Reinke &amp; Spencer（1964）的系列实验首次证实，蛋白与内膜的黏连强度直接受控于蛋清的微观酸碱环境（pH 值）。刚产下的新鲜鸡蛋内溶解有高浓度的碳酸，蛋白呈弱酸性至弱碱性（<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">pH</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">7.6</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">7.9</span></span></span></span>），此时蛋白中的高分子聚合物与内膜角蛋白网格之间存在强烈的离子键与共价交联，表现出极高的界面黏着力。</p>
+<p>随着储存时间的延长，蛋壳表面微孔介导了二氧化碳（<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord text"><span class="mord">CO</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>）的持续气化逸出，促使蛋白 pH 值显著上升并稳定于 9.0–9.2 的弱碱性区间（Fuller &amp; Angus, 1969; McGee, 2004）。pH 值的升高改变了卵清蛋白等核心蛋白质的电荷分布状态，诱发静电排斥效应并破坏了微观交联结构，从而在生化层面实现了蛋白与内膜的界面解耦。</p>
+<p>（2）相变热力学与热冲击假说</p>
+<p>进入21世纪，随着厨艺物理学的发展，学术界将焦点转向了烹饪相变过程中的热力学动力学。López-Alt（2015）通过样本量超过 1000 枚鸡蛋的大规模控制变量实验，揭示了烹饪起始温度对剥离成功率的决定性作用：</p>
+<ul>
+<li><strong>冷水下锅：</strong> 鸡蛋随水温缓慢上升（慢速加热）。最外层稀蛋白在未达到凝胶化变性温度前，有充裕的时间通过渗透作用充盈并渗入蛋壳内膜的微孔纤维隙缝中。当温度升高至变性点时，蛋白在内膜孔隙内发生闪速凝胶化，形成微观机械锚定与卡死，导致剥离时发生严重的结构撕裂。</li>
+<li><strong>沸水/蒸汽下锅：</strong> 100°C 的高热流密度在两相界面诱发了瞬时热冲击。最外层蛋白分子在接触高热瞬间发生闪速变性，迅速凝固为致密的阻隔层，切断了高分子链向内膜微孔的渗入通道，从物理相变路径上阻断了微观锚定效应的发生。</li>
+</ul>
+<p>此外，López-Alt（2015）与 McGee（2004）均强调了热终止阶段冰浴淬火的生化与物理双重效益：迅速降低界面温度不仅能够有效截断含硫氨基酸受热分解产生硫化氢（<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord text"><span class="mord">H</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord text"><span class="mord">S</span></span></span></span></span>）与铁离子结合生成硫化亚铁（<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord text"><span class="mord">FeS</span></span></span></span></span>，即蛋黄表面发绿现象）的生化反应链，更能利用蛋白与蛋壳收缩率的数量级差异，诱发界面剪切拉应力，形成宏观剥离空隙。</p>
+<h4 id="223-机械应力与降温骤冷研究"><a class="header" href="#223-机械应力与降温骤冷研究">2.2.3 机械应力与降温骤冷研究</a></h4>
+<p>现代食品工程学者已将研究视角拓展至机械应力与降温骤冷领域。</p>
+<p>研究指出，将高温熟蛋迅速投入 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6741em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">∘</span></span></span></span></span></span></span></span><span class="mord text"><span class="mord">C</span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord"><span class="mord">4</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6741em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">∘</span></span></span></span></span></span></span></span><span class="mord text"><span class="mord">C</span></span></span></span></span> 的冰水混合物中，能够利用蛋壳（无机质）与蛋白凝胶（高分子聚合物）热膨胀系数的显著数量级差异，在两相界面处诱发出极大的界面剪切应力。这种剪切应力能够直接拉断残存的内膜纤维，在物理层面形成空隙，显著降低后续剥离过程中的摩擦阻力。</p>
+<h4 id="224-本文工作与现有研究的差异"><a class="header" href="#224-本文工作与现有研究的差异">2.2.4 本文工作与现有研究的差异</a></h4>
+<p>尽管前人在烹饪热力学与生化解耦领域已经积累了较为丰富的经验，但现有文献依然存在着明显的缺陷。</p>
+<p>一方面，传统研究普遍将剥离失效视为纯粹的物理现象，完全忽略了研究者（我!）在遭遇蛋白撕裂时的晨间心理防御机制坍塌与后续的破罐破摔行为。另一方面，现有实验室研究结论均建立在理想的温控环境之下，未能考虑到学校食堂等复杂外部环境下极其糟糕的不稳定的水温与未知烹饪手法。</p>
+<p>基于此，本研究在整合前人食品化学与相变力学成果的基础上，旨在建立一套具备强抗干扰能力、能够 100% 成功剥离的“晨间好运捍卫型标准作业程序”，以填补这一领域的空白。</p>
+<h2 id="3-方法论"><a class="header" href="#3-方法论">3 方法论</a></h2>
+<h3 id="31-鸡类演化构造"><a class="header" href="#31-鸡类演化构造">3.1 鸡类演化构造</a></h3>
+<p><em><strong>射人先射马，擒贼先擒王。——《前出塞》</strong></em></p>
+<p><em><strong>起床先吃蛋，吃蛋先懂鸡。——作者</strong></em></p>
+<h4 id="311-生物进化亲缘与家鸡解剖结构"><a class="header" href="#311-生物进化亲缘与家鸡解剖结构">3.1.1 生物进化亲缘与家鸡解剖结构</a></h4>
+<p>要从根本上破解蛋白与蛋壳内膜的黏连机制，必须深入探讨家鸡物种演化史及其生殖系统的生理构造。</p>
+<p>在生物分类学中，家鸡属于动物界、脊索动物门、鸟纲、鸡形目、雉科、原鸡属、原鸡种。基因组学研究表明，现代家鸡的主要野生祖先是分布于东南亚和中国西南地区的红原鸡，并在漫长的驯化过程中与其他几种原鸡发生过少量基因杂交。</p>
+<p>　家鸡的祖先是野生原鸡，主要栖息在亚洲南部的热带丛林里。原鸡分为四个物种：红原鸡、绿原鸡、灰原鸡和斯里兰卡原鸡，动物分类学和遗传学研究表明红原鸡是家鸡的最近祖先。</p>
+<p>人类大约在 8000 年前（新石器时代）开始驯化红原鸡。起初，人类驯化它们并非为了稳定获取蛋白质（吃蛋或吃肉），而是用于祭祀卜筮与斗鸡娱乐。这种原始的崇拜与仪式感，隐喻了人类自古以来对蛋形态完整性的某种本能期待。在现代，随着森林缩减以及人类猎杀，红原鸡的数量在不断减少。我国已将红原鸡列为国家二级保护动物以保护这一珍贵的生物资源。</p>
+<p>在古生物学与比较解剖学领域，现代鸟类已被公认为兽脚亚目恐龙的直系后裔。</p>
+<p>古蛋白质组学分析表明，从暴龙化石中提取出的胶原蛋白序列，在演化树上与现代家鸡表现出高度的同源性。这意味着，<strong>母鸡在子宫内沉积蛋壳与内膜的生物学机制，实际上是一套继承自中生代恐龙、经历了上亿年演化洗礼的古老防御系统</strong>。或许我们每天早晨所面对的，不仅仅是一个早餐食材，更是一个继承了兽脚类恐龙的古代地球霸主的后代。</p>
+<p><img src="./img/如何煮并剥一个完美的鸡蛋/1.png" alt=""></p>
+<p><img src="./img/如何煮并剥一个完美的鸡蛋/2.png" alt=""></p>
+<p>为了适应飞行与高效的能量代谢（以及高效的产蛋需求），家鸡在解剖结构（上图）上演化出了一系列高度特化的器官系统。</p>
+<p>家鸡缺乏牙齿，其消化系统采用了“储存-机械研磨”的分工策略。食物经食道首先进入<strong>嗉囊</strong>进行暂存与预润湿；随后经过<strong>腺胃</strong>注入消化液，进入肌肉极其发达的肌胃（即鸡内金所在部位）。<strong>肌胃内常留有鸡吞食的砂石</strong>，利用高强度的物理挤压将坚硬食物碾碎。这种强大的物理研磨能力，构成了家鸡高效吸收钙质以制造蛋壳的物质基础。</p>
+<p>与大多数哺乳动物不同，家鸡拥有两条极其发达的<strong>盲肠</strong>。盲肠内栖息着复杂的微生物群落，用于发酵粗纤维并合成维生素。盲肠的强消化吸收能力，确保了母鸡在摄入低质量饲料时，仍能维持子宫壳腺内碳酸钙（<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord text"><span class="mord">CaCO</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>）的高速率沉淀。</p>
+<p>家鸡的消化、泌尿与生殖系统最终汇集于同一个出口——<strong>泄殖腔</strong>。泄殖腔在解剖上分为<strong>粪道、尿道和生殖道</strong>三部分。在产蛋瞬间，输卵管末端会发生生理性<strong>翻出</strong>，将鸡蛋直接送出体外，<strong>避免其在排出过程中接触到粪便</strong>。这一构造使得鸡蛋外壳在产出瞬间保持相对无菌，但同时也赋予了蛋壳外膜极强的生物学封闭特性。</p>
+<h4 id="321-交配与产蛋机制"><a class="header" href="#321-交配与产蛋机制">3.2.1 交配与产蛋机制</a></h4>
+<p>在探讨鸡蛋形成之前，必须厘清母鸡的受精机制与蛋的生物学属性。与大多数哺乳动物不同，家鸡的交配过程极其高效且特殊。公鸡无外生殖器，交配时公母鸡通过泄殖腔的短暂贴合（通常仅持续几秒）完成精液转移，这一行为在比较解剖学中被称为<strong>泄殖腔接吻</strong>。</p>
+<p>公鸡的精子进入母鸡输卵管后，并不会立即失效，而是会储存在位于输卵管与子宫交界处的精子腺体中。母鸡可在此储<strong>存精子长达 2 至 3 周</strong>，并在每次排卵时逐次释放精子进行受精。</p>
+<p>若精子在输卵管漏斗部与刚释放的卵黄结合，胚盘将开始细胞分裂，形成具发育成胚胎潜能的生物体——<strong>受精蛋</strong>。</p>
+<p>若精子缺失，母鸡仍会按照激素周期正常排卵并包裹蛋白与蛋壳，此时卵黄表面仅保留一个未分裂的浅色胚珠——<strong>未受精蛋</strong>。</p>
+<img src="./img/如何煮并剥一个完美的鸡蛋/3.png" style="zoom:33%;" />
+<p>对于绝大多数人而言，学校食堂供应的鸡蛋绝大多数为工业化笼养或平养环境下产出的<strong>未受精蛋</strong>，从烹饪与剥离的角度来看，受精蛋与未受精蛋在沸水中的变性力学性质差异极小。</p>
+<p>无论是否受精，一个完整鸡蛋的形成过程，本质上是一条长达 24 至 26 小时的生物 3D 打印与多层封装流水线。从解剖学视角来看，母鸡的生殖系统主要由左侧发育健全的卵巢与输卵管构成（右侧生殖系统在演化过程中已退化，以减轻体重量并适应高空或奔跑需求）。一个鸡蛋从无到有并最终排出的全过程，可精确划分为以下四个生理节点：</p>
+<img src="./img/如何煮并剥一个完美的鸡蛋/4.png" style="zoom: 33%;" />
+<ol>
+<li>
+<p><strong>卵黄排卵与蛋白沉积（漏斗部与膨大部）</strong>：</p>
+<p>母鸡卵巢释放成熟的卵黄进入输卵管漏斗部。若存在储存的精子，受精作用将在漏斗部的 15 分钟短暂停留期内完成。随后，卵黄进入膨大部，在此处历时约 4 小时，由腺体密集分泌并包裹上浓蛋白与稀蛋白（主要成分为卵清蛋白），构建出鸡蛋的生物质主体。</p>
+</li>
+<li>
+<p><strong>内膜与外膜的织造（峡部）</strong>：</p>
+<p>在输卵管峡部，母鸡历时约 1 小时，利用有机角蛋白纤维交叉织造出两层极薄的网状膜——即<strong>蛋壳内膜与蛋壳外膜</strong>。这两层膜不仅是抵御外部微生物入侵的生物屏障，更是后续水煮过程中导致蛋白与蛋壳产生物理黏连的罪魁祸首。</p>
+</li>
+<li>
+<p><strong>矿化与气室形成（子宫/壳腺）</strong>：</p>
+<p>包裹着双层角蛋白膜的生物体进入子宫段，在此停留长达 18 至 20 小时。子宫壳腺分泌大量的碳酸钙晶体沉积在外膜上，构建出坚硬且充满微孔的蛋壳。在产出体外前，两层内膜紧密贴合；而当鸡蛋被排出体外、环境温度由母体体温（约 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">41.</span><span class="mord"><span class="mord">5</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6741em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">∘</span></span></span></span></span></span></span></span><span class="mord text"><span class="mord">C</span></span></span></span></span>）骤降至室温时，内部物质发生热胀冷缩，导致蛋壳钝端的内外膜发生物理分离，从而形成初始的<strong>钝端气室</strong>。</p>
+</li>
+<li>
+<p><strong>逆向挤压与产出过程（泄殖腔）</strong>：</p>
+<p>经过子宫肌肉的逆向收缩与泄殖腔的强力蠕动，输卵管末端发生生理性翻出，鸡蛋以钝端朝前的姿势被排出体外。至此，一个外包碳酸钙坚壳、内含多层角蛋白网格与高浓度凝胶蛋白的鸡蛋正式宣告完成。</p>
+</li>
+</ol>
+<p>由此可见，鸡蛋自诞生之日起，其“蛋白-内膜-碳酸钙壳”的三层结构便存在着极其复杂的分子交联与收缩历史。学校食堂粗放且不可控的煮蛋手法，无异于在未破坏这种生物交联的前提下强行进行物理剥离，其导致的剥烂破防现象具有必然性。</p>
+<h4 id="322-影响产蛋的因素"><a class="header" href="#322-影响产蛋的因素">3.2.2 影响产蛋的因素</a></h4>
+<p><strong>为什么母鸡在没有公鸡参与、未完成受精的情况下，依然会持续消耗大量能量排出未受精蛋？</strong> 这看似违反了自然选择中能量最优化的演化原则，但从比较内分泌学与驯化选择压力的角度来看，该现象具有深刻的生理学必然性。</p>
+<p>家鸡属于鸟类，而鸟类的排卵行为并不依赖于交配刺激，而是受光照周期与内分泌系统的自主调控。当环境光线通过视网膜及颅内感光受体刺激母鸡的下丘脑时，下丘脑会分泌促性腺释放激素，促使垂体释放促卵泡素与黄体生成素。即使没有公鸡存在，黄体生成素峰值的出现也会强行触发成熟卵泡破裂并释放卵黄进入输卵管。</p>
+<p>另一方面，在自然野外状态下，红原鸡（家鸡祖先）每年仅在繁殖季节产蛋 1–2 窝（每窝 10–12 枚），用于繁衍后代。然而，在长达 8000 年的人类驯化进程中，人工选择强行打破了这一季节性约束。人类通过选育留种，不断强化了母鸡不停排卵的基因突变，使得现代蛋鸡的输卵管变性成为一个不需要外部交配信号即可自我循环运行的无休止生产线。</p>
+<p>一枚完整鸡蛋从卵巢排卵到最终排出，需要经历大约 <strong>24.5 至 26 小时</strong>的连续生理加工。这意味着，<strong>母鸡每天的排卵时间都会比前一天顺延约 30 至 60 分钟</strong>。母鸡连续产蛋的天数被称为<strong>连产期</strong>。一只高产蛋鸡通常可以实现连续 30 至 60 天（甚至更长）每天产一枚蛋。然而，当排卵时间顺延至下午（通常为 15:00 以后）时，母鸡体内下丘脑的黄体生成素释放峰值会被夜间的光暗周期强行抑制，导致次日无法排卵，从而产生 1 天的连产间歇。休整一天后，排卵程序将在次日清晨重新启动。因此可以得到一个结论：<strong>适当的补充光照，可以增加产蛋量。</strong></p>
+<p>在评估鸡蛋生产的可持续性时，一个关键的底层问题在于：<strong>一只母鸡一生能产出的鸡蛋数量，在基因或解剖层面是否是一个固定常数？</strong></p>
+<p>从比较发育生物学与细胞学视角来看，这一问题呈现出<strong>微观有限，宏观弹性</strong>的双重特征。</p>
+<p>从微观上来说，母鸡在胚胎发育与孵化初期，其左侧卵巢中可发育的原始卵泡数量是完全固定的。在母鸡出壳时，其卵巢内已包含了约 2,000 至 12,000 个原始卵泡细胞。从细胞学角度来看，这构成了母鸡一生理论产蛋量的上限绝对配额。与哺乳动物类似，母鸡在出生后无法再通过有丝分裂生成新的卵母细胞。</p>
+<p>虽然初始配额高达上万个，但绝大多数原始卵泡在发育过程中会经历闭锁退化。在自然或工业养殖寿命内，一只现代商业蛋鸡实际能够完整转化为壳蛋排出的数量，通常在 <strong>300 至 500 枚</strong>（在延长产蛋周期或不换羽的优化养殖下可达 500–600 枚）。影响这一实际表达量的核心因素包括：钙代谢衰竭与骨质疏松和光照与生理衰老等等因素。</p>
+<p>母鸡原始卵泡储量巨大，但实际合格产出有限的生理特性，在概率论层面为研究者揭示了一个残酷的现实：食堂阿姨所拿到的每一枚鸡蛋，本质上都是某只母鸡在其生命周期中<strong>不可再生配额的 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1/</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span></strong>。母鸡体内钙质的逐渐耗竭与内膜质量的波动，进一步增加了后期产出鸡蛋在剥离过程中的物理不稳定因素。</p>
+<h3 id="32-鸡蛋生化构造"><a class="header" href="#32-鸡蛋生化构造">3.2 鸡蛋生化构造</a></h3>
+<p><em><strong>知己知彼，百战不殆。——《孙子兵法》</strong></em></p>
+<p><em><strong>知鸡知蛋，百剥不坏。——作者</strong></em></p>
+<h4 id="321-鸡蛋的结构"><a class="header" href="#321-鸡蛋的结构">3.2.1 鸡蛋的结构</a></h4>
+<p>要实现 100% 无损的物理剥离，就必须对剥离对象（鸡蛋）的微观与宏观结构进行彻底的解剖学解构。从物理力学与生化组成的视角来看，一个成熟的鸡蛋由<strong>九大核心物理结构</strong>交织而成。这九个结构共同构成了一套高效的生命维持与防御系统，同时也是决定研究者晨间剥离成败的物理基质：蛋壳、蛋壳外膜、蛋壳内膜、气室、系带、蛋白、蛋黄膜、蛋黄、胎盘。</p>
+<img src="./img/如何煮并剥一个完美的鸡蛋/5.png" style="zoom:33%;" />
+<h4 id="322-外部硬质与多孔防护屏障"><a class="header" href="#322-外部硬质与多孔防护屏障">3.2.2 外部硬质与多孔防护屏障</a></h4>
+<p>碳酸钙蛋壳是鸡蛋的刚性防护外壳，厚度约为 0.3–0.4 mm，由约 95% 的碳酸钙（<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord text"><span class="mord">CaCO</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>）晶体与 5% 的有机基质交织而成。蛋壳表面密布着 7,000 至 17,000 个微观气孔，构成了胚胎发育过程中气体与水分交换的物理通道。在水煮力学中，坚硬的多孔蛋壳既是抵抗外部机械应力的物理屏障，也是热量向内部蛋白传导的第一道热力学边界。</p>
+<p>紧贴于碳酸钙蛋壳内侧的是<strong>两层</strong>由<strong>网状角蛋白纤维构成</strong>的有机薄膜，总厚度约为 10–20 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">μ</span><span class="mord text"><span class="mord">m</span></span></span></span></span>。</p>
+<p>其中，<strong>蛋壳外膜</strong>紧密贴合于碳酸钙蛋壳的内壁，而<strong>蛋壳内膜</strong>则直接与内部的蛋白胶体相接触。这两层角蛋白网格不仅是抵御微生物侵入的最后一道生物屏障，更是<strong>引发剥离失败的核心原因</strong>。若蛋白分子在受热变性凝胶化的过程中渗入了内膜的微孔纤维隙缝中，就会形成共价键结合与机械锁扣，从而造成壳肉一体的性物理粘连。</p>
+<p>气室位于鸡蛋的钝端（较圆的一端），夹在蛋壳外膜与蛋壳内膜之间的物理空隙中。在鸡蛋刚从母体产出（体温约为 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">41.</span><span class="mord"><span class="mord">5</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6741em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">∘</span></span></span></span></span></span></span></span><span class="mord text"><span class="mord">C</span></span></span></span></span>）时，内部物质充盈，此时并无气室存在。随着鸡蛋产出后环境温度骤降至室温，内部内容物发生热胀冷缩，强行拉断了钝端内外膜之间的局部物理连接，从而形成了初始的气室。气室的存在，不仅记录了鸡蛋的物理冷却历史，更给研究者提供了整个物理剥离程序中唯一的默认突破口。</p>
+<h4 id="333-内部胶体与核心"><a class="header" href="#333-内部胶体与核心">3.3.3 内部胶体与核心</a></h4>
+<p>系带是由密集交织的浓蛋白纤维扭结而成的两条白色螺丝状结构，分别连接于蛋黄的两侧，并将其悬挂锚定在鸡蛋的物理几何中心。系带的生物学功能是作为力学缓冲减震器，防止鸡蛋在受到外部机械震荡时蛋黄直接撞击坚硬的蛋壳。然而在水煮受热后，系带会变性凝固为强韧的蛋白质绳结。在剥离或切开水煮蛋时，系带的局部高拉伸强度有时会为蛋白带来应力集中，成为影响物理切割平整度的微观因素。</p>
+<p>蛋白是水煮蛋中占比最大、也是研究者最关心的生物质主体，水分含量约为 88%，其余主要由卵清蛋白、卵转移蛋白和卵胶蛋白等高分子蛋白质构成。在宏观解剖上，蛋白可细分为外层稀蛋白与内层浓蛋白：</p>
+<ul>
+<li><strong>稀蛋白</strong>流动性较强，紧贴于蛋壳内膜，是水煮过程中首先接收热量并发生相变的第一响应区。</li>
+<li><strong>浓蛋白</strong>呈高粘度网状凝胶状态，包裹在蛋黄外围。</li>
+</ul>
+<p>蛋白在加热过程中的凝胶化相变直接决定了水煮蛋的弹性，若相变过程未能强行切断其与蛋壳内膜的微观渗入，蛋白就会在凝胶化瞬间与内膜形成难以分割的物理交联。</p>
+<p>蛋黄膜是包裹在蛋黄最外层的一层透明弹性薄膜，主要<strong>由胶原蛋白与网状纤维</strong>构成。它的物理作用是在流体状态下将高脂质的蛋黄与高水分的蛋白彻底隔离开来，维持内部相态的稳定性。在烹饪相变中，<strong>蛋黄膜的完整性至关重要</strong>：若加热过度或受力不均导致蛋黄膜破裂，蛋黄中的脂质就会渗入蛋白，破坏蛋白凝胶的均匀性与表面连续性。</p>
+<p>位于鸡蛋几何中心的是营养核心——蛋黄，主要由高浓度的脂蛋白、甘油三酯以及丰富的矿物质构成。蛋黄的凝固相变温度（约 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord">6</span><span class="mord"><span class="mord">5</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6741em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">∘</span></span></span></span></span></span></span></span><span class="mord text"><span class="mord">C</span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">7</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6741em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">∘</span></span></span></span></span></span></span></span><span class="mord text"><span class="mord">C</span></span></span></span></span>）显著低于蛋白的热变性温度（约 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">8</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6741em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">∘</span></span></span></span></span></span></span></span><span class="mord text"><span class="mord">C</span></span></span></span></span>）。这一相变温度差是厨艺物理学中控制溏心蛋与全熟蛋成熟度转变的物理依据。</p>
+<p>胎盘（胚盘）是位于蛋黄表面极小的一个浅色圆点微观结构，包含着禽类的遗传物质。在未受精蛋中，该结构仅为未分裂的浅色胚珠；而在受精蛋中，它则是已开始细胞分裂的胚盘，胎盘在整个鸡蛋中的质量与体积占比几乎可以忽略不计，且水煮后的物理性质无异。</p>
+<h3 id="33-煮鸡蛋中的生化现象"><a class="header" href="#33-煮鸡蛋中的生化现象">3.3 煮鸡蛋中的生化现象</a></h3>
+<p>// TODO</p>
+<h3 id="34-剥鸡蛋中的物理规律"><a class="header" href="#34-剥鸡蛋中的物理规律">3.4 剥鸡蛋中的物理规律</a></h3>
+<p>// TODO</p>
+<h3 id="35-心理暗示与完美鸡蛋"><a class="header" href="#35-心理暗示与完美鸡蛋">3.5 心理暗示与完美鸡蛋</a></h3>
+<p>// TODO</p>
+<h2 id="4-实验"><a class="header" href="#4-实验">4 实验</a></h2>
+<p>// TODO</p>
+<h2 id="5-结论与未来工作"><a class="header" href="#5-结论与未来工作">5 结论与未来工作</a></h2>
+<p>结论：</p>
+<p>避免使用当天或刚买回来的超新鲜鸡蛋，优先选择在冰箱储存了 1~2 周的鸡蛋（pH &gt; 8.8）。</p>
+<p>煮沸足量水，将鸡蛋直接浸入沸水（或蒸锅）。定时 8.5~9 分钟（追求完美半熟/溏心）或 11 分钟（全熟）。</p>
+<p>到点后立即捞出，迅速投入包含大量冰块的冰水中，浸泡至少 15 分钟。利用热胀冷缩使蛋白收缩脱壳。</p>
+<p>敲碎钝端（气室所在位置），在缓和的自来水流下剥壳，水流会沿着缝隙渗入壳膜之间，利用流体压力将壳轻易推开。</p>
+<p>直接买煎蛋就可以不用剥蛋了哦吼吼↑↑</p>
+<p><strong>未来工作</strong>：</p>
+<p>基于深度学习的鸡蛋新鲜度无损超声波检测技术</p>
+<p>针对学校食堂煮蛋设备的改良建议书</p>
+<p>将本理论推广至茶叶蛋、皮蛋等衍生蛋品的可能性探讨</p>
+<h2 id="6-道德与伦理声明"><a class="header" href="#6-道德与伦理声明">6 道德与伦理声明</a></h2>
+<p>本研究所有实验样本（无论剥离完整与否，含撕裂破损样本）均已进入研究者消化系统（已下肚），严格符合食品安全与零浪费规范。实验过程中无任何家鸡受到非人道对待。</p>
+<p>部分图像来自于网络。</p>
+<h2 id="7-参考文献"><a class="header" href="#7-参考文献">7 参考文献</a></h2>
+<p>[1] Reinke, WC, &amp; Spencer, JV (1964). <em>“Observation of selected variables affecting the peelability of hard-boiled eggs.”</em> Poultry Science, 43(5), 1355.</p>
+<p>[2] Meehan, JJ, Sugihara, TF, &amp; Kline, L. (1962). <em>“Relationships between shell egg handling practices and the ease of peeling hard-cooked eggs.”</em> Poultry Science, 41(5), 1437-1443.</p>
+<p>[3] Fuller, GW, &amp; Angus, P. (1969). <em>“Peelability of hard-cooked eggs.”</em> Poultry Science, 48(6), 1945-1951.</p>
+<p>[4] J. Kenji López-Alt (2015). <em>The Food Lab: Better Home Cooking Through Science.</em> (W. W. Norton &amp; Company)</p>
+<p>[5] Harold McGee (2004). <em>On Food and Cooking: The Science and Lore of the Kitchen.</em> (Scribner)</p>
+<p>[6] http://www.kiz.cas.cn/kxcb/kp2/kp34/201701/t20170106_4732248.html</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="雨夜杂谈.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="在RK1828上使用Rust部署Superpoint+Lightglue.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="雨夜杂谈.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="在RK1828上使用Rust部署Superpoint+Lightglue.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-c2a407aa.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>
