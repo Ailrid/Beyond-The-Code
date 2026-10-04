@@ -7,5 +7,6 @@
 [话题：符号主义下的人工智能](符号主义下的人工智能.md)
 [话题：论苦难](论苦难.md)
 [话题：雨夜杂谈](雨夜杂谈.md)
+[话题：如何煮并剥一个完美的鸡蛋](如何煮并剥一个完美的鸡蛋.md)
 [教程：在RK1828上使用Rust部署Superpoint+Lightglue](在RK1828上使用Rust部署Superpoint+Lightglue.md)
 
