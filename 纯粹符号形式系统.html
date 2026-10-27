@@ -1,0 +1,353 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>话题：纯粹符号形式系统 - Beyond-The-Code</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-2459343d.css">
+        <link rel="stylesheet" href="css/chrome-ae938929.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-2bcd3dd6.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-955da643.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Beyond-The-Code</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+<h1 id="纯粹符号形式系统"><a class="header" href="#纯粹符号形式系统">纯粹符号形式系统</a></h1>
+<h2 id="话题数学凭什么是对的"><a class="header" href="#话题数学凭什么是对的">话题：数学凭什么是对的</a></h2>
+<p>本篇的目的是，建立一个自洽的，在纯粹的符号形式系统内部适用的体系（注意我这里限定的一个关键词语，纯粹的，在后面的文章中我将会解释什么是“纯粹的符号形式系统”），来解释下面这个问题：推理到底是在做什么？凭什么推理得到的结果在现实世界是对的？什么是数学能够表达的？什么是数学表达不了的？</p>
+<p>逻辑原子主义虽然已经是上个世纪的哲学体系，也有许多学说和假设已经在现代被扬弃，但其提供的研究符号与形式系统的工具是强力的。其中不乏有维特根斯坦这样的璀璨人物，虽然其在后期否定了自己前期在《逻辑哲学论》中的大部分理论，但并不意味着《逻辑哲学论》中的观点是错误的，只是对于现实世界和自然语言这样复杂的领域内，或许并不适用。而我们今天，就在纯粹符号形式系统，从《逻辑哲学论》其中的一句话开始，我们今天的讨论——一切逻辑命题都是反复同义。</p>
+<hr>
+<p>为了讨论能够继续下去，我们需要严格限制这个话题中的“数学”一词的范围，只有先把这一点确定下来，我们之后的讨论才是有意义的。</p>
+<p>第一，数学不等于理性本身。数学只是理性体现的一种方式，一种人类创造的符号语言和认知世界的方式，不等价与理性本身。</p>
+<p>第二，我们在这里讨论的是，可以被形式化的数学。我们将讨论的范围严格限制在纯粹符号形式系统内部本身，不包含和现实世界物理实体或其他存在相关的部分。纯粹一词，指的是我们的符号形式系统是与外部物理世界不存在联系的系统。</p>
+<p>这个限制是合适的，因为当今世界，绝大部分的数学问题和证明体系，都可以转换到一个纯粹的符号形式系统中。只要我们能够搞清楚纯粹的符号形式系统，那么我们也就搞清楚了绝大部分数学本身。因此在下面，我会经常交换数学和纯粹符号系统这两个用语，但是二者本质上的在这里我想要讨论的，都是指纯粹符号系统。</p>
+<hr>
+<h3 id="观点一一切逻辑命题都是反复同义"><a class="header" href="#观点一一切逻辑命题都是反复同义">观点一：一切逻辑命题都是反复同义。</a></h3>
+<p>在一个纯粹的符号形式系统内部，不存在原本不存在的，被创造的东西。</p>
+<p>例如，当我们给出万有引力定律和基本的运动学定律，再加上初始的条件，我们可以得到行星的椭圆轨迹方程。但是“椭圆轨迹方程”不是通过推理创造出来的，因为，如果“椭圆轨迹方程”是需要被推理才能够创造的，我们可以由此出发得到“在牛顿没有推出这个结论之前，行星的轨迹是未知的”，这显然是荒谬的。</p>
+<p>在这个纯粹符号形式系统内部，当我们给定规则与初始条件之后，结论就已经在其中了，椭圆轨迹方程”是被我们发现的原本就隐含在其中的，而不是我们创造出来的。并且，<strong>通过反复同义创造出的其他命题是无穷无尽的，构成了一个无穷的、绝对正确且等价的命题集合。</strong></p>
+<hr>
+<h3 id="观点二反复同义只在系统内部成立对人的意义不成立"><a class="header" href="#观点二反复同义只在系统内部成立对人的意义不成立">观点二：反复同义只在系统内部成立，对人的意义不成立。</a></h3>
+<p>通过观点一，我们得出结论，数学只是绝对等价的交换，没有创造任何新的东西，那么为什么我们会觉得通过数学变换，我们得到了新知识？</p>
+<p>二者是不冲突的，因为反复同义的“义”是对于符号系统而言的，而对我们的“意义”是在符号系统之外的。</p>
+<p>我们认为是我们由于“推理”获得了新知识，那只是由于人类认知的局限性，而不是因为条件和结果在逻辑的天平上不再相等了。对于人而言，意义是相当复杂且诡异的，在这里我们必须把这里的“义”限制起来，不能把对人的意义和在符号系统内的意义混为一谈。</p>
+<hr>
+<h3 id="观点三数学是正确的因为数学推理是反复同义"><a class="header" href="#观点三数学是正确的因为数学推理是反复同义">观点三：数学是正确的，因为数学推理是反复同义。</a></h3>
+<p>由观点一和观点二，我们可以明白，推理和变换，只是一个绝对等价的符号游戏，而我们的结论，本质上只是条件与公理，在符号系统内部的另一种表现形式，对于符号形式系统而言，二者是同义的一件事。</p>
+<p>由此，我们可以顺利的得出我们对于其中一个问题的回答：为什么数学推理的结果，在现实世界里是正确的？</p>
+<p>因为数学的推理，本身只是一场绝对正确没有创造任何新东西的反复同义，既然结果和条件是同义的，那本就应该是正确的。</p>
+<p>这句话应该做何理解呢？我们可以这样理解这件事，这句话是在说，“万有引力定律 + 基本的运动学定律 + 初始的条件”和“行星轨迹遵循椭圆轨迹方程”二者本身就是一件事，数学只不过是把他从前者翻译成了后者，仅此而已，而不是数学的结果神奇的表现了现实世界的运行规律。实际上你也可以从后者反向推出万有引力定律，而且牛顿正是这样做的。</p>
+<hr>
+<p>然而，数学的很多推理不是反复同义的，因为数学中很多推理变成了单向的蕴含，例如由x=2推出x的平方是4,但是我们不能反推出来如果x的平方是4，那么x=2。这又是为什么呢？</p>
+<p>归根结底，这是由于我们不经意间主动的丢弃了信息，一旦我们丢弃了独立存在信息，那么推理就不再是完整的反复同义了。我们能够到到达的反复同义的集合，在这种情况下会因为信息的丢失而<strong>扩大</strong>。</p>
+<p>这是什么意思呢？让我们来仔细讨论一下这件事。</p>
+<p>如果我们一开始默认我们讨论范围在整数系中，x=2实际上<strong>不是一个原子命题</strong>，他实际上隐含了这么两个条件：x是正的且x的平方是4（实际上这里的这个性质，是-2和2共有的某种特性，是正负符号信息之外的运算性质，而不是这么具体的一个性质），二者不能推导出对方，说明二者是<strong>独立的</strong>，且反复同义集合由二者出发共同构成。</p>
+<p>我们人类在推理的过程中，丢弃了“x不是负的/x是正的”这个隐含的条件，而是只使用了另一个性质作为推理的出发点，因此推理前后二者不再是反复同义了，反复同义的集合在这一步推理中缩小了，就变为了蕴含关系。（或者换一个方面来看，我们其实从未使用过“x是正的”这个隐含的条件，如果丢弃掉这个原子命题，那么实际上整个流程仍然是反复同义的）。</p>
+<p>如果我们严格的来论证-2和2的区别，我们必须使用《实分析》中关于数字和运算的定义。在整数构造中，整数乘法定义为：
+<span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[(</span><span class="mord mathnormal">a</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">b</span><span class="mclose">)]</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[(</span><span class="mord mathnormal">c</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">d</span><span class="mclose">)]</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[(</span><span class="mord mathnormal">a</span><span class="mord mathnormal">c</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">b</span><span class="mord mathnormal">d</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">  </span><span class="mord mathnormal">a</span><span class="mord mathnormal">d</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">b</span><span class="mord mathnormal">c</span><span class="mclose">)]</span></span></span></span></span>
+并且：
+<span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[(</span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">0</span><span class="mclose">)]</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">−</span><span class="mord">2</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[(</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">2</span><span class="mclose">)]</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">4</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[(</span><span class="mord">4</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">0</span><span class="mclose">)]</span></span></span></span></span>
+于是对于2的平方我们有：
+<span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[(</span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">0</span><span class="mclose">)]</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[(</span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">0</span><span class="mclose">)]</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[(</span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">  2</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mclose">)]</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[(</span><span class="mord">4</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">  0</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">0</span><span class="mclose">)]</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[(</span><span class="mord">4</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">0</span><span class="mclose">)]</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">42</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[(</span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">0</span><span class="mclose">)]</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[(</span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">0</span><span class="mclose">)]</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[(</span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mclose">)]</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[(</span><span class="mord">4</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">0</span><span class="mclose">)]</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[(</span><span class="mord">4</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">0</span><span class="mclose">)]</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">4</span></span></span></span></span>
+对于-2的平方我们有：
+<span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">−</span><span class="mord">2</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">−</span><span class="mord">2</span><span class="mclose">)</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[(</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">2</span><span class="mclose">)]</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[(</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">2</span><span class="mclose">)]</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[(</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">  0</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">0</span><span class="mclose">)]</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[(</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">4</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">  0</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">0</span><span class="mclose">)]</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[(</span><span class="mord">4</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">0</span><span class="mclose">)]</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">4</span><span class="mopen">(</span><span class="mord">−</span><span class="mord">2</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">−</span><span class="mord">2</span><span class="mclose">)</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[(</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">2</span><span class="mclose">)]</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[(</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">2</span><span class="mclose">)]</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[(</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">0</span><span class="mclose">)]</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[(</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">4</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">0</span><span class="mclose">)]</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[(</span><span class="mord">4</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">0</span><span class="mclose">)]</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.3669em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">4</span></span></span></span></span>
+可以看到，二者之间存在一个我们在运算之中有没有用到的东西或者说没有起到作用的东西——<strong>代表元的分量位置</strong>。2的正部分是2，负部分是0，正部分为0，负部分为2。<strong>这个分量位置的意义，在形式差乘法中没有用到。</strong></p>
+<p>这就是我们所说的——“x不是负的/x是正的”这个独立的性质。</p>
+<p>我们也可以把分量位置的解释抹除掉，构造一个没有分量位置的符号系统，但那样我们就退化为了自然数系下的定义，一旦不存在所谓的正负符号，我们的推理就是可逆的了。**如果强行要在整数系内解决这个问题，那就必须把这条被我们丢弃的信息重新补充回来。**此外我们还可以得到一个附加结论，如果我们删除了多个条件，却仍然能从结论和其他条件出发完整倒推，那么删除的那些条件，必然存在冗余——他们之间存在反复同义。</p>
+<p>回到我们的论证上来，我们说，<strong>由于信息的丢失，反复同义集扩大了</strong>，为什么？因为条件是作为约束添加到命题推理中来的，我们由p⇒q得到的结论里，p 的范围更小，q的范围更大，<strong>倒推时，我们的变换变成了，从宽范围指向窄范围，导致了我们倒推的时候，有些命题无法再被映射回原来的反复同义集合。</strong></p>
+<hr>
+<p>再次运用我们的观点，举一个例子，x&gt;2是 x&gt;1的<strong>充分不必要条件</strong>，x&gt;1是 x&gt;2的<strong>必要不充分条件</strong>。在由x&gt;2推出x&gt;1这个过程中，我们的反复同义集合扩大了，因为能够由x&gt;2反复同义得到的新命题，在x&gt;1中都能得到，但反过来并不是这样。</p>
+<p>那么我们丢弃了什么呢？我们丢弃了那些位于2&gt;=x&gt;1之间的，能够区分二者的符号性质，这看起来像是反复同义的废话，让我们仔细的考察这件事。我们可以把x&gt;2拆分成为两个部分：和x&gt;n（其中n小于等于2）的命题共有的性质、和x&gt;2<strong>不拥有</strong>2&gt;=x&gt;n这个命题含有的性质。</p>
+<p>注意，二者**一个体现了该命题与其他命题的共同特点，一个则于区分该命题与其他命题的不同点。**只是在这里我们没办法用肯定句来体现这个性质（例如在上一个句子里我们可以说“x是正的”），用否定的形式同样也可以体现这个性质（例如我们在上一个例子里说“x不是负的”，但是要注意的是否定的形式不是单独存在的，需要结合一个潜在命题“x在整数系”中，才能够得到结论“x是正的”）。</p>
+<p>一旦我们在推理的过程中丢失了二者其中的某个，那么我们的反复同义集合就会扩大，整个推理过程就不再可逆。</p>
+<h2 id="话题形式系统的诅咒"><a class="header" href="#话题形式系统的诅咒">话题：形式系统的诅咒</a></h2>
+<p>在上面，我们回答了问题“数学推理为什么是正确的”，而在接下来的话题中，让我们更进一步尝试回答另一个问题：“什么是数学能够表达的？什么是数学表达不了的？”</p>
+<hr>
+<h3 id="观点四纯粹符号形式系统内不存在时间因此数学没有预测未来"><a class="header" href="#观点四纯粹符号形式系统内不存在时间因此数学没有预测未来">观点四：纯粹符号形式系统内不存在时间，因此数学没有预测未来</a></h3>
+<p>纯粹符号系统的内部是不存在时间的，因为不存在时间，所以数学从来没有预测未来。</p>
+<p>如何理解这句话呢？让我们来看看，为什么我说纯粹符号系统里只有空间，没有时间。</p>
+<p>首先，符号本身就是空间的。当我们写下任何记号，这个记号只是一个纯粹的空间标记，没有任何纯粹符号系统含有“必须要过一秒之后下面这个定理才为真”或者“一秒之前那个命题才成立，现在为假”这种命题，符号推理是时间无关的，这也恰恰纯粹符号系统能够如此成功的原因。因为符号系统本身就无法表达时间这个概念，所以在任何时间下，这些符号变换也就永远都能成立，因为不成立的与时间相关的命题根本无法表示。</p>
+<p>你可能会说不对，那我们在数学推理里经常用到的t和t+1，还有编程里使用的<code>setTimeout</code>和<code>setInterval</code>呢？这些难道不是时间吗？</p>
+<p>但这实际上是一种假象，一种以空间换时间的技巧，而且这个技巧是有前提的。当我们写下<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8917em;vertical-align:-0.2083em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0785em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">t</span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2083em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:-0.0785em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>时，实际上我们并没有在描述任何时间，而且我也从来没有说过t是时间，他完全可以是马尔科夫链的状态转移指示，或者单纯的数组下标。实际上我甚至可以写成<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="mclose">)</span></span></span></span>，即使这样，他们的含义也不会发生变化，只是换了一种符号来表示而已。</p>
+<p>可以看到，我们在这里实际上根本就从来没有引入过时间这件事。<strong>是符号系统外部的人，觉得这是在描述时间，而不是符号本身拥有时间。在这种情况下，没有时间，自然也就没有因果，自然数学也就没有在预测未来了。</strong></p>
+<p>那我们编程里使用的<code>setTimeout</code>和<code>setInterval</code>呢？这总该是真正的时间吧？的确，这些函数的运作取决于系统时钟，而系统时钟来自于符合物理现实的晶振。可是这一切的前提是“晶振的速度和现实世界的速度是对应的”，这么说来一旦使用一个不同的晶振，或者模拟一个虚假的晶振，那么这里的“时间”就会发生变快或者变慢，甚至于将cpu时钟速度趋近于无穷大时，这个系统就会退化为一个纯粹符号系统，瞬间给出答案。</p>
+<p>可见这里的时间仍然是假的，不然我们又可以让未来提前发生了。那他真正的含义是什么呢？cpu时钟对应的空间为“执行代码的数量”，因此<code>setTimeout</code>实际上可以等价为“在执行完某些数量的代码之后，在反过来执行这些代码”。其仍然是一个以空间换时间的错觉。</p>
+<p>可时间在到底有什么用呢？为什么我们会觉得数学运算是在预测未来发生的事呢？</p>
+<p>在<strong>观点八</strong>中，我们将回过头来更加深刻的来思考这件事。现在让我们给出一个简短的结论：<strong>时间在这样的系统内部仍然不存在，对于外部的时间来说，其负责的只有渲染。在这种情况下，数学仍然还是没有预测未来。</strong></p>
+<hr>
+<h3 id="观点五纯粹符号形式系统无法靠自身扩大自己的反复同义集合"><a class="header" href="#观点五纯粹符号形式系统无法靠自身扩大自己的反复同义集合">观点五：纯粹符号形式系统无法靠自身扩大自己的反复同义集合。</a></h3>
+<p>这个观点由我们的观点一能够自然得到，一个纯粹符号系统从公理和条件出发，能够得到的反复同义集内的命题虽然有无穷多，但其整个范围终究是有限的，纯粹形式系统无法自己创造本不存在的在这个集合里的命题。</p>
+<p>在这种情况下，必然存在“命题为真但内部不可证”这样的命题。但这里的不可证，在符号系统内部来看不是因为条件不足或者自指导致的相互矛盾，而是因为<strong>结论根本无法表示</strong>，为真但不可证这件事，是我们在符号系统之外看到的。哥德尔不完备定理某种意义上，和这件事说的是同一件事。</p>
+<hr>
+<h3 id="观点六人类的理性是超越纯粹符号系统的因为人类可以承认未知公理或证明原来的公理"><a class="header" href="#观点六人类的理性是超越纯粹符号系统的因为人类可以承认未知公理或证明原来的公理">观点六：人类的理性是超越纯粹符号系统的，因为人类可以“承认未知公理”或“证明原来的公理”。</a></h3>
+<p>现实宇宙整体是一个反复同义的集合吗？或者说，现实宇宙能够变成一个纯粹的符号系统吗？显然不是的，因为现实宇宙存在真正的时间。我们的符号系统能够表达的，只是在时间不参与干扰变化时的那一小部分，这不是宇宙的整体。</p>
+<p>由观点五可以得到，人的理性，不是一个纯粹的符号系统，符号系统的极限也绝不是人类理性的极限，因为人的理性，似乎存在某种能够递归的在一个原本的形式系统之上进行扩大的能力。<strong>但这究竟是因为理性可以递归的认知扩大自己，还是因为现在的符号系统没有达到理性的上限呢？</strong></p>
+<p>这个问题是很值得思考的，因为最大的反复同义集合，本身就是现实物理宇宙的一部分，而人生活在物理宇宙中。如果理性是能够递归扩大自己的，那就代表了理性是无限的，后者则说明代表了理性是有限的，至少不会超越我们所存在的现实宇宙的这一部分。那么由此可以自然提出疑问：人类的理性能够认知宇宙中的一切事物吗？存在不可以被理性认知的事物吗？</p>
+<p>如果时间真正作为了变量参与了因果的形成，那么这样看来，得到结果的唯一方法只有——让这件事运行下去。如果是这样，那么所谓精确的预测未来，从理论上就是不可能的。进一步思考，如果理性能够像现在这样意识到“我做不到这件事”，是否已经说明理性就已经在更高的层次审视自身了呢？</p>
+<p>不对，意识到“我做不到”不代表我跳出了原来的层次，就像“本系统不能证明我”这句话，系统能说自己的局限，但并没有因此超越系统。</p>
+<p>这样看来至少我倾向于认为，理性不是无极限的，至少受制于宇宙底层最根本的一些定律的限制。</p>
+<h2 id="话题四位一体"><a class="header" href="#话题四位一体">话题：四位一体</a></h2>
+<h3 id="观点七自指是在符号系统内是反复同义的黑洞但在符号系统外不是"><a class="header" href="#观点七自指是在符号系统内是反复同义的黑洞但在符号系统外不是">观点七：自指是在符号系统内是反复同义的黑洞，但在符号系统外不是。</a></h3>
+<p>纯粹符号系统内部没有时间，只有一个静态的、平面的逻辑空间。当命题 A 指涉 A 自身时，它没有任何空间去缓冲这种循环。所有的信息在瞬间内卷，就像引力坍缩一样，退化为一个毫无信息的奇点。</p>
+<p>然而，在物理世界中，自指为什么能安然无恙地存在？<strong>因为物理实体拥有真实的时间。</strong> 神经元自己的突触环路，在当前时刻的 A 必须经过一段物理延迟，才能在下一个时刻作用于自身。<strong>时间把自指摊平在了不同的空间截面上，从而阻止了逻辑的瞬间坍缩。</strong></p>
+<h3 id="观点八对于物理世界中可以被纯粹符号形式系统表达的部分时间在这里只负责渲染果而不负责推动果形成"><a class="header" href="#观点八对于物理世界中可以被纯粹符号形式系统表达的部分时间在这里只负责渲染果而不负责推动果形成">观点八：对于物理世界中可以被纯粹符号形式系统表达的部分，时间在这里只负责渲染果，而不负责推动果形成。</a></h3>
+<p>前面我们说到，计算机系统里，时间不影响因果，那因果到底是什么呢？</p>
+<p>关于这个结论，让我们先看看前辈大哲学家们是怎么看待的。</p>
+<p>亚里士多德是第一位系统探究因果关系的哲学家。他的四要完整解释一个事物，需要诉诸四种不同的原因。其中一种叫做“动力因”，含有是“是什么使它产生？”。这种宽泛的因果观统治了西方思想近两千年，直到近代科学兴起，才逐渐聚焦于“动力因”。</p>
+<p>苏格兰哲学家大卫·休谟认为因果，是一种心理习惯。当看到A就期待B时，这种期待感被我们误认为是一种客观的必然性，事件似乎是被联结的，但从未相连接。简而言之，某种意义上你甚至无法证明明天的太阳必定会升起，因为这只是一种经验上的认知，而非真正的逻辑真理。对于因果，休谟的回答是：没有理性证明，只有习惯和信念。</p>
+<p>康德说，我们确实无法从经验中证明因果必然性，但他拒绝接受因果只是一种主观习惯。他认为，因果性并非我们从经验中发现的规律，而是我们用来组织经验的先天形式。这意味着，我们之所以能经验到一个有客观先后秩序的世界（而非一堆混乱的感觉），恰恰是因为我们的大脑预先用因果这个框架去整理感官材料。因果律是我们理解客观经验世界的前提条件，而非其产物。在康德这里，因果从世界的规律变成了我们认识世界的法则。</p>
+<p>进入20世纪，哲学家们对因果的探讨更加五花八门了。伯特兰·罗素认为，因果概念是历史的遗物，应该从哲学和科学词汇中彻底清除。大卫·刘易斯。它将因果定义为一种反事实依赖关系。约翰·斯图尔特·密尔认为原因是一组先决条件，在此条件下，结果会无条件且不变地随之发生。</p>
+<hr>
+<p><strong>我认为，因果是一种物理实体之间或与时间之间的纠缠下，产生的复杂内在联系。</strong></p>
+<p>现代神经科学告诉我们，我们的大脑本身就是一个由因果塑造的产物。我们人类的DNA编码数据完全不可能容纳一个大脑如此庞大的拓扑结构信息，现代神经科学已经通过多种实验证明，DNA编码信息只保证了大脑的基础结构，在视觉剥夺和多种实验中已经指出，如果在幼年时期没有得到外界的正确刺激和反馈，那么这项神经功能就可能永久性的损坏。**从这种意义上而言，因果本身就已经作用于我们大脑结构的形成，因果不只是我们认识世界的法则，我们本身就是由因果参与构成的复杂产物之一。**就在这一方面来说，和康德观点颇有些相近，但并不是什么我们独特的某种认知结构导致了因果的出现，而是我们本身就是因果的产物之一。</p>
+<p>我们在这里说了两类发生纠缠的对象：另一些实体或者和时间。这就说明我们的世界的“因果”可以被分成两种——能被数学和纯粹符号系统表示的因果和时间参与的因果，而这些哲学家们的错误在于，没有正确的区分这两种因果。<strong>这两种因果的关键在于，时间到底有没有参与系统的演化。</strong></p>
+<p>类似于“太阳出来石头就热了”这样的因果是属于前者的，而不是属于后者，时间在这里只负责把“果”渲染出来，而我们的大脑形成的过程，属于后者。</p>
+<hr>
+<h3 id="观点九对于物理世界中可以被纯粹符号形式系统表达的部分是物理实体和空间实在推动了反复同义的选择"><a class="header" href="#观点九对于物理世界中可以被纯粹符号形式系统表达的部分是物理实体和空间实在推动了反复同义的选择">观点九：对于物理世界中可以被纯粹符号形式系统表达的部分，是物理实体和空间实在推动了反复同义的选择。</a></h3>
+<p>纯粹符号系统为什么可以描述物理世界中的一部分问题？**因为这部分问题本身就并不需要时间，外部的时间在这里也只负责渲染。**因此符号世界的渲染可以加速——程序可以通过提高CPU时钟而导致运行速度变快，但程序变快了或者渲染画面帧率提升了，并不意味着现实世界的时间流速变快或者未来提前发生了。</p>
+<p>那么，究竟是什么促使着我们不去选择那些毫无意义的反复同义，而是去选择那些真正符合我们认知的命题呢？</p>
+<p>从观点八出发，时间在纯粹符号系统内不参与推动结果的形成，那么一定是物质和空间本身推动了反复同义的选择，让我们从中选择符号我们需要的反复同义命题。</p>
+<p>我们在高中阶段会遇到过这样的物理题，当我们能算出正负两个满足条件的解时，或者内外两种情况的解时，为何我们会抛弃其中一种？因为这些解不符合物理世界规律，此即我们在观点八中说的第一种“<strong>因果</strong>”。纯粹符号系统内部不存在因果，因为因果在符号系统之外。</p>
+<h3 id="观点十不纯粹的符号形式系统具有在符号系统内无法解决的缺陷但在符号系统外不是"><a class="header" href="#观点十不纯粹的符号形式系统具有在符号系统内无法解决的缺陷但在符号系统外不是">观点十：不纯粹的符号形式系统，具有在符号系统内无法解决的缺陷，但在符号系统外不是。</a></h3>
+<p>一个运行在真实物理世界中的符号系统，必然要面对一个悖论：它的内部是纯符号的，但它必须依赖外部的物理硬件和真实时间。</p>
+<p>一旦多个纯粹符号系统试图在真实的物理时间上交互并受到了时间的影响，比如分布式系统，它们就会发现一个根本的绝境——<strong>它们无法同步</strong>。因为物理时间有延迟，有光速限制，有不同的晶振频率。这就是 CAP 定理（一致性、可用性、分区容错性不可兼得）的哲学本质：<strong>物理世界的时间影响了纯粹符号系统外部的因果。</strong></p>
+<p>为了对抗这种物理延迟，不得不发明“锁”、“阻塞等待”、“逻辑时钟”等机制，但这一切都只是打补丁。因为只要物理实体介入了时间，纯粹符号系统的绝对等价就被打破了，产生了我们无法在符号系统内部消除的竞态条件。</p>
+<h3 id="观点十一自指时间实体因果四者是来自形式系统外的四位一体在物理世界具有深刻的内在联系"><a class="header" href="#观点十一自指时间实体因果四者是来自形式系统外的四位一体在物理世界具有深刻的内在联系">观点十一：自指、时间、实体、因果，四者是来自形式系统外的四位一体，在物理世界具有深刻的内在联系。</a></h3>
+<p>我们把话题收束到这四个概念上。</p>
+<p>纯粹的符号系统可以言说，但它必定是静态的、局部的。而物理实体的存在，打破了这种静态，引入了真实的时间，时间与物理实体的结合，让原本绝对的等价变换变成了有时间先后的因果推动，而正是因为有时间将因果摊开，自指才得以在空间中展开，不会瞬间坍缩为悖论。</p>
+<p>这四者——自指、时间、实体、因果——在纯粹的形式系统内部找不到安身之所，它们是一体的，它们都来自于系统外部那个活生生的、不可言说的物理宇宙。</p>
+<h3 id="观点十二连续时间因果的不可还原性与计算的不可约性"><a class="header" href="#观点十二连续时间因果的不可还原性与计算的不可约性">观点十二：连续时间因果的不可还原性与计算的不可约性</a></h3>
+<p><strong>什么时候可以用空间换时间的技巧？</strong></p>
+<p>在微积分中，时间被我们视为无穷小的离散dt并求和计算极限，所以我们可以用<strong>上一刻</strong>和<strong>下一刻</strong>的局部变化来推导，此时空间换时间是可行的。</p>
+<p>然而，当系统存在物理限制的延迟和环路反馈时，当前状态不再只与无穷小的上一刻有关，而是取决于<strong>过去且不与当前时刻临接的一整段时间窗口内的历史总和。</strong></p>
+<p>我们或许可以尝试将这段离散窗口给离散化来解决这个问题，但我们不得不解决两个棘手的困难。</p>
+<p>第一，在数学上，这变成了一个<strong>无穷维</strong>的函数空间问题，一个时间段拥有无限个时刻，我们或许试图用有限个离散变量去逼近无限维的连续演化，但这永远只是一种逼近，且由于不连续和相互影响的问题导致了问题变得极其复杂难以理解。</p>
+<p>第二，更棘手的是<strong>混沌与误差放大</strong>。如果我们把时间段离散化为n个变量去计算，必然存在截断误差。而存在这样时间回路的系统往往属于混沌系统，微小的误差会随着时间呈指数级放大。这意味着，<strong>离散化与逼近的路径在混沌系统面前彻底失效</strong>——没有任何有限的符号捷径可以代替系统本身的真实演化。</p>
+<p>如果你想要精确表达带有时间反馈的复杂因果，或许唯一的办法，就是<strong>让这个物理实体在真实的时间中自己跑下去</strong>？宇宙不需要用微积分去算自己，它只是在演化它自己。</p>
+<h2 id="话题不可言说之物"><a class="header" href="#话题不可言说之物">话题：不可言说之物</a></h2>
+<p>如果用拉普拉斯妖来审视纯粹符号系统，我们会发现：在符号系统内部，拉普拉斯妖是存在的，因为一切都已经写在公理和逻辑等式里了</p>
+<p>但面对真实的时间与因果，我们的语言和符号就撞到了极限。自然语言比数学符号更有生命力，不是因为它包含了更多逻辑，而是因为<strong>说自然语言的人，本身就是被困在物理时间里、受制于因果循环的实体</strong>。我们之所以觉得自然语言更能传达情感或意图，是因为我们在用我们自己那带有时间延迟的物理大脑，去共鸣对方那带有时间延迟的大脑。</p>
+<p>**语言的边界，就是符号能描绘的静态空间的边界。**想要用符号精确表达时间与因果，就像你试图用手抓住一道光并让它改变方向——无论你握得多紧、抓得多快，都是徒劳的。因为光不属于力气的范畴，要改变光，你需要的是镜子。</p>
+<p>那么，纯粹的符号系统或许不行，但人类的理性是否可以认知那些有时间参与因果形成的事物？</p>
+<p>我倾向于认为可以，因为人类的大脑和身体本身，就是这一套时间因果的产物。<strong>但我们靠符号和语言是不够的，或许必须有真正让系统跑下去的耐心。</strong> 面对纯粹时间参与塑造的因果本身，符号和语言只能描述它的外壳，至于想要精确的描述它内在的演化本质，此处，我们暂时先只能沉默。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="论苦难.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="如何煮并剥一个完美的鸡蛋.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="论苦难.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="如何煮并剥一个完美的鸡蛋.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-c2a407aa.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>
