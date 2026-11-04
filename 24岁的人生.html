@@ -1,0 +1,281 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>自述：24岁的人生 - Beyond-The-Code</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-2459343d.css">
+        <link rel="stylesheet" href="css/chrome-ae938929.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-b334a848.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-9c17c221.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Beyond-The-Code</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+<h1 id="24岁的人生"><a class="header" href="#24岁的人生">24岁的人生</a></h1>
+<p>自从10月23日生日🎂，来到这个世界上已经24个念头了，一直由犹豫了好久要不要写这么一篇文章，最终从这里动笔，谨以本文献给24岁的自己。</p>
+<h2 id="0-本不该来到这个世界的我"><a class="header" href="#0-本不该来到这个世界的我">0 本不该来到这个世界的我</a></h2>
+<p>从哪里讲起呢？嗯…把思绪拉到24年前，我诞生于2002年，那是一个计划生育还在严打的时代。</p>
+<p>我的妈妈，是一个很伟大的人，或许我如今能有什么良好的品质，大抵都是从妈妈身上继承的。按照我印象里妈妈的自述，她的命运是及其颠沛流离的，很小的时候我的姥爷就过世了，以八十年代的条件，在贵州的偏远山区甚至温饱都是问题，她从小在这样的条件下长大，艰苦的环境培养了她能干、吃苦耐劳的品质。至今为止我都觉得论奋斗这件事上，无人能与我的妈妈比拟。</p>
+<p>我的妈妈有一任前夫，并和他有三个孩子，一个是我的哥哥（不久前去世了），另外两个是我的姐姐（现在在我家这里生活，已经结婚了）。据她所言，她前夫是一个相当差劲的人，暴力、酗酒、赌博，把我妈妈辛苦赚来的钱都拿去挥霍了，最后她实在不堪忍受，选择了离婚，并随便买了一张车票，带着我的两个姐姐踏上了旅程，来到了我现在的家这里。</p>
+<p>我的妈妈和我的爸爸相遇的过程感觉像是电视剧一样的剧情，我爸从未和我说过这些相关的事情，但是据我妈妈所说当时她生病了，是我爸爸花钱救了她，于是我妈妈就决定嫁给我爸爸了，就是这样，两个人组建了一个新的家庭。不过这样的说法实在是有些让我感觉难以置信，但，我的妈妈就是这样说的。</p>
+<p>关于我的爸爸，我觉得他是一个非常大男子主义，而且脾气很差劲很倔如驴的人，完全听不进去别人说话，而且很好面子，嘴也很臭，不过现在年纪大了反而好了很多了。在我小的时候他一直都在外地打工挣钱，与我而言，在我的童年时代他几乎是缺失的，就这一方面来说他是一个不称职的父亲。但就经济方面来说，他的能干程度也完全不逊于我的妈妈，把在外省吃俭用攒下的钱都用来补贴家用，让我的妈妈不需要外出打工补贴家用，我的妈妈才能陪我度过一整个童年，就这一方面来说，他甚至比绝大多数父亲都要称职。</p>
+<p>就在这样的家庭里，2002年我来到了这个世界上。由于我的妈妈有过三个孩子，按照当时的计划生育政策，我大抵是不被允许来到这个世界上的，据说当时怀了我以后，计划生育的人天天来查，要抓人去做堕胎。由于当时法制不健全，抓不到我的妈妈，他们就抓住我的爸爸一顿暴力殴打，据说好几次把他打的晕了过去。为了方便来抓人的时候逃跑，爸妈还在家里的房子墙壁上掏了一个大洞，邻居和乡亲们一看到来查人了就赶紧让我爸妈快跑。从小我听这些长大，大抵我恨死他们（计划生育的人）了，哪怕到今天也一样，当年那个时代最黑暗的印记，就这样烙印在了我出生的时候。</p>
+<p>心惊胆战过了十个月，我被生了下来。可家里穷得叮当响，爸妈不得不出去打工挣钱，这时负责抚养我的，就是我的两个姐姐。都说长兄如父，在我的身上大概就是长姐如母吧，虽然我基本上已经记不清这些事情了，但是我的姐姐对我真的很好很好，哪怕是同母异父的姐姐，在我眼里也和亲生姐姐一般。</p>
+<p>让我感到遗憾的是我同母异父的哥哥，我只见过他一面，那是在高中的时候，他来到了我们家来找我的妈妈（也是他的妈妈）。据说我的妈妈走后，他的日子过的非常难，可想而知，一个孩子和一个酗酒、家暴、赌博的父亲，每天过的是怎样的日子。我的妈妈说她非常的亏欠他，当时带不走他也是因为前夫从中阻挠，可是我发现，我的哥哥并不如我想的那样和我的妈妈一样也是一个吃苦耐劳的人。</p>
+<p><strong>艰苦的环境可以塑造一个人，同样也可以摧毁一个人。</strong></p>
+<p>我的哥哥在我眼里，是一个哀其不幸，怒其不争的人。他身上有非常多的问题，懒惰（有钱就花）又勤快（干活卖力）、沉醉（贪图享乐，一堆不良嗜好）又努力（努力的谋生），还不停的和妈妈要钱花，宛如寄生虫一般，这些矛盾并存在他身上，大抵是因为在那样艰苦的生活里，及时享乐和沉醉与享受就是最好的自我麻痹吧。</p>
+<p>等我再一次听到他的消息的时候，他就已经离世了。他走的非常悲惨，开车在高速服务区里身体突然发病，大概是以前车祸留下的癫痫症，身边又没有其他人，就这样毫无人知晓的离开了人世。更可悲的是，等被发现的时候，身体都已经腐烂了，在医院里停了那么久，而所谓的贵州的“大伯大婶”们，还在为了他在家里的几亩地的继承权和财产分割而争论不休。我的妈妈哭了，我不知道说什么，因为我对这个哥哥几乎没有什么印象，但是这件事给了我很深的感触，尤其是那些所谓的亲戚，我悲叹于我的哥哥的人生短暂与痛苦，而又难以真正的共情他的所作所为。</p>
+<h2 id="1-十里八乡的坏孩子王"><a class="header" href="#1-十里八乡的坏孩子王">1 十里八乡的坏孩子王</a></h2>
+<p>小时候的我，是一个没出息的人。至今只有一些残留的些许记忆能告诉我，小时候我是一个十里八乡都知道的坏孩子头。我干过的坏事不限于以下这些：因为不知道谁把我的书包划破了，所以我选择把所有同班同学的书包全部用小刀划一边；破坏别人家的菜地，糟蹋别人家的菜以此为乐；因为打赌砸坏别人家的缸；上课在后排打扑克牌；偷家里的钱买很多雪糕和卡片被老妈打等等等等。成绩也是一塌糊涂，不能说还可以，只能说是倒数。</p>
+<p>不过同时，我的童年也却是丰富多彩。我有很多的宝贵回忆至今还珍藏在我的脑海里：春天和小伙伴们放学后一起踢沙包；夏天一起下河抓螃蟹；秋天一起在村子里到处探险；冬天一起下河溜冰…<strong>这些回忆，构成了我的人格底色</strong>，我大抵是最后一代童年还是这样度过的人吧，现在的小孩子们都已经被手机剥夺了童年，可悲矣。</p>
+<p>绝大多数事情我都不记得了，人类的大脑发育天性使然，对于小学之前的事情，也只能写到这里了吧。</p>
+<h2 id="2-第一步的尝试"><a class="header" href="#2-第一步的尝试">2 第一步的尝试</a></h2>
+<p>在升入初中的时候，我入学考试考了第180多名，当时全校大概300多人左右，而且还是一个乡镇初中，那里的孩子们能上高中的都只有不到一半，甚至一些上不完初中就辍学了。这样的成绩实在是很一般，按照这样的剧本发展下去，我的未来大抵是考入一个技校或者大专，然后浑浑噩噩过完纪念最后变成路边小店里的服务员或者什么类似的人吧。</p>
+<p>我记得很清楚很清楚，在我刚考进初中的时候，我就被班主任拉去谈话了（他姓邓，就叫他邓老师吧）或许是由于我小学的时候名声实在是太坏，已经传到了他的耳朵里，他就直接警告我在班里别捣乱，当时我真的很生气，感觉自己被羞辱了，在心里我默默的记下了这件事，我一定要他让他好看。</p>
+<p><strong>我遇到了我生命里的第一个贵人</strong>，哪怕她只是一个普普通通的初中英语老师。我还记得她姓夏，就叫他夏老师吧，夏老师是一个口齿伶俐又胖胖的英语老师，据说是来这里支教的。她教的英语真的很好很清楚，哪怕当时我几乎对于英语的认知水平，因为小学的不学无术停留在只认识字母和最简单的单词的水平，她都没有放弃我。</p>
+<p>我第一次认识到了过去式，认识到了现在进行时，那种获得知识的感觉真的很奇妙。<strong>我终于发现，好像学习并没有我所想象的那么困难</strong>，于是我尝试着将这些感觉迁移到其他课程上，尝试去努力的学习和理解…奇迹就这样发生了，初一的期中考试，我直接考到了班里的第五名，全校的前几十名。</p>
+<p>当时那个警告我别在班里捣乱的邓老师，终于在期中考试总结班会上对我佩服的五体投地，说自己被震惊了。（至今我对此仍得意洋洋）就这样，我第一次体会到了学习的甜头，原来只要把成绩搞好，这些看不起我的人就不得不正视我。</p>
+<p>到了初二，我几乎和所有人一样，有了手机，沉迷游戏，成绩不断的下滑。邓老师（他还是我的班主任）把我叫过去，但是出乎我意料的是他并没有批评我，而是一眼就看出来我在家里晚上偷偷玩手机没有好好休息，导致上课无法集中精力成绩下滑，对我说了很多语重心长的话（我已经记不清了）。只是当时，我顿感甚是羞愧，愧对了老师的期望，所以我改掉了这个毛病，成绩最后也逐渐的回归了正轨，他也没有在找过我谈话。</p>
+<p>或许从这个时候开始，我就已经变了吧，变得不再是从前那个叛逆的孩子了。</p>
+<p>让我印象最深的还是初三的时候，那个时候大家经历了重新分班，他已经不再是我的班主任了，我的新班主任姓石，就叫他石老师吧，石老是也是一个很好的班主任，他讲课非常清楚，同时对我也很好。我的初一初二都不是住宿的，每天七点左右到学校，下午五点多就放学回家了，到了初三的时候为了准备中考，学校给我们加上了晚自习，并开放了宿舍（不过这个政策最终由于宿舍排水管炸了各种污水流了一地而取消了哈哈）</p>
+<p>当时的宿舍条件，只能说比监狱还差，甚至很多时候连热水都没有。记得冬天的时候，我早早起来去食堂买了个烧饼，就去教室开灯一边啃煎饼一边背语文了，那时候大家大多都还没起床。本来这只是一件没什么的小事，就是一个人来的比较早罢了，但是等我之后才得知，邓老师（我原先的班主任）在监控里看到我了，并当着他全班的面夸我要大家向我学习，还说我将来一定会有出息的，这句话让我记到今天。</p>
+<p><strong>我一定会有出息的。</strong></p>
+<p>挥挥手告别了初中，进入的就是我最波荡坎坷的高中。</p>
+<h2 id="3-凝视深渊"><a class="header" href="#3-凝视深渊">3 凝视深渊</a></h2>
+<p>高中的残酷程度，远超我的想象。我在初中还是班级里最闪耀的人之一，到了高中就变成了泯然众人矣。我的高中一个年级足足有1500人！我大概一般只能考到一个200-300名的样子，按照那个程度来算，也就只能考上一个一本吧。我曾经也参加过所谓精英创客班的选拔，但是最后被淘汰了。这一次我才认识到，人和人的条件差距，远比我想象的要大。别人早就从补习班和私教那里提前学过考试的内容了，而我还和一个小白一样在知识的海洋里扑腾着不要溺水。</p>
+<p>这些差距和学业的压力让我喘不过气来，仅仅上了半个学期，高一下半个学期我就抑郁休学了。</p>
+<p>那段日子真是鸡飞狗跳。抑郁是一种你无法控制的情绪，明明没有任何事情发生，你还是会莫名的情绪崩溃，感觉心脏就像被反复的捏碎然后重组一样，甚至产生了一种物理上的痛楚。</p>
+<p>我已经记不清自己到底闹过多少事了，在河边闹着要跳河，妈妈抱着我哭着说我要没了那她也一起跳，甚至最后为了让我好起来，不惜找所谓的村姑迷信的给我叫魂。直到最后一次，我借着出门透气的名义，关掉了手机，离家出走了很远很远，本以为我就会这样在某个地方消失，但是突然间我发现了一个熟悉的身影，那…是我的妈妈，她开着三轮车停下跑了过来紧紧抱住我哭了起来。我至今不知道她是怎么找到我的，我以为是某种意义上的心灵感应，后来才听我姐姐说，妈妈几乎找遍了身边的每个村子问遍了所有人…</p>
+<p>我顿时感觉自己真的不是个东西，<strong>一种巨大的羞愧感再一次涌上了我的心头，我必须好起来。</strong></p>
+<p>为了好起来，我采取了最极端的措施，我强行给自己停掉了医生的药，当抑郁发病的时候，就一个人独自蜷缩在床上，攥着自己的心脏强忍痛苦，不断的把自己断掉的情绪和碎掉的内心重新拼起来…</p>
+<p>我记不清多久之后了，终于，我似乎已经渐渐越来越少的发病了，一年后，我重返了校园，虽然重返之后，我还会时不时因为精神崩溃请假回家休息几天，但也已经逐渐的能够控制自己的情绪了。还是那个熟悉的学校，但是我认识的同学已经全部走了，我就这样落后了他们一级，这是我永远无法忽视的伤痛，我要努力的追上他们。</p>
+<p>借着抑郁症的幌子，我和所有的老师打好了招呼，我不再跟随所有老师的教学，也不再参与上课提问，不再写任何作业，而是开始埋头自己自学。我近乎疯狂的努力，只花了一年的时间，就把高中课程的所有知识全部自学了，甚至高二还抽空自学了大学的高等数学、线性代数、概率论，甚至还有理论力学，分析力学，变分法等等…（那段时间我其实想大学去学物理专业，但是最后我放弃了，因为物理专业实在难以就业）。</p>
+<p>我想，自己的自学本领，大抵就是在那时培养的吧。高三的一模考试，我考到了全校第十名，甚至连所谓的精英创客班，也没有几个能考过我的。但是说实话，我也不知道这是为什么，大概是运气吧，因为之前我仍然还停留在全校100名左右的水平。高考的时候我得了新冠，一边发烧一边考试，本以为我考的很差，不过我也已经没有什么遗憾了。成绩出来，我考了640分，这是我考的最好的一次。</p>
+<p><strong>从此开始，我的人生才真的拉开序幕。</strong></p>
+<h2 id="4-不可言说之物"><a class="header" href="#4-不可言说之物">4 不可言说之物</a></h2>
+<p>正如我在雨夜杂谈中所写的，大一刚入学的时候，我还什么都不会，甚至连自己应该学什么都完全不知道，就好像一个刚刚学会在泳池游泳的人突然被扔进了大海里自生自灭。身边的同学们也要比自己优秀得多，这种断层式的“泯然众人矣”和“不知道自己应该做什么”的感觉，又让我时常焦虑到睡不着。</p>
+<p><strong>但是我不再是从前那个束手无策的自己了。</strong></p>
+<p>我花了四年的时间，创造了让我骄傲的作品，完成了一件又一件困难的事，学习了如此多的知识，赢得了老师和同学的夸奖与敬佩，靠着这些东西，我觉得可以赢得自己想要的一切，自己在逻辑和代码的世界内就是创世神。</p>
+<p><strong>直到我的逻辑梦想被维特根斯坦无情的击碎。</strong></p>
+<p>我曾幻想“知识就是力量”，靠着数理逻辑可以解决世界和人生上的一切困难。直到看到维特根斯坦所写的：“一切逻辑命题都是反复同义”，“对于不可言说的，必须保持沉默”。</p>
+<p><strong>可那又是什么呢？我在努力寻找着这些不可言说之物，那些在数理逻辑之外的存在。</strong></p>
+<p>直到我开始养花，开始摄影，开始学习哲学，学习植物生理学，接触各种完全从未接触过的领域，开始尝试去感受，我才发现我的生活漏掉了这么多美好的事物。我们活在这个世界上，是自然的一份子，在智力与逻辑之外，还存在无数美好的生命瞬间与感受，有些事情不需要依靠逻辑去分析，去感受他的美，热爱他的绽放即可。</p>
+<p>至今，我仍在尝试着努力去做一个完整的人，做一个能够绽放就要努力绽放的花朵。</p>
+<p>未来的我，你又会是什么样子呢？还在尝试努力去做一个完整的人吗？</p>
+<p>2026年11月04日。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="雨夜杂谈.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="雨夜杂谈.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-c2a407aa.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>
